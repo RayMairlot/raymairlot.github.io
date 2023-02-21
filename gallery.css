@@ -10,6 +10,6 @@ body {
     grid-gap: 5px;
 }
 
-#gallery-grid>img {
+#gallery-grid > img {
     width: 100%;
 }
