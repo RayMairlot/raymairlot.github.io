@@ -1,8 +1,18 @@
 <html>
     <head>
+        <link rel="stylesheet" href="header.css">
         <link rel="stylesheet" href="gallery.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("header.html");
+            });
+        </script>
     </head>
     <body>
+
+        <div id="header"></div>
+
         <div id="gallery-grid">
             <img src="Gallery Image Thumbnails/Cute Objects Thumbnail.jpg" alt="Cute steam train render">
             <img src="Gallery Image Thumbnails/Lego Thumbnail.jpg" alt="Cute steam train render">
