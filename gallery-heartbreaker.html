@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="footer.css">
+        <link rel="stylesheet" href="gallery-page.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("../header.html");
+                $("#footer").load("../footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <div id="gallery-page-title-container">
+                <h1 id="gallery-page-title">Iron Man: Heartbreaker</h1>
+                <div id="gallery-page-description">An on-going project to re-create the 'Heartbreaker' Iron Man suit.
+                </div>
+            </div>
+            <div class="gallery-page-grid gallery-page-grid-two-columns gallery-page-grid-full-height">
+                <a href="Gallery Images/Heartbreaker/Body WIP.png">
+                    <img src="Gallery Images/Heartbreaker/Body WIP.png" alt="Cute steam train render">
+                </a>
+                <a href="Gallery Images/Heartbreaker/Body Back WIP.png">
+                    <img src="Gallery Images/Heartbreaker/Body Back WIP.png" alt="Cute steam train render">
+                </a>
+            </div>
+            <div class="centre-image-link">
+                <a href="Gallery Images/Heartbreaker/Hand WIP.png">
+                    <img src="Gallery Images/Heartbreaker/Hand WIP.png" alt="Cute steam train render"
+                         class="single-image-height">
+                </a>
+            </div>
+            <div class="full-width-image-link-or-max">
+                <a href="Gallery Images/Heartbreaker/Head WIP 2 Back and Front.png">
+                    <img src="Gallery Images/Heartbreaker/Head WIP 2 Back and Front.png" alt="Cute steam train render">
+                </a>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

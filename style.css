@@ -1,3 +1,34 @@
 body {
     margin: 0;
 }
+
+#page-content {
+    padding: 35px;
+}
+
+.centre-image-link {
+    margin: 20px;
+}
+
+.centre-image-link img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.single-image-height {
+    width: min(500px, 100%);
+}
+
+.full-width-image-link-or-max {
+    margin: 20px;
+}
+
+.full-width-image-link-or-max img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    max-width: 100%;
+
+}

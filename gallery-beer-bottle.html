@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="footer.css">
+        <link rel="stylesheet" href="gallery-page.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("../header.html");
+                $("#footer").load("../footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <div id="gallery-page-title-container">
+                <h1 id="gallery-page-title">Beer Bottle</h1>
+                <div id="gallery-page-description">A personal project emulating a real beer advert.</div>
+            </div>
+            <div class="full-width-image-link-or-max">
+                <a href="Gallery Images/Beer Bottle/Beer Bottle render 1 WM.png">
+                    <img src="Gallery Images/Beer Bottle/Beer Bottle render 1 WM.png" alt="Cute steam train render">
+                </a>
+            </div>
+            <div class="full-width-image-link-or-max">
+                <a href="Gallery Images/Beer Bottle/Beer Bottle wire 1 WM.png">
+                    <img src="Gallery Images/Beer Bottle/Beer Bottle wire 1 WM.png" alt="Cute steam train render">
+                </a>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>
