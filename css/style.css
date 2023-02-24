@@ -10,6 +10,12 @@ body {
     margin: 20px;
 }
 
+.centre-element {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .centre-image-link img {
     display: block;
     margin-left: auto;
@@ -30,5 +36,14 @@ body {
     margin-right: auto;
     object-fit: contain;
     max-width: 100%;
+
+}
+
+.section-divider {
+    width: 100%;
+    border-style: solid;
+    border-color: rgb(218, 218, 218);
+    border-width: 0 0 1px 0;
+    margin: 35px 0;
 
 }
