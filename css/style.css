@@ -6,6 +6,15 @@ body {
     padding: 35px;
 }
 
+
+.underlined-title {
+    border-style: solid;
+    border-color: rgb(218, 218, 218);
+    border-width: 0 0 1px 0;
+    padding-bottom: 15px;
+    margin-top: 65;
+}
+
 .image-grid {
     margin: auto;
     display: grid;
