@@ -6,6 +6,48 @@ body {
     padding: 35px;
 }
 
+.image-grid {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max(250px, 100%/5), 1fr));
+    grid-gap: 5px;
+    margin-top: 35px;
+}
+
+.image-grid img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.image-grid-two-columns {
+    grid-template-columns: repeat(auto-fit, minmax(max(350px, 100%/3), 1fr));
+}
+
+.image-grid-two-columns img {
+    height: 430px;
+}
+
+.image-grid-three-columns {
+    grid-template-columns: repeat(auto-fit, minmax(max(300px, 100%/4), 1fr));
+}
+
+.image-grid-three-columns img {
+    height: 330px;
+}
+
+.image-grid-four-columns {
+    grid-template-columns: repeat(auto-fit, minmax(max(250px, 100%/5), 1fr));
+}
+
+.image-grid-four-columns img {
+    height: 270px;
+}
+
+.image-grid-full-height img {
+    object-fit: scale-down;
+    height: 100%;
+}
+
 .centre-image-link {
     margin: 20px;
 }
