@@ -1,0 +1,48 @@
+#page-content {
+    padding: 0 !important;
+}
+
+.full-width-image-link-or-max {
+    margin: 0 !important;
+}
+
+h1 {
+    margin-top: 0px !important;
+}
+
+#case-study-video {
+    width: 30%;
+    padding: 20px;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#case-study-sections > div {
+    padding: 60px 65px;
+}
+
+#case-study-sections > div:nth-child(even) {
+    background-color: lightgrey;
+}
+
+.column-two img {
+    width: 100%;
+}
+
+@media (max-width: 750px) {
+    #case-study-sections > div {
+        padding: 30px 35px;
+    }
+
+    #case-study-video {
+        width: 100%;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .column-two img {
+        padding-top: 25px;
+    }
+}
