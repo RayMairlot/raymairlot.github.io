@@ -117,15 +117,11 @@ p:last-of-type {
 
 .two-column-layout {
     display: flex;
+    gap: 40px;
 }
 
-.column-one {
+.column {
     width: 50%;
-}
-
-.column-two {
-    width: 50%;
-    padding-left: 45px;
 }
 
 @media (max-width: 750px) {
@@ -135,14 +131,10 @@ p:last-of-type {
 
     .two-column-layout {
         flex-direction: column;
+        gap: 25px;
     }
 
-    .column-one {
+    .column {
         width: 100%;
-    }
-
-    .column-two {
-        width: 100%;
-        padding-left: 0;
     }
 }
