@@ -9,6 +9,10 @@
     margin-right: 0;
 }
 
+#case-study-sections div + div {
+    margin-top: 0px;
+}
+
 .full-width-image-link-or-max:last-child {
     margin-bottom: 0 !important;
 }
@@ -20,6 +24,10 @@
 
 h1 {
     margin-top: 0px !important;
+}
+
+.image-grid {
+    grid-gap: 20px !important;
 }
 
 #case-study-video {
