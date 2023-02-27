@@ -64,17 +64,7 @@ p:last-of-type {
     height: 100%;
 }
 
-.centre-image-link {
-    margin: 20px;
-}
-
 .centre-element {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.centre-image-link img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -88,13 +78,14 @@ p:last-of-type {
     margin: 20px;
 }
 
+.centre-image-link img,
+.image-with-caption img,
 .full-width-image-link-or-max img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     object-fit: contain;
     max-width: 100%;
-
 }
 
 .section-divider {
