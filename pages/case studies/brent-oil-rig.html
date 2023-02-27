@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/case-study.css">
+        <link rel="stylesheet" href="/css/youtube-embed.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+
+            <div id="case-study-sections">
+
+                <div>
+                    <h1 class="underlined-title">Brent Oil Rig</h1>
+
+                    <div class="two-column-layout">
+                        <div class="column">
+                            <p>
+                                <b>Client: Bigger Bang</b>
+                            </p>
+                            <p>
+                                In 2017 I worked as a 3D generalist for film and television production company Bigger
+                                Bang on a small project for their client, Shell.
+                            </p>
+                            <p>
+                                The project was to create a short animation that would be used internally at Shell to
+                                show the process of decommissioning oil rigs in the Brent Oil Field, owned by Shell.
+                                Initially, the goal was to also include the Pioneering Spirit, a boat specifically built
+                                to carry oil rig platforms, but eventually, this was reduced to just showing the oil
+                                rig, a comparison of the oil rig's size compared to landmarks and the basics of how the
+                                top of the oil rig platform detaches from the base.
+                            </p>
+                            <p>
+                                My role was to work directly with director, David Hatter, to take existing assets, model
+                                new ones and animate and render them to create a blueprint-style animation. The
+                                animation was completed in Blender 3D.
+                            </p>
+                        </div>
+                        <div id="case-study-video" class="column">
+                            <div class="embedtool">
+                                <iframe src="https://www.youtube.com/embed/_5IPi20LXnU" frameborder="0"
+                                        allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p>
+                        I was initially provided with an existing oil rig asset, but I knew such a high
+                        resolution model would be both difficult to manage and would probably not work well with
+                        the methods I was intending to use to get the blueprint look. Below is a test render
+                        that I sent to the director to explain this. Upon seeing this he gave me the go-ahead to
+                        spend time heavily reducing the complexity of the model, which resulted in practically
+                        all pieces of the oil rig being remodelled with simpler geometry.
+                    </p>
+                    <div class="image-with-caption full">
+                        <a href="/images/case study images/brent oil rig/BI Cycles Test WM.png">
+                            <img src="/images/case study images/brent oil rig/BI Cycles Test WM.png"
+                                 style="width: 500px;">
+                        </a>
+                        <p>The oil rig prior to simplification.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <p>
+                        Below is the finalised look for the blueprint, using the remodelled oil rig. Created in Blender
+                        3D, this combined the Blender Internal render engine's wireframe shader for the main geometry
+                        detail, Freestyle for the thicker outlines and Cycles for the diffuse shading.
+                    </p>
+                    <p>
+                        Despite having the intention to wholly use the Cycles rendering engine for this, combined with
+                        Freestyle for the line rendering, even with simplified geometry the render time was too costly
+                        to use Freestyle for everything. Instead, Blender's 'Blender Render' engine (Blender Internal)
+                        was used for the bulk of the line work and Freestyle was reduced to only doing the outlines of
+                        geometry, something that Blender Internal couldn't do and Freestyle could do without extending
+                        render times too much. Several render passes from the two render engines and Freestyle were then
+                        combined in Blender's compositor to create the finished effect.
+                    </p>
+                    <div class="centre-image-link">
+                        <a href="/images/case study images/brent oil rig/Oil Rig Render freestyle WM.png">
+                            <img src="/images/case study images/brent oil rig/Oil Rig Render freestyle WM.png"
+                                 style="width: 500px;">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <p>
+                        The first stage of the animation shows a transition between some existing footage of an oil rig
+                        and the digital oil rig. The digital oil rig only had to be representative of the real oil rig,
+                        so the transition isn't exact.
+                    </p>
+                    <div class="full-width-image-link-or-max">
+                        <a href="/images/case study images/brent oil rig/Oil Rig Transition WM.png">
+                            <img src="/images/case study images/brent oil rig/Oil Rig Transition WM.png">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <p>
+                        The second stage of the animation was to show the oil rig to scale next to some famous
+                        landmarks. I reused the Empire State Building from another project I had done for Bigger Bang
+                        and modeled The Eiffel Tower.
+                    </p>
+                    <div class="full-width-image-link-or-max">
+                        <a
+                           href="/images/case study images/brent oil rig/Oil Rig Animation with Blueprint Elements WM.png">
+                            <img
+                                 src="/images/case study images/brent oil rig/Oil Rig Animation with Blueprint Elements WM.png">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <p>
+                        The final stage of the animation shows the lifting off of the oil rig top from the base, which
+                        would then be carried away by ship.
+                    </p>
+                    <div class="full-width-image-link-or-max">
+                        <a href="/images/case study images/brent oil rig/Oil Rig Animation 563 WM.png">
+                            <img src="/images/case study images/brent oil rig/Oil Rig Animation 563 WM.png">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="footer"></div>
+
+    </body>
+</html>

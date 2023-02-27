@@ -2,7 +2,19 @@
     padding: 0 !important;
 }
 
-.full-width-image-link-or-max {
+/* Selects divs preceded by paragraphs (to add spaces before images) */
+#case-study-sections p + div {
+    margin-top: 60px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.full-width-image-link-or-max:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Solo image in section */
+.full-width-image-link-or-max:only-child {
     margin: 0 !important;
 }
 
@@ -38,7 +50,10 @@ h1 {
     #case-study-video {
         width: 100%;
         margin: 0;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 0;
+    }
+
+    #case-study-sections p + div {
+        margin-top: 30px;
     }
 }
