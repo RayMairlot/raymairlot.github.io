@@ -82,6 +82,10 @@ p:last-of-type {
     margin: 60 0;
 }
 
+.image-and-grid > .image-grid {
+    margin-top: -40;
+}
+
 .centre-image-link img,
 .image-with-caption img,
 .full-width-image-link-or-max img {
@@ -135,7 +139,12 @@ p:last-of-type {
 
     .centre-image-link,
     .image-with-caption,
+    .image-and-grid,
     .full-width-image-link-or-max {
         margin: 30px 0px;
+    }
+
+    .image-and-grid > .image-grid {
+        margin-top: -10;
     }
 }
