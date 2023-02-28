@@ -9,16 +9,17 @@
     margin-right: 0;
 }
 
-#case-study-sections div + div {
-    margin-top: 0px;
-}
-
-.full-width-image-link-or-max:last-child {
+#case-study-sections .image-and-grid:last-child,
+#case-study-sections .centre-image-link:last-child,
+#case-study-sections .image-with-caption:last-child,
+#case-study-sections .full-width-image-link-or-max:last-child {
     margin-bottom: 0 !important;
 }
 
 /* Solo image in section */
-.full-width-image-link-or-max:only-child {
+#case-study-sections .centre-image-link:only-child,
+#case-study-sections .image-with-caption:only-child,
+#case-study-sections .full-width-image-link-or-max:only-child {
     margin: 0 !important;
 }
 
