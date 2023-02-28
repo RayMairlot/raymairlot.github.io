@@ -75,7 +75,11 @@ p:last-of-type {
 }
 
 .full-width-image-link-or-max {
-    margin: 20px;
+    margin: 60px;
+}
+
+.image-with-caption {
+    margin: 60 0;
 }
 
 .centre-image-link img,
@@ -127,5 +131,11 @@ p:last-of-type {
 
     .column {
         width: 100%;
+    }
+
+    .centre-image-link,
+    .image-with-caption,
+    .full-width-image-link-or-max {
+        margin: 30px 0px;
     }
 }
