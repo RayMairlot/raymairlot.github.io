@@ -2,11 +2,9 @@
     padding: 0 !important;
 }
 
-/* Selects divs preceded by paragraphs (to add spaces before images) */
-#case-study-sections p + div {
-    margin-top: 60px;
-    margin-left: 0;
-    margin-right: 0;
+#case-study-sections .full-width-image-link-or-max {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 #case-study-sections .image-and-grid:last-child,
@@ -60,9 +58,5 @@ h1 {
         width: 100%;
         margin: 0;
         padding: 0;
-    }
-
-    #case-study-sections p + div {
-        margin-top: 30px;
     }
 }
