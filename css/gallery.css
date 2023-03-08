@@ -24,6 +24,8 @@
 @media (max-width: 500px) {
     #biography {
         flex-direction: column;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     #biography img {
@@ -32,7 +34,8 @@
 
     #biography div {
         text-align: center;
-        margin: 0px;
+        margin: 30px 0px 0px 0px;
+    }
 
     #yt-embed-container {
         width: 100%;
