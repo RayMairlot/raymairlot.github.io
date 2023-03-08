@@ -20,6 +20,24 @@
     font-style: italic;
 }
 
+h2 {
+    margin-top: 55;
+}
+
+#social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+#social-icons img {
+    height: 50px;
+    width: 50px;
+}
+
+#yt-embed-container {
+    width: 80%;
+}
 
 @media (max-width: 500px) {
     #biography {
@@ -40,23 +58,4 @@
     #yt-embed-container {
         width: 100%;
     }
-}
-
-h2 {
-    margin-top: 55;
-}
-
-#social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-}
-
-#social-icons img {
-    height: 50px;
-    width: 50px;
-}
-
-#yt-embed-container {
-    width: 80%;
 }
