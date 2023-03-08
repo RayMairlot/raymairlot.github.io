@@ -33,6 +33,9 @@
     #biography div {
         text-align: center;
         margin: 0px;
+
+    #yt-embed-container {
+        width: 100%;
     }
 }
 
