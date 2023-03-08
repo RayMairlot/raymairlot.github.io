@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/rollercoaster-shading-and-layout-update.html'><h1>Rollercoaster: Shading and layout update</h1></a>
+                    <p>17/04/2013<p>
+                </div>
+                <p>
+                    <strong>[This post was originally posted on Half-Man Half-Bird's website and has been reposted here with permission so that my future posts on this topic are not out of context.]</strong>
+                </p>
+                <p>
+                    So it's been a couple of weeks since the last update but things have advanced quite a bit. I'm still working on 'Shot 2' but the tracks have been laid out, rendering tests have been done and shading has started.
+                </p>
+                <p>
+                    One of the first things I did was set up the track which was simple enough and just meant scaling the imported (from the other scene) track so everything was roughly the correct size and then match it to the geometry I had already built that represents the buildings. You can also see the support struts that I've made which 'hold up' the building, because it's not like it would end up pulling down the building or anything...
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/571567.jpg">
+                        <img class=centre-element src="/images/blog/571567.jpg">
+                    </a>
+                <p>
+                    Having set up the track and carriages I then worked on a few shaders and preliminary renders. The lighting was pretty simple (once I'd figured out how simple it could be) and is just a sun lamp, the shadows of which I managed to match pretty close to the source footage. The colour's a bit off for the shadows but I was working on the direction and angle at this point. I've changed the position slightly since then and a changes in ground height to match the footage also alters the look of them.
+                </p>
+                <p>
+                    This was also a chance to quickly test the motion/vector blur which was done after the render in the compositor and doesn't look too bad. Of course, to get vector blur there has to be some movement so I very roughly animated the carriages along the track. One issue I noticed during the render tests was not the speed of the render, which wasn't bad at all, but the time it took to load all the geometry into memory. It took a good while to load everything so I optimised the track by animating the 'count' property in the arrays so that as the camera pans the track extends, but before it's needed it isn't visible. I think I can take this further with more geometry being invisible/not rendered until it's needed.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/563130.png">
+                        <img class=centre-element src="/images/blog/563130.png">
+                    </a>
+                <p>
+                    Here's just a closer look at those support struts, they're the sort of thing you see supporting big <a href=http://www.macalloy.com/projects/st-paul2019s-square-liverpool-uk/fssget/image>buildings</a> or <a href=http://www.poetsoflondon.com/pictures/eng.jpg>bridges</a>. And of course it's only <em>after</em> I've made it that I've found out the support strut's proper name is 'tension bars'.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/3177395.jpg">
+                        <img class=centre-element src="/images/blog/3177395.jpg">
+                    </a>
+                <p>
+                    And here's a quick rendered view of the track and support struts, it's a bit different to the rendering above which was done last week. The shaders were looking pretty dark and all of the reference images I'd looked at showed bright colours so I updated the shaders to reflect that, but I might try and find some in-between.
+                </p>
+                <p>
+                    Although you might not notice it (but you'd notice if it wasn't there) I've also added a slight bevel to the blue blocks that the struts connect to and a few other objects, they were looking a bit sharp but I was thinking that they would be covered in thick paint; the bevel gives a slight highlight along the edge.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/2208520.jpg">
+                        <img class=centre-element src="/images/blog/2208520.jpg">
+                    </a>
+                <p>
+                    Aside from all that I also started setting up render layers and doing a quick composite in blender, even though Matt will be doing the compositing probably in Nuke. I need to do this to make sure render layers are getting outputted as intended. There were a lot of complexities involved where certain layers should be receiving shadows but not appearing in reflections but I'll probably go into the details of that in a couple of weeks.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/rollercoaster-update.html'><< Previous Post</a>    <a id='next' href='/blog/rollercoaster-shot-3.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

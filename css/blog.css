@@ -1,0 +1,128 @@
+article {
+    margin: 60 130px 70px 130px;
+}
+
+article h2 {
+    font-size: 26;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.blog-header {
+    border-style: solid;
+    border-color: rgb(218, 218, 218);
+    border-width: 0 0 1px 0;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.blog-header h1 {
+    margin-bottom: 20;
+}
+
+.blog-header a {
+    text-decoration: none;
+}
+
+.blog-header p {
+    margin: 0 !important;
+}
+
+.post-navigation {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+#next {
+    margin-left: 25px;
+}
+
+.aside {
+    display: inline-block;
+}
+
+.aside p {
+    font-size: 16;
+}
+
+.aside p:first-of-type {
+    margin-top: 0;
+}
+
+.aside p:last-of-type {
+    margin-bottom: 0;
+}
+
+.twitter-tweet {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+}
+
+pre {
+    background-color: lightgrey;
+    text-align: left;
+    white-space: pre-line;
+    margin: 35px 0;
+    padding: 20px;
+}
+
+.quote {
+    background-color: lightgray;
+    margin: 45px 30px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.quote-open, .quote-close {
+    font-weight: bold;
+    font-size: 40;
+}
+
+.quote-open::before {
+    content: open-quote;
+}
+
+.quote-close {
+    margin-top: auto;
+    margin-bottom: -15px
+}
+
+.quote-close::after {
+    content: close-quote;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 20px 5px 20px 10px;
+}
+
+#yt-embed-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 95%;
+}
+
+@media (max-width: 500px) {
+
+    .two-column-layout {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+
+    article {
+        margin: 60 0px 70px 0px;
+    }
+
+    .quote {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

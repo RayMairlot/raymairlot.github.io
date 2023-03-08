@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <h1>Example blog page title</h1>
+                    <p>21/08/2011<p>
+                </div>
+                <h2>Image</h2>
+                <div class='image-with-caption'>
+                    <a href="/images/blog/blog fracture game.jpg">
+                        <img src="/images/blog/blog fracture game.jpg">
+                    </a>
+                    <p> Caption: The intersecting squashed sphere causes a slightly different explosion.</p>
+                </div>
+                <h2>Italics and bold</h2>
+                <p>
+                    You can see on the right (above) a <em>representation</em> of the falloff, where in the centre it's <strong>lighter</strong> and the objects are full size, but if the empties move <em>diagonally</em> up and right, the imaginary dark falloff area will also move, start to cover the torus and cause the spheres to scale down.
+                </p>
+                <h2>Numbered List</h2>
+                <ol>
+                    <li>Filling an object with other objects.</li>
+                    <li>Scaling the objects with AN.</li>
+                    <li>Creating the 'wave' effect with AN.</li>
+                </ol>
+                <h2>Unordered List</h2>
+                <p>
+                    There are several different elements that came into play to create the finished result:
+                </p>
+                <ul>
+                    <li>Fracture the <em>original</em> object</li>
+                    <li>Use the game engine to get <strong>physics</strong> (by recording game engine to frames)</li>
+                    <li>Use a particle system for the smaller shards</li>
+                    <li>Manipulate keyframes to create reversing effect</li>
+                    <li>Control the particle system so that it pauses and then 'reverses' (it merely gives the impression of reversing)</li>
+                    <li>Using the compositor for the final look, including motion blur, <a href=http://ict.debevec.org/~debevec/Probes/>link here</a> depth of field etc.</li>
+                </ul>
+                <h2>Code</h2>
+                <pre>
+                    sin(xLocation - ((time + TimeOffset)/Speed)) * RandomNumber * Strength + OriginalLocation
+                </pre>
+                <h2>Link</h2>
+                <p>
+                    <a href=http://ict.debevec.org/~debevec/Probes/>link here</a>
+                </p>
+                <h2>Multiple links in paragraph</h2>
+                <p>
+                    The first thing I quickly <em>decided</em> on was the fact that I wanted to use the classic Suzanne model in blender as the focus was the effect and not the modelling. Secondly I knew that I wanted the material to make it look like a jewel and luckily I had the perfect HDRI image for creating this effect courtesy of <a href=http://ict.debevec.org/~debevec/Probes/>link also here</a> (I used the Grace Cathedral <a href=http://ict.debevec.org/~debevec/Probes/>and here</a>).
+                </p>
+                <h2>YouTube Video</h2>
+                <div id="yt-embed-container" class="centre-element">
+                    <div class="embedtool">
+                        <iframe src="https://www.youtube.com/embed/IfRARHIMldg" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <h2>Quote</h2>
+                <blockquote>
+                    <p>
+                        The first thing I quickly decided on was the fact that I wanted to use the classic Suzanne model in blender as the focus was the effect and not the modelling.
+                    </p>
+                    <p>
+                        Another quote line
+                    </p>
+                </blockquote>
+                <h2>Tweet</h2>
+                <blockquote class="twitter-tweet"><a href="https://twitter.com/RayMairlot/status/918796491677986817"></a></blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <h2>Aside</h2>
+                <div>
+                    <em>*Having created the main *asterisks* explosion I now wanted to create the </em>smaller<em> particles that would act as tiny shards. To do this I created several different objects that would act as my custom shards and grouped them (shown below).</em>
+                </div>
+                <h2>Image-grid-two</h2>
+                <div class="image-grid image-grid-two-columns">
+                    <a href="/images/blog/blog fracture game.jpg">
+                        <img src="/images/blog/blog fracture game.jpg">
+                    </a>
+                    <a href="/images/blog/blog fracture game.jpg">
+                        <img src="/images/blog/blog fracture game.jpg">
+                    </a>
+                </div>
+                <h2>Two column layout</h2>
+                <div class="two-column-layout">
+                <div class="column">
+                <p>
+                    I then went into the <em>render</em> <strong>settings</strong> section of the particles tab (I applied a particle system to a sphere) and chose 'Group' and plugged in the name of the group of custom shards I had made, I also checked 'Pick Random' (shown right).
+                </p>
+                <p>
+                    What these settings do, for those that perhaps haven't used them before is to replace every particle emitted with a piece of geometry from the group we just plugged in. 'Pick Random' simply says to randomly choose 1 of the pieces of geometry from the group when emitting a particle. I also turned off the emitter check box which is also in the screen shot to the right to make sure that the sphere that the particle system was applied to didn't show up when rendering.
+                </p>
+                </div>
+                    <div class="column">
+                <div class='image-with-caption'>
+                    <a href="/images/blog/blog fracture particle settings.jpg">
+                        <img src="/images/blog/blog fracture particle settings.jpg">
+                    </a>
+                    <p> Caption: Render settings for the particles.</p>
+                </div>
+                </div>
+            </div>
+            <h2>Scaled down image</h2>
+            <div class='image-with-caption'>
+                <a href="/images/blog/blog fracture particle settings.jpg">
+                    <img src="/images/blog/blog fracture particle settings.jpg">
+                </a>
+                <p> Caption: Render settings for the particles.</p>
+            </div>
+            <h2>File</h2>
+                <a href="/files/10 Print - Ray Mairlot.blend" download>
+                    Download 10 Print - Ray Mairlot.blend
+                </a>
+            </article>
+<div class='post-navigation'></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

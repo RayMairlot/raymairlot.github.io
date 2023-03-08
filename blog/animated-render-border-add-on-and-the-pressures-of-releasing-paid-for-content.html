@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/animated-render-border-add-on-and-the-pressures-of-releasing-paid-for-content.html'><h1>Animated Render Border Add-on and The Pressures of Releasing Paid-for Content</h1></a>
+                    <p>11/07/2015<p>
+                </div>
+                <p>
+                    A few days ago I released my first add-on on the <a href=https://blendermarket.com/products/animated-render-border>Blender Market</a>: Animated Render Border. It's an add-on that allows the render border feature of blender - which allows a portion of an image be rendered - to be animated and track objects. This can cut down render time by skipping rendering the background (which might be blank if using render layers) or by rendering only a specific part of an image for a whole animated preview. I won't go too much into the details of it as that's all I seem to have done over the last few days, and frankly, I've bored myself by writing the same blurb on all the various social sites and forums. Instead, indulge yourself by watching the (relatively) short video below which is a full demo of the add-on, and of course, feel free to head over to the <a href=https://blendermarket.com/products/animated-render-border/>Blender Market</a> to buy yourself a copy:
+                </p>
+                <div id="yt-embed-container" class="centre-element">
+                    <div class="embedtool">
+                        <iframe src="https://www.youtube.com/embed/K09oZUIKCvs" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p>
+                    This add-on was originally started in February this year. It was just an experiment that I thought might be useful at some point. I'd seen a few attempts at such an add-on and a few more blog posts lamenting the lack of such features and surprisingly, I had quickly got the core code to work in the viewport. After that, other priorities took hold and I left the add-on, only to be reminded of it recently by a few posts on <a href=http://blender.stackexchange.com/questions/32127/is-there-a-way-to-have-cycles-skip-rendering-alpha/33903#33903>Blender.StackExchange</a> and by my own attempts to use it, forgetting I had left it unfinished. I had thought at some point I could release the add-on as a bit of publicity for my site, but the fact that some highly skilled python coders seemed to be coming to the conclusion that an add-on like this could be useful, prompted me to finish it before they might be tempted to do the same and 'steal my thunder'.
+                </p>
+                <p>
+                    At that point I hadn't thought about selling it, I just wanted to quickly finish it and release it. I'd thought about it originally, an extra revenue stream is always welcome, though I wasn't sure if the add-on might be too simple for the Blender Market, but all that slipped from my mind until I was a few weeks away from releasing it for free. Reminded of my idea to sell it I did a bit of investigation and applied to be a vendor on the Blender Market by describing the product I would like to sell. My application was approved, which meant I had to fill some of the extra requirements of releasing on the Blender Market. Don't get me wrong, they're perfectly acceptable requirements, ones I would have set myself, just ones I hadn't been thinking of when I thought I'd "quickly finish and release it". I wasn't just finishing up the code, I now had to think about a video demo, documentation, product images and descriptions, future updates and promotion. I was reminded of each one of these just at the point I thought I might be nearing the end. So the project, like all projects, was a bit longer to finish than expected.
+                </p>
+                <p>
+                    There is also a bit more pressure when releasing a paid add-on. Getting it functional wasn't good enough, I now had to look at it from the perspective that someone would be buying this and expecting it to work in a professional way. People might be using this in their workflows. What if it crashed and they lost their work? Suddenly, things that I thought were fine for a free release stuck out as dysfunctional. Things that I knew had to be in place for tracking to work had to be checked for and the user warned if they were missing. Every circumstance a user might get into needed to be accounted for. The add-on requires a camera present in the scene. What if they delete the camera? What if they manually turn off settings the add-on has turned on so it can work? What if they're idiots start pouring pasta sauce over their keyboards because I've accidentally pasted a lasagna recipe into the documentation!?*
+                </p>
+                <p>
+                    The days after the release were spent answering questions from all the various places I'd posted it, solving bugs and talking about future features. I hadn't quite anticipated the amount of attention it would need after the release, though I was aware that part of the Blender Market commitment is that authors provide support for products. Luckily, it seems to have settled down now and I have received a modest, but pleasing amount of sales so far. This coming week I hope to be able to return to my modelling projects and improve the add-on steadily over the next few weeks and months.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+                <p>
+                    *<em>I will not be held liable for any damages incurred by pasta sauce or any other ingredients which when combined could constitute a 'lasagna'.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/sickly-sweet1.html'><< Previous Post</a>    <a id='next' href='/blog/scene-nodes-and-unity.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

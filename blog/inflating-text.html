@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/inflating-text.html'><h1>Inflating Text</h1></a>
+                    <p>17/09/2013<p>
+                </div>
+                <p>
+                    Introducing my latest effect, Inflating Text:
+                </p>
+                <div id="yt-embed-container" class="centre-element">
+                    <div class="embedtool">
+                        <iframe src="https://www.youtube.com/embed/I_5jCg7uoww" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p>
+                    So this effect was a real tough one, it was really difficult at times to get it finished. I had to switch techniques after having worked on it for a few days and had already given up on several other effects when I realised they wouldn't work, so it felt like it took a long time to complete.
+                </p>
+                <p>
+                    The effort was worth it though, I was really pleased with the final effect once I eventually got it finished and it attracted quite a bit of attention which was even more pleasing. Apart from getting a lot of positive comments and +1's over on the <a href=https://plus.google.com/communities/115632807910317842467>Google+ Blender Commnity</a> (and people attempting their own versions, just hours after it was released, <a href=https://plus.google.com/111960011143834810418/posts/9zjCd8h7Fx9>here</a> and <a href=https://plus.google.com/111960011143834810418/posts/UyrHCNm1Np1>here</a>) I had my work featured on <a href=http://www.blendernation.com/2013/09/08/inflating-text/>Blender Nation</a>, had a <a href=https://twitter.com/dfelinto/statuses/376483885523017728>blender developer</a> questioning how I achieved the effect and just over a week later it has 9,000 views.
+                </p>
+                <p>
+                    As usual, there will be a tutorial at some point but I can't say for sure when. The basic technique is to reverse a cloth simulation so that instead of the text collapsing it appears to, well, inflate. When I first started this effect I had done the cloth simulation part and then spent quite a bit of time on working on reversing it. The normal way that a simulation might be reversed is to render out the sequence and reverse the image order before laying it over the top of a render that's going forward.
+                </p>
+                <p>
+                    I had come up with a different way to reverse it and it should work on any of the simulation types that can have an external cache. But that will have a separate tutorial all of it's own so I'll leave that there for now.
+                </p>
+                <p>
+                    Suffice to say I had got quite far in using that technique before realising that it wouldn't fully work. I had wanted a slight deflation to occur each time the pump....pumps, so that it would inflate before deflating slightly as if the connecting valve wasn't 100% efficient and some air was escaping. This wasn't compatible with the reversing method I had used up to that point so I had to work on a new one.
+                </p>
+                <p>
+                    The final technique I ended up using was to use a cloth simulation as I had done before but then applying it as a shape key at different stages of completion. The shape keys can then be animated on in the desired order (reversed) to give the inflating and deflating effect. While that solves the main technique there were a whole lot of smaller things to do before the effect was complete such as building, rigging and animating the pump, disconnecting the cable before the text shoots off, deflating the text as the air rushes out and then timing the whole thing into one cohesive animation.
+                </p>
+                <p>
+                    All in all a lengthy and at some points stressful process but the outcome was worth it.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/ice-and-icing.html'><< Previous Post</a>    <a id='next' href='/blog/icing-text-tutorial.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/moving-render-layers-and-travelling-in-time.html'><h1>Moving Render Layers and Travelling in Time</h1></a>
+                    <p>01/04/2017<p>
+                </div>
+                <p>
+                    Over the past few months I found the need to create two more add-ons for Blender 3D: 'Timecode' and the aptly, but rather unexcitingly named 'Move Render Layers'.
+                </p>
+                <h2>Timecode</h2>
+                <p>
+                    'Timecode' is a small add-on that adds the ability to navigate the timeline by inserting a timecode into the <em>Timeline</em> Editor's header (in the form of HH:MM:SS:FF):
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Timecode Timeline header.png">
+                        <img class=centre-element src="/images/blog/Timecode Timeline header.png">
+                    </a>
+                <p>
+                    As part of the add-on there is also a small label that appears above the current keyframe/selected-object label, showing the current timecode:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Timecode 3D View.png">
+                        <img class=centre-element src="/images/blog/Timecode 3D View.png">
+                    </a>
+                <p>
+                    <em>Note: One thing I still have to do is get the Timecode label to shift over when the 3D View Toolshelf is open. Currently, the label will be covered when the toolshelf is open.</em>
+                </p>
+                <p>
+                    You can get Timecode, <a href=https://github.com/RayMairlot/Timecode/releases>here</a>.
+                </p>
+                <h2>Move Render Layers</h2>
+                <p>
+                    I've always been slightly annoyed that unlike the majority of the other lists in Blender, the render layer list cannot be re-ordered, and so eventually, after nurturing that annoyance, it bore fruit in the form of two little arrows:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/moveRenderLayers buttons.gif">
+                        <img class=centre-element src="/images/blog/moveRenderLayers buttons.gif">
+                    </a>
+                <p>
+                    Yes, this is perhaps the epitome of the 'First World Problems' meme, but you just wait 'till you're working on a complex project with one shadow render layer at the top of the list and one at the bottom, both of them destined to remain separate, then we'll see who's laughing.
+                </p>
+                <p>
+                    It will be me.
+                </p>
+                <p>
+                    "Ha, ha, ha ha, ha," I will say, actually saying the words instead of laughing. And you will say "How did you get in my house?" and I'll say "That's not important." Then, I'll reach down (because you'll have already fallen to your knees in despair), cup your cheek with my hand, softly brush away your tears with my thumb and say "No, I was just joking, that was my fake laugh. You can still use my add-on". And you'll get up, feeling slightly bashful that you got so upset, wiping away the remainder of your tears (because I did a bad job of wiping them away and really just smeared them) and I'll give you a little reassuring touch on the shoulder to say "It's ok." We'll make eye contact, break into smiles and walk off into the sunset. And it will be weird, not least because it wasn't even close to sunset when I first appeared and you didn't really even want to leave your house, but you accept this is a new future where all kinds of things are possible, like moving render layers up and down.
+                </p>
+                <p>
+                    Alternatively, if you would prefer not to enact that little tête-à-tête you can download the add-on, now, from <a href=https://github.com/RayMairlot/Move-Render-Layers/releases>here</a>.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/node-pong-a-silly-little-idea.html'><< Previous Post</a>    <a id='next' href='/blog/animation-nodes-an-experiment.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

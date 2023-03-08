@@ -53,11 +53,4 @@ h2 {
 
 #yt-embed-container {
     width: 80%;
-    max-width: 1080px;
-}
-
-@media (max-width: 750px) {
-    #yt-embed-container {
-        width: 100%;
-    }
 }

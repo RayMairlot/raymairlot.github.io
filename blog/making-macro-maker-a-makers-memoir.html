@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/making-macro-maker-a-makers-memoir.html'><h1>Making Macro Maker: A Maker's Memoir</h1></a>
+                    <p>14/03/2018<p>
+                </div>
+                <p>
+                    A while ago I was doing a series of repetitive actions in Blender - not an uncommon occurrence - and as usual, I began to think of a Python script that I could write to do this task for me...
+                </p>
+                <p>
+                    But I write a lot of scripts. And the add-ons I write are often project specific and therefore limited in use. Plus, this task was about manipulating object's and their data and applying modifiers and joining objects and moving them and setting their origins and removing doubles and and...and that sounded like a terrible amount of effort.
+                </p>
+                <p>
+                    I thought to myself that it would be so much simpler if I could simply take the actions I was already doing - which were pretty straightforward when done through the UI - and just record them. Other software has this functionality: Word and a few of the other Office products have 'Macros' while Adobe's offering is 'Actions'. Both produce the same results: record a sequence of tasks, save it and then play those actions back any time on the selected content.
+                </p>
+                <p>
+                    I looked into whether Blender had any similar functionality. I knew it didn't really have anything like that built-in. <a href=https://blender.stackexchange.com/questions/6409/possible-to-replay-repetitive-tasks-using-python>Common advice</a> is to pull down the <em>Info Editor</em> window, copy the actions that are listed there and paste them into the <em>Text Editor</em> and run them. This does technically work, but this workflow is itself repetitive.
+                </p>
+                <p>
+                    There's even an add-on that comes with Blender called 'Macros Recorder', which does automatically record a series steps to a text file and inserts it into a script ready to be run. But that add-on doesn't have the nicest of UIs and at best I would describe it as 'cryptic', even though, once worked out, it is quite simple to use. Nevertheless, when comparing these options* with Word's macros or Photoshop's actions, they fall somewhat short, which tempted me to make my own add-on.
+                </p>
+                <div class='aside'>
+                    <p><em>*I've just found another add-on, <a href=http://blenderaddonlist.blogspot.co.uk/2014/09/addon-macro-menu.html>here</a>.</em></p>
+                </div>
+                <p>
+                    Now, you may be thinking "But weren't you complaining earlier that you right a lot of add-ons?" and the answer is "Yes", or at least "Yes, <em>but</em>..." I <em>do</em> write a lot of add-ons and I have, in the past, sometimes got caught up in writing an add-on as a bit of a distraction instead of just getting on with whatever task the add-on is meant to be helping with, <em>but</em>, <em>if</em> the add-on is helpful to many projects instead of just one and <em>if</em> I can see that maybe this add-on would be popular and useful enough to potentially sell, then I give in and allow myself to have a bit of a play with some code.
+                </p>
+                <p>
+                    The result of this playing is Macro Maker, the add-on I wrote:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Macro Maker first screenshot.png">
+                        <img class=centre-element src="/images/blog/Macro Maker first screenshot.png">
+                    </a>
+                <p>
+                    Not exactly the most exciting screenshot, I'll give you that, but it gets across the basic idea. So far the add-on has the following functionality:
+                </p>
+                <ul>
+                    <li>Record 'Macro Steps' (where each step is an action you take) 'live', i.e. each 'step' is shown as you make it:</li>
+                </ul>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Macro Maker Demo - Editing.gif">
+                        <img class=centre-element src="/images/blog/Macro Maker Demo - Editing.gif">
+                    </a>
+                <ul>
+                    <li>The ability to delete steps if you make a mistake.</li>
+                    <li>The option of editing options. In the GIF above I edit the 'Angle' of the rotation.</li>
+                    <li>Saving macros to an external file so they're accessible to any blend file you open.</li>
+                    <li>Manage and delete saved macros from a separate panel.</li>
+                    <li>And, most importantly, the ability to click a button to replay the macro. You can also set the macro to run on each selected object individually. You could, for example, have a macro with the <em>Cursor to Selection</em> command as one of its steps. By default, the cursor would go to the centre of the <em>selection of objects</em>, but you might want the cursor to go to each <em>individual</em> object instead.</li>
+                </ul>
+                <p>
+                    One important thing to note is that it's only possible to detect 'actions' i.e. Blender's operators - basically anything that's a button or a tool from a menu. It can't automatically detect property changes. So you could add an <em>Array</em> modifier, but you couldn't set its <em>Count</em> property. I've got around this by providing an entry in the right-click context menu for properties called '<em>Add Property to macro</em>':
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Macro Maker Context Entry.png">
+                        <img class=centre-element src="/images/blog/Macro Maker Context Entry.png">
+                    </a>
+                <p>
+                    This adds the property to the macro. I can understand that might seem a bit fiddly, but I don't think there's a way around it.
+                </p>
+                <p>
+                    Here's the most up-to-date screenshot of the UI, showing a few recorded macros:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Macro Maker UI.png">
+                        <img class=centre-element src="/images/blog/Macro Maker UI.png">
+                    </a>
+                <p>
+                    However - and this is a rather large 'however' - I'm not going to do any more work on it, at least not for the minute. It works pretty well, I'm able to use it for <em>some tasks</em>, but it still needs a lot of work. For example, I can't:
+                </p>
+                <ul>
+                    <li>Use tools that are combinations of two other tools, e.g. inserting an edge loop actually runs two different operators. Firstly, it inserts a loop - the first operator - then secondly it starts the edge slide tool. Side note: confusingly, Blender refers to these types of operators as...macros.</li>
+                    <li>Detect which context the macro was recorded in. Was it recorded in <em>Edit Mode</em>? Then you shouldn't be able to run it in <em>Object Mode</em> etc.</li>
+                    <li>What if the operators requires certain conditions to be met and they aren't? E.g., you can't join two objects if only one is selected. How do I pass those error messages on to the user?</li>
+                    <li>A pretty major one: you can't yet edit existing macros. There are some I've recorded which I would really like to extend - the only option at the minute is to re-record them in their entirety.</li>
+                    <li>I've also never really tested it on anything but the <em>3D View</em>, so it's pretty focused around objects at the minute, despite the fact it should work in every area of Blender, which also means detecting which area a macro expects to be run in to avoid running something in the <em>3D View</em> which was intended for the VSE.</li>
+                    <li>Properties on the <em>object</em> can be recorded, but I can't yet record properties on an object's materials or modifiers.</li>
+                </ul>
+                <p>
+                    There are also a few technical things that need to be changed, but I think for the most part it would just take time. As for <em>why</em> I'm not continuing to work on it, the answer is 2.8. Blender is undergoing heavy development. Heavy enough that the very specific Python APIs I'm using might not even exist when 2.8 is finished (I'm already having to prepare for the fact that my existing add-ons, including the one I <a href=https://blendermarket.com/products/animated-render-border/>sell</a> will have to be updated, as some critical parts of the API are changing), so I'm going to wait until 2.8 is out before I work on it again.
+                </p>
+                <p>
+                    There is also a slightly different problem which makes me slightly wary of further development. From talking to a few people on Twitter about the add-on, I'm slightly worried people haven't thought about how macros actually work (in any software, not just my add-on) and they may have difficulty in adapting their current way of thinking when trying to use the add-on.
+                </p>
+                <p>
+                    Let's say I want to record a macro that takes the selected vertices in <em>Edit Mode</em>, adds them to a new <em>Vertex Group</em>, adds a new <em>Mask</em> modifier and assigns that newly created <em>Vertex Group</em> to the modifier. The steps would look something like this (having already selected the vertices):
+                </p>
+                <ol>
+                    <li>Add a new <em>Vertex Group</em>.</li>
+                    <li>Click 'Assign' under the <em>Vertex Group</em>.</li>
+                    <li>Add a new <em>Mask</em> modifier.</li>
+                    <li>Choose the new <em>Vertex Group</em> on the <em>Mask</em> modifier.</li>
+                </ol>
+                <p>
+                    This looks pretty straightforward, but there are actually a few problems with this that would stop the macro working under some (maybe most) circumstances. The macro would work fine up until step '4': "Choose the new <em>Vertex Group</em>". It sounds simple, but how would the macro know which modifier to add the <em>Vertex Group</em> to? I don't yet have this part of property recording working yet, but when trying to choose the <em>Vertex Group</em>, it would likely look for a <em>Mask</em> modifier with the same name as when the macro was recorded. So what happens when the macro is run a second time or if there's already a <em>Mask</em> modifier? The new modifier would have '.001' appended to the end of its name and the macro, not being able to find a mask modifier with the correct name, would fail.
+                </p>
+                <p>
+                    The important thing to realise is that when dealing with lists, the add-on will likely look for something to have the same name each time, whether that's a modifier in a list of modifiers or a <em>Vertex Group</em> in a list of vertex groups. <em>Potentially</em>, this could be fixed by having an option when recording a property to always look for the property on the last item in the list. I'll only know if this is an option once I resume development. Even then I have a feeling that wouldn't solve all the problems.
+                </p>
+                <p>
+                    So, to conclude, I'll start working on Macro Maker again when 2.8 is released and I'll see if the APIs I need are still intact. There's also the problem that the toolbar as it exists now, where the add-on is placed, doesn't exist in 2.8, but I've heard that the developers are going to make sure the new UI supports 'UI heavy' add-ons by updating the UIs of the add-ons that are distributed with Blender, so hopefully there will be a solution for add-ons that require constantly visible columns for their layouts.
+                </p>
+                <p>
+                    In the wake of ceasing to work on this add-on, I've been working on a personal Lego project, which I'll probably talk about in the next post, but judging by my past release schedule for blog posts, that won't be for another 6 months.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/animation-nodes-an-experiment.html'><< Previous Post</a>    <a id='next' href='/blog/10-print-in-blender-using-material-nodes.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

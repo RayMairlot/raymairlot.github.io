@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/selective-unhide-add-on.html'><h1>Selective Unhide Add-on</h1></a>
+                    <p>26/03/2016<p>
+                </div>
+                <p>
+                    '<a href=http://www.raymairlot.co.uk/blog/iron-man-heartbreaker>Heartbreaker</a>' isn't the main thing I'm going to be talking about today. I did do some work on it (as I do every week); it was an update on the head, and I wanted to finish that update before showing a 'before and after' comparison, so until that's fully finished, I'll just show the newer version of the bicep which I also worked on:
+                </p>
+                <div class='image-with-caption centre-element'>
+                    <a href="/images/blog/Bicep WIP.png">
+                        <img src="/images/blog/Bicep WIP.png">
+                    </a>
+                    <p> The bicep was in very basic shape compared to the near finished version now.</p>
+                </div>
+                <p>
+                    What I'm mainly going to talk about is an add-on I released last week. What I find can often happen (ok, fairly rarely) is that you suddenly realise that you've had a workflow problem for a while, but you've just got used to it and have learned to work with it instead of looking for a solution. This is what I realised had happened with hide and unhide. When I work on 'Heartbreaker' I generally end up isolating part of the suit, like the head, in order to focus only on that. To do that I use 'Local view'. I also use hide and unhide, the built in blender commands (H and Alt+H respectively). I use them <em>a lot</em>.
+                </p>
+                <p>
+                    I was hiding a lot of objects and then wanting to bring back <em>one specific</em> object. Of course, that's not really an option unless you're using the outliner, so unhiding would unhide <em>everything</em>, most of which I would then immediately re-hide. I tried to think of a solution to that. How could I visualise hidden objects and be able to selectively unhide them? Would a panel work? A menu? And who in their right mind has the time to answer all these rhetorical questions?
+                </p>
+                <p>
+                    With the near unbearable slew of self-questioning dealt with, I managed to find time to come up with 'Selective Unhide', which replaces the default Alt+H behaviour:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Selective Unhide Object Mode Menu.PNG">
+                        <img class=centre-element src="/images/blog/Selective Unhide Object Mode Menu.PNG">
+                    </a>
+                <p>
+                    With the add-on installed (<em>freely</em>* available from <a href=https://github.com/RayMairlot/Selective-Unhide>here</a>) pressing Alt + H now shows the menu in the image above.
+                </p>
+                <div class='aside'>
+                    <p><em>*This isn't an asterisk to say that actually, no, it isn't free, but instead it's to simply highlight how kind and selfless it is to give something away for free. So, yes, it is free, but be sure to send me a mental or actual note of thanks every time you use it. Although, if you use it a lot maybe you could just consolidate all the thank yous (actual or mental) into a weekly digest. Obviously I want to receive your praise, I just don't want to be swamped by praise. Maybe I'm overthinking the whole 'praise' thing, I just think that it's important to receive praise in moderation. I don't want to overdo it and get too big headed from all the inevitable praise headed my way.</em></p>
+                </div>
+                <p>
+                    Let's go through each of the menu items:
+                </p>
+                <p>
+                    <strong>Unhide all objects</strong> - This is the old behaviour - it shows any object that is hidden.
+                </p>
+                <p>
+                    <strong>UnHide all by type</strong> - Despite the odd, mid-word capitalisation, this groups all hidden objects by object type, like 'Mesh', 'Camera' or 'Curves', for example. Clicking on an object type will unhide all objects of that type. Maybe you have a light setup you want to keep hidden, but want to reveal all your meshes.
+                </p>
+                <p>
+                    <strong>Search</strong> - This is what I seem to be using most. It allows you to search for any hidden object or group and reveal that item. This allows you to quickly find a specific object, the downside being that it relies on well named objects. I try to see the up-side of things, so I'm going to say it's an <em>advantage</em> that it relies on well named objects as it means I have been forced to start renaming all objects that have some numerical variant of the name 'Cube'.
+                </p>
+                <p>
+                    <strong>Hidden Groups</strong> - If an object is hidden <em>and</em> is in a group, then the name of the group is listed here. Clicking it restores all hidden objects in that group. So if you found you were constantly unhiding and hiding the same objects, group them, and this will help with that.
+                </p>
+                <p>
+                    <strong>Hidden objects by type</strong> - Similar to 'Unhide all by type', this groups all the hidden objects by their object type. The difference this time is that clicking on an object type will then show a sub-menu listing all the hidden objects of that type that you can unhide.
+                </p>
+                <p>
+                    Someone on Twitter suggested I that the menu should also work for bones in Edit mode and Pose mode. I agreed, so it now works in Edit mode, showing hidden bones and hidden bone groups, though I haven't yet implemented this for Pose mode.
+                </p>
+                <p>
+                    Next week I'll hopefully be showing the updated head of 'Heartbreaker' and I might go over hard-surface techniques I use a lot.
+                </p>
+                <p>
+                    Well there we go. Another week, another blog post, another set of anomalous asterisks and atrocious alliteration.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/iron-man-heartbreaker.html'><< Previous Post</a>    <a id='next' href='/blog/making-headway.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

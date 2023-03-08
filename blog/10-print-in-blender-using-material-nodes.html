@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/10-print-in-blender-using-material-nodes.html'><h1>10 Print in Blender Using Material Nodes</h1></a>
+                    <p>21/08/2020<p>
+                </div>
+                <p>
+                    During the Coronavirus lockdown I've been trying to improve my understanding of procedural materials in Blender. During one of my experiments I remembered a video I had seen by the excellent Daniel Shiffman on the <a href=https://www.youtube.com/watch?v=bEyTZ5ZZxZs&vl>Coding Train YouTube channel</a> about '<a href=https://10print.org/>10 Print</a>' and I wondered if I could recreate this in Blender.
+                </p>
+                <p>
+                    The idea is pretty simple: for each cell in a grid you generate a random number and based on that number you either display a forward slash or a backwards slash, creating a maze-like image.
+                </p>
+                <p>
+                    Below is my result, along with an animated reveal effect:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/10 Print Gif.gif">
+                        <img class=centre-element src="/images/blog/10 Print Gif.gif">
+                    </a>
+                <p>
+                    I won’t go into the details of how I made it because I made it in a very non-linear way, starting with something more complex than it needed to be, but that I understood pretty well, that I simplified further and further as I went on until the end result is something quite compact but that I understand less.
+                </p>
+                <p>
+                    There’s some screenshots below which should help, along with the blend file with fairly good labels on everything.
+                </p>
+                <div class='image-with-caption centre-element'>
+                    <a href="/images/blog/10 Print Screenshot 1.png">
+                        <img src="/images/blog/10 Print Screenshot 1.png">
+                    </a>
+                    <p> 10 Print Group Node</p>
+                </div>
+                <div class='image-with-caption centre-element'>
+                    <a href="/images/blog/10 Print Screenshot 2.png">
+                        <img src="/images/blog/10 Print Screenshot 2.png">
+                    </a>
+                    <p> 10 Print animation and reveal</p>
+                </div>
+                <p>
+                    <em>You are free to use the contents of the blend file in commercial or non-commercial work as long as you don’t distribute or sell the contents as is. Please also provide attribution if you use it.</em>
+                </p>
+                    <a class="button" href="/files/10 Print - Ray Mairlot.blend" download>
+                         Download 10 Print Blend File
+                    </a>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/making-macro-maker-a-makers-memoir.html'><< Previous Post</a>    <a id='next' href='/blog.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

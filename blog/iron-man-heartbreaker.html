@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/iron-man-heartbreaker.html'><h1>Iron Man - Heartbreaker</h1></a>
+                    <p>17/03/2016<p>
+                </div>
+                <p>
+                    Finally! I worked around the rendering issues mentioned <a href=http://www.raymairlot.co.uk/blog/bugs-more-bugs-and-then-finally-some-work>previously</a>, so I can finally reveal what I've been working on: the Iron Man 'Heartbreaker' suit.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Body WIP.png">
+                        <img class=centre-element src="/images/blog/Body WIP.png">
+                    </a>
+                <div class="image-grid image-grid-three-columns">
+                    <a href="/images/blog/Body Back WIP.png">
+                        <img class=centre-element src="/images/blog/Body Back WIP.png">
+                    </a>
+                    <a href="/images/blog/Head WIP.png">
+                        <img class=centre-element src="/images/blog/Head WIP.png">
+                    </a>
+                    <a href="/images/blog/Hand WIP.png">
+                        <img class=centre-element src="/images/blog/Hand WIP.png">
+                    </a>
+                </div>
+                <p>
+                    Proof that I actually was working on something. Ha!
+                </p>
+                <p>
+                    I'm quite pleased the way the renders turned out. I've been working on this so long that all I see is what has to be fixed, but seeing some renders and hearing some <a href=https://plus.google.com/u/0/+RayMairlot/posts/Bj4em3GJMRB>feedback</a> lets me know I'm on the right track*.
+                </p>
+                <div class='aside'>
+                    <p><em>*Keep reading for a great continuation of this train based metaphor.</em></p>
+                </div>
+                <p>
+                    Interestingly (not my opinion, an actual certified Very Interesting Thing™), the rim lighting on the models is actually from the material, <em>not</em> from physical lights. Partially, that's because I think you get more control, but really it's because I've never been able to get completely satisfactory results from trying to set up rim lighting. This setup uses the normal of the faces to determine whether it should be highlighted or not. Here is a (simplified) screenshot of it:
+                </p>
+                <div class='image-with-caption centre-element'>
+                    <a href="/images/blog/WIP Material Setup.png">
+                        <img src="/images/blog/WIP Material Setup.png">
+                    </a>
+                    <p> Click to enlarge. Or don't. The choice is literally yours.</p>
+                </div>
+                <p>
+                    The normal is manipulated with the 'Normal' node before being sharpened by the colour ramp. This mixes between the glossy base material and the white highlight. To get a really bright highlight I actually use an emission shader, but to make sure it doesn't cast light onto itself I use a 'Light Path' node so only the camera sees the emission, the objects in the scene just see black (the empty 'Shader' input).
+                </p>
+                <p>
+                    This is a simplified setup, so it just shows the right side rim lighting, if you want other sides of the model to be highlighted, duplicate the 'Normal' and 'ColorRamp' nodes, adjust the normal direction and add them to the other rim nodes with a 'MixRGB' node set to 'Add'.
+                </p>
+                <p>
+                    See I <em>told</em> you it was interesting, and yet you (probably) resisted believing me. Hopefully you will trust me a bit more in future. If not, things are going to get pretty embarrassing for you when I continue to show you <em>Interesting Things</em>™. Let's avert this embarrassment by jumping aboard this train of Trust and riding out this analogy right to the end, <em>together</em>.
+                </p>
+                <p>
+                    Now that all that train business is dealt with I can get on with my work, so that by next week I will be able to show off a new screenshot.
+                </p>
+                <p>
+                    I guess that's the end of the line for this post (THE TRAIN FUN NEVER ENDS).
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/bugs-more-bugs-and-then-finally-some-work.html'><< Previous Post</a>    <a id='next' href='/blog/selective-unhide-add-on.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

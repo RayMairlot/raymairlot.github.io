@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/inverted-cameras-for-vector-blurring-reflections.html'><h1>Inverted Cameras For Vector Blurring Reflections</h1></a>
+                    <p>24/06/2013<p>
+                </div>
+                <p>
+                    It's a catchy post title I know.
+                </p>
+                <p>
+                    Technically this is the first post on my own site about the vfx rollercoaster project I'm working on, so if you want to catch up have a look at some of the previous posts that I ported over from my other site.
+                </p>
+                <p>
+                    At the end of the last blog post I said something about using an inverted camera so that vector blur would work for reflections. I did indeed get this to work and seeing as I can't find much mention of either an alternative method or this method, I'll explain a little further.
+                </p>
+                <p>
+                    So in the third shot of the vfx sequence the rollercoaster loops around the bridge before going off into the distance. It's going quite fast so there will be motion blur and we're using Cycles in Blender so I could probably use the true 3D motion blur, but aside from the fact I've never got this to work I also want to cut down the render time so I'm using vector blur in the compositor. This all works fine, no problem there. The issue is that said bridge is over water, meaning there should be a reflection of the rollercoaster...but if the rollercoaster is being vector blurred, then so should the reflection.
+                </p>
+                <p>
+                    But that's the thing, the vector blur works by using a vector pass which holds the motion of the object. But a reflection, or rather the object doing the reflecting, doesn't move itself, only what it reflects moves. So if you looked at the vector pass you wouldn't see any motion data for the reflection. A vector pass has to directly see the moving geometry, not indirectly via reflections.
+                </p>
+                <p>
+                    Here's where the inverted camera comes into effect. We're going to use a second camera that completely bypasses the object that does the reflecting and renders the geometry itself. It's a little complex so I've put together a crude drawing.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/9148903854d.png">
+                        <img class=centre-element src="/images/blog/9148903854d.png">
+                    </a>
+                <p>
+                    The red camera is the original, motion-tracking camera. The green represents the object that we've been using to reflect the rollercoaster (the river).  The blue camera is a new, second camera, and by the little blob on the bottom of the camera we can see it's pointing downwards, whereas the red camera is pointing upwards. This second camera has been created by duplicating the original camera, parenting it to an empty, and then flipping the empty on several of it's local axis until it's flipped upside down. You've then just got to move the empty down so that the geometry is in roughly the right place below the bridge.
+                </p>
+                <p>
+                    The white dotted line represents a pixel, the red camera sees it via the reflection object (green line) but the blue camera can see it directly (when the reflection object isn't rendered).
+                </p>
+                <p>
+                    Below is an example of this in action. On the left is a viewport rendered view showing the reflection created by a flat plane.  On the right the view of the flipped camera, I disabled the rendered view to make it a bit easier to see that the geometry is now on the bottom, I used the image on the left as a reference when moving the empty down to so the geometry lines up with the reflection it's replacing. Success! We now have a camera that sees the 'reflection' geometry directly and will generate a vector pass.
+                </p>
+                <div class="two-column-layout">
+                <div class="column">
+                    <a class="full-width-image-link-or-max" href="/images/blog/2211282.png">
+                        <img class=centre-element src="/images/blog/2211282.png">
+                    </a>
+                </div>
+                    <div class="column">
+                    <a class="full-width-image-link-or-max" href="/images/blog/1286989.png">
+                        <img class=centre-element src="/images/blog/1286989.png">
+                    </a>
+                </div>
+            </div>
+            <p>
+                One thing I noted is that once the reflection has been distorted by the water ripples (saving that for another post) the reflection, and it's vector blur, are a lot more faint than I thought they would be. It started to make me think that the whole creation of the inverted camera was a bit pointless if you couldn't see the effect much but I think it must make <em>some</em> difference.
+            </p>
+            <p>
+                It's actually still useful because I use the same technique to reflect the shadow pass that I composite over the footage, as with the reflections the shadow pass wasn't showing up shadows of the reflected geometry, so this also solves that.
+            </p>
+            <p>
+                The only downside at the minute is that Blender can't render multiple cameras per frame so you have to render out the reflection camera (as .exr's to preserve the vector pass accurately) first and then composite it in (which kind of cancels out the 'saves render time' reason). This may well change with the <a href=https://github.com/dfelinto/blender/tree/multiview>multi view project</a> that is being developed at the minute, but I'm not sure if that will allow different render layers to be visible per camera, so it may not help.
+            </p>
+            <p>
+                <em>Ray.</em>
+            </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/rollercoaster-shot-3.html'><< Previous Post</a>    <a id='next' href='/blog/extracting-ripples-from-footage.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

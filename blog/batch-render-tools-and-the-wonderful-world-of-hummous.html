@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/batch-render-tools-and-the-wonderful-world-of-hummous.html'><h1>Batch Render Tools (and The Wonderful World of Hummous)</h1></a>
+                    <p>15/07/2016<p>
+                </div>
+                <p>
+                    During the freelance work that I've been working on for the last couple of months I had to do a lot of long renders of animations. When I'm doing a really long render I tend to use the command line to do a 'background' render so that Blender's UI doesn't have to be visible (which apparently saves a bit of memory), and as with most things recently, that caused me to write an another add-on...
+                </p>
+                <h2>The Manual Way</h2>
+                <p>
+                    Before I get onto the add-on I'll take you through the manual rendering process I used to do. To do a 'background' render (more commonly referred to as a 'command line' render) you open up a Command Prompt (or something similar for non-Windows users), navigate to the Blender installation directory and use something like this:
+                </p>
+                <pre>
+                    blender -b "C:\Path\To\Blend\File.blend" -a
+                </pre>
+                <p>
+                    To break things down, that's:
+                </p>
+                <ul>
+                    <li>'<strong>blender</strong>' to run Blender.</li>
+                    <li>'<strong>-b</strong>' (which stands for 'background') to make blender run without the UI</li>
+                    <li>The path to the blend file</li>
+                    <li>'<strong>-a</strong>' to tell blender that you want to render an animation</li>
+                </ul>
+                <p>
+                    If I want to render multiple files then I would create a Windows Batch file with the following commands (I've simplified the paths just so they would fit on the page nicely):
+                </p>
+                <pre>
+                    CALL "C:\BlenderPath\blender.exe" -b "C:\blendfile 1.blend" -s 1 -e 50 -a
+                    CALL "C:\BlenderPath\blender.exe" -b "C:\blendfile 2.blend" -s 75 -e 80 -a
+                    CALL "C:\BlenderPath\blender.exe" -b "C:\blendfile 3.blend" -s 211 -e 263 -a
+                </pre>
+                <ul>
+                    <li>'<strong>CALL</strong>' which opens a program, followed by the path to blender executable to specify blender is the program I want to open</li>
+                    <li>'<strong>-s</strong>' and then a frame number, specifying the frame to start rendering from</li>
+                    <li>'<strong>-e</strong>' and then a frame number, this time pointing to where blender will render to</li>
+                    <li>'<strong>-a</strong>' as before, to specify that we're rendering an animation</li>
+                </ul>
+                <p>
+                    I would then just double click the Batch file, which would automatically open a command prompt and start rendering.
+                </p>
+                <p>
+                    To navigate to Blender's folder and open a command prompt or to create a batch file with the updated filepaths and parameters each time I wanted to render became a bit time-consuming - I wasn't even doing that many renders at that point - so I decided it might be worthwhile (and fun) to create an add-on with a UI to handle this for me.
+                </p>
+                <p>
+                    Out of the primordial code came:
+                </p>
+                <h2>Batch Render Tools</h2>
+                <p>
+                    Features:
+                </p>
+                <ul>
+                    <li>Can render multiple files</li>
+                    <li>Option to hibernate after rendering</li>
+                    <li>Ability to re-order batch render jobs</li>
+                    <li>Can generate batch jobs by specifying a directory of blend files</li>
+                    <li>Launches a Command Prompt window as a separate process to carry out the rendering, so blender can be closed once rendering has begun.</li>
+                </ul>
+                    <a class="full-width-image-link-or-max" href="/images/blog/batchRenderTools Main.png">
+                        <img class=centre-element src="/images/blog/batchRenderTools Main.png">
+                    </a>
+                <p>
+                    It's available to download from Github, <a href=https://github.com/RayMairlot/Batch-Render-Tools>here</a>. One caveat is that at the minute it's still Windows only.
+                </p>
+                <p>
+                    The 'readme' over on Github is quite extensive (and if I say so myself, quite excellently formatted) so head over there if you want to know how to use every little feature, and given the amount of time it took to create that 'readme', I really suggest you do.
+                </p>
+                <p>
+                    'Batch Render Tools' also has a small secondary panel which serves as a shortcut for opening a Command Prompt in the Blender installation directory, which I also find quite useful:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/batchRenderTools command.png">
+                        <img class=centre-element src="/images/blog/batchRenderTools command.png">
+                    </a>
+                <h2>Virtual Machines</h2>
+                <p>
+                    Having got a bit of feedback regarding the fact the add-on is only compatible with Windows, I decided to try and invest a little more time into getting it working on other OSs by way of 'virtual machines' - a way of installing another OS and run it like you would a program, instead of having to install it on another partition. This task is what's known as a 'time sink'. That is to say, it swallowed up the time I threw at it and I got very little in return.
+                </p>
+                <p>
+                    Linux wasn't too bad, I installed Ubuntu in VirtualBox without too many issues, got it running and very quickly found the code needed to make the add-on compatible on the OS. Hurrah. Hurrahing aside though - for one can only Hurrah so much before people start to stare -  that left me with OS X.
+                </p>
+                <p>
+                    There would be no 'hurrahing' now. The time of 'hurrahing' had well and truly passed, which made me wish I'd made a bigger deal of that first 'hurrah'. I'd have cherished it if I'd realised that the <em>lack</em> of 'hurrahing would be so notable later on, in the post-hurrah, OS X era*. I was battling with a 'Hackintosh' - it's name entirely appropriate given the endless problems and workarounds needed just to get it running - and after several hours I was no closer to finding the correct Python code to replicate the functionality the other OSs had so readily offered me.
+                </p>
+                <div class='aside'>
+                    <p><em>*I've said 'hurrah' too many times now. It doesn't really look like a word and I can't tell if I'm spelling it right, nor what it really means. Was 'hurrah' ever a word? Should 'hurrahs' be pronounced like 'hummous'. Is 'hummous' a word or is it 'hummus'? Do they mean the same thing? Have I just described time in terms of pre and post-chickpea-based dip? We'll literally never know, but at least I've distracted myself from talking about the god-awful virtual machines.</em></p>
+                </div>
+                <p>
+                    Eventually I gave up, but since then, because of the amount of time that has passed between sharing the add-on and this blog post being published, I have had someone contact me regarding the issue and <a href=https://github.com/RayMairlot/Batch-Render-Tools/issues/1>offer a solution</a>, so when I get a minute (read 'hours' and 'motivation') I'll attempt to adjust the add-on to also work for Linux and OS X.
+                </p>
+                <p>
+                    If you can, avoid virtual machines. I would say "avoid them like the plague", but thinking about it, I'd rather take my chances with 'the plague'.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+                <div class='aside'>
+                    <p><em>P.S. I will concede that perhaps having only 5 sentences on 'hummous' is hardly a </em>"Wonderful World of Hummous"<em> as the title suggests, but ultimately I prize appealing alliteration over accuracy.</em></p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/how-to-make-things-that-no-one-needs.html'><< Previous Post</a>    <a id='next' href='/blog/node-pong-a-silly-little-idea.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

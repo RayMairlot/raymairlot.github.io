@@ -2,6 +2,10 @@
     padding: 0 !important;
 }
 
+#page-content p:not(.image-with-caption p) {
+    margin-top: 0px !important;
+}
+
 #case-study-sections .full-width-image-link-or-max {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -29,10 +33,14 @@ h1 {
     grid-gap: 20px !important;
 }
 
+#case-study-sections .image-with-caption {
+    width: auto !important;
+}
+
 #case-study-video {
     width: 340px;
     padding: 20px;
-    padding-top: 50px;
+    padding-top: 60px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -41,11 +49,13 @@ h1 {
     padding: 60px 65px;
 }
 
+
 #case-study-sections > div:nth-child(even) {
     background-color: lightgrey;
 }
 
-.column img {
+
+#case-study-sections .column img {
     width: 100%;
 }
 

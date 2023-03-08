@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/rollercoaster-tracking-and-construction.html'><h1>Rollercoaster: Tracking and Construction</h1></a>
+                    <p>13/03/2013<p>
+                </div>
+                <p>
+                    <strong>[This post was originally posted on Half-Man Half-Bird's website and has been reposted here with permission so that my future posts on this topic are not out of context.]</strong>
+                </p>
+                <p>
+                    In our last post we outlined how we got on getting our footage for this rollercoaster project. I wanted to get started pretty quickly with this project and I'd actually already started modelling the rollercoaster before we had the footage, but seeing as it was the tracking that I thought would give the most problems I changed focus to trying to get Shot 2 in our sequence tracked. This would effectively work as our test shot; if we could get this shot done we could continue with the rest of the project, and if I decided it couldn't be done then we would move on to something else. I think I was right about this being the most difficult part (at least so far).
+                </p>
+                <p>
+                    I started by brushing up on my knowledge on the camera tracker in Blender 3D by watching an excellent tutorial by <a href=http://cgcookie.com/blender/author/sebastian-konig/>Sebastian Koenig</a>. I wont quote directly what he said but it was roughly:
+                </p>
+                <div class='quote'>
+                    <div class='quote-open'></div>
+                    <blockquote>
+                    <p>
+                        Blender doesn't currently support shots that have been tracked on a tripod, e.g. shots that just have rotation and no <a href=http://en.wikipedia.org/wiki/Parallax#Visual_perception>parallax</a> motion. They're particularly difficult to track and if you were to do a shot like that you would want to add some extra camera motion either at the start or the end that has some perspective shift for the tracker to analyse.
+                    </p>
+                    </blockquote>
+                    <div class='quote-close'></div>
+                </div>
+                <p>
+                    And Shot 2, the first shot I was tracking, the first real shot I had ever tracked, the first time I was using Blender's tracker? A shot that contains just rotation and is effectively a tripod shot. Great. I actually got a little worried at this point and thought we would have to re-film everything with added motion, but Sebastian also mentioned that the tracker should get tripod support in the future, and luckily, after a quick google, I found that it now did.
+                </p>
+                <p>
+                    So then began quite a lengthy process, which isn't over yet, of tracking the Shot 2 footage in the hope of getting a solved camera. The actual process is quite easy, but thanks to a hefty amount of motion blur due to our fast pan it's probably not as accurate as it could be, so I added a few manual keyframes to the camera to correct a few glitches in the motion. I don't think when it's all done that the camera tracking will be perfect, but I think it will be close enough. The other shots should be slightly easier as there's no major movement, just a bit of camera jiggle.
+                </p>
+                <p>
+                    Then comes the easy part in the project, you've got past the hard part, now onto the easy rewarding part. I've tracked the camera, so surely the proxy geometry that will have shadows cast onto it will simply pop into place, how hard can it be? Surprisingly (or not, if I'd remembered all the other projects that were more difficult than expected) things didn't turn out like that. For whatever reason, perhaps my inexperience, it was really difficult to get the geometry to line up with it's real world counterpart in the footage.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/4900008.jpg">
+                        <img class=centre-element src="/images/blog/4900008.jpg">
+                    </a>
+                <p>
+                    The geometry on the left of the picture now thankfully matches the footage pretty well, but at the moment the geometry on the right, although vertically straight, as I think it should be, isn't lining up yet. I think it's because of the camera distortion as the geometry seems to be less accurate the closer to the camera it is. I'm just going to have to change the geometry to try and match the warping in the footage which feels like cheating, but then isn't all of CG cheating?
+                </p>
+                <p>
+                    I haven't yet spoken about the actual rollercoaster model that I mentioned at the beginning. And that's simply because it wasn't much of an issue, apart from a small problem that was fixed with a few constraints. Annoyingly it seems while the internet is full of pictures of cats there are very few blueprints or even up close pictures of rollercoasters, so much of the general design is my own creation from whatever information I could glean from wide shot photos. The wheels that clamp onto the track though seem to be standard among most rollercoasters, so I managed to find a few detailed pictures of them.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/7487084.jpg">
+                        <img class=centre-element src="/images/blog/7487084.jpg">
+                    </a>
+                <p>
+                    I'm quite pleased with how the roller coaster model is set up. The whole thing is controlled by one central curve. The track will automatically extend when the curve is extruded and when the curve is deformed the hanging seats (which need a better name) will rotate to match the curvature. Everything can then be slid along the track with a single empty controlling everything.
+                </p>
+                <p>
+                    So that's pretty much it. Tracking and modelling this week, probably more modelling next week with hopefully a few test renders. One thing I haven't yet investigated is whether we're going to be able to use motion blur in Cycles or do it as a post process....
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/life-is-a-rollercoaster.html'><< Previous Post</a>    <a id='next' href='/blog/rollercoaster-update.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

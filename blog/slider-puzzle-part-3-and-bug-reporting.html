@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/slider-puzzle-part-3-and-bug-reporting.html'><h1>Slider Puzzle Part 3 and Bug Reporting</h1></a>
+                    <p>11/04/2014<p>
+                </div>
+                <p>
+                    Well, another week has shot by which means it's time for part 3 of my <a href=https://www.youtube.com/playlist?list=PLcvN4zs8FzNOBhQZJ-AE-UJaGWSgknfFf>tutorial series</a>:
+                </p>
+                <div id="yt-embed-container" class="centre-element">
+                    <div class="embedtool">
+                        <iframe src="https://www.youtube.com/embed/aZRIRZIPtDo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p>
+                    I've also been working on my other main project. I haven't really spoken about it yet or shared anything about it other than that I've done some scripting for it. I'm still not ready to do that, maybe after this tutorial is out the way I can start sharing more about it.
+                </p>
+                <p>
+                    But, as part of it I did come across what I thought was a bug in Blender, and I <a href=https://developer.blender.org/T39554>reported it as such</a>. Reporting bugs for Blender is important. We use it, so it's in our benefit to improve it, even if all we can contribute is pointing out a problem in the hope that someone more skilled can fix it. It can be a bit of an alien concept to people who aren't familiar with open source programs, that there might be a way to contact the people who made a piece of software and get them to fix something or answer a question. Of course, it isn't limited to open source projects, I contact many services if I find an issue, open source just tends to promote it a bit more and, well, be a bit more open that it's a possibility. But whatever it is that you use, it again comes down to: Why wouldn't I want it fixed?
+                </p>
+                <p>
+                    This is turning into a post about bug reporting, really I just wanted to highlight the <em>specific</em> issue I had...
+                </p>
+                <p>
+                    Turns out that what I reported wasn't actually a bug at all but a <em>known design limitation</em>. It's not exactly a bug because it's working as expected, even if the way it works isn't exactly ideal. It's annoying, but it basically means they, the developers, are aware of it, but can't currently change it.
+                </p>
+                <p>
+                    I came across the limitation because I'm working with duplicated objects which all share the same object data (OD from now on) and they all need to share the same vertex groups. I thought that sharing/Linking OD would solve this, which it partially does. Apart from one <em>slight</em> problem. It turns out that the OD stores the vertex groups and their <em>weights</em> but it doesn't store their <em>names</em>. The names can be unique for each object that shares OD. So two objects which share OD will have the same vertex groups and they'll be Linked, but they could be named completely differently.
+                </p>
+                <p>
+                    Which is....confusing.
+                </p>
+                <p>
+                    Edit one vertex group called 'group 1' on one object and 'group 2' might be edited on the other object if you've renamed a group on one object but not the others with Linked data...
+                </p>
+                <p>
+                    Cue a series of scripts to try and manage all this. Haven't quite fixed it all yet, have to work out which vertex groups aren't being used by modifiers so I can clean it all up a bit and maybe have some global counter which handles the naming of any new groups.
+                </p>
+                <p>
+                    Anyway, I don't regret reporting it as a bug even though it's technically not. I've at least come away knowing how it works, thanks to Campbell Barton (a Blender developer) and I don't think it does any harm letting the developers know that people are still finding this is an issue. It's also far better to have reported it than potentially be trying to work out workarounds when a simple report could have fixed it.
+                </p>
+                <p>
+                    Better safe than sorry.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/slider-puzzle-part-2-and-more-scripting.html'><< Previous Post</a>    <a id='next' href='/blog/slider-puzzle-part-4-and-the-big-project.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

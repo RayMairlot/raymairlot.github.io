@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/rollercoaster-shot-3.html'><h1>Rollercoaster: Shot 3</h1></a>
+                    <p>22/05/2013<p>
+                </div>
+                <p>
+                    <strong>[This post was originally posted on Half-Man Half-Bird's website and has been reposted here with permission so that my future posts on this topic are not out of context.]</strong>
+                </p>
+                <p>
+                    The problem of writing a blog post is that while I'm writing it I feel I should be working on the thing I'm writing about. That's probably why it's been roughly a month since the last blog post even though I said it would be every Wednesday. The trouble is it doesn't always feel that there's a blog post worthy amount of work done. Maybe I should do smaller more regular updates.
+                </p>
+                <p>
+                    Anyway, on to updating you on the progress of the vfx for our project. I got a bit bored just working on the same shot all the time, it was starting to get a bit monotonous so I started work on the other two shots so that if I get tired of working on one I can switch to another. Turns out that although I originally wanted to focus on shot 2 which I felt would be the most interesting, it was also the hardest. So progress on one of the other shots, shot 3, has probably overtaken progress on shot 2 because it's a lot easier.
+                </p>
+                <p>
+                    Shot 3 is the last shot in our sequence and it shows our rollercoaster looping around a bridge and going through one of the bridge's archways before going off into the distance. Oh and it's over water so we also have to contend with reflections. Which is fun.
+                </p>
+                <p>
+                    Below on the left (click to enlarge) is the original frame of shot 3 and on the right is with all the geometry added.
+                </p>
+                <div class="two-column-layout">
+                <div class="column">
+                    <a class="full-width-image-link-or-max" href="/images/blog/8878377.png">
+                        <img class=centre-element src="/images/blog/8878377.png">
+                    </a>
+                </div>
+                    <div class="column">
+                    <a class="full-width-image-link-or-max" href="/images/blog/8320228.png">
+                        <img class=centre-element src="/images/blog/8320228.png">
+                    </a>
+                </div>
+            </div>
+            <p>
+                So you can see the track is in place and then there's all the proxy bridge geometry for catching shadows or acting as a mask.
+            </p>
+            <p>
+                It got a little frustrating at times, the tracking gives more than a good start to the camera motion but it isn't perfect. I decided to just brute force it and keyframe out all the problems but it turns out it was nowhere as bad as I  thought. The camera needed only about 7 keyframes to give it a bit of improvement from the original track. That still didn't mean that the geometry fitted the footage perfectly, I don't know what causes that issue, whether it's still a bad track or if it's lens distortion. However I changed the geometry it still wouldn't fit at some points so again I decided to manually keyframe it. Again it was only a few keyframes on some objects, nothing major.
+            </p>
+            <p>
+                There were two other areas of the bridge mesh that needed a bit more work as it wasn't individual objects that needed to be animated but vertices, the archway of the bridge and another small part. For this I used empty hooks (below) which I could animate and their associated vertices would follow.
+            </p>
+                <a class="full-width-image-link-or-max" href="/images/blog/1389662.png">
+                    <img class=centre-element src="/images/blog/1389662.png">
+                </a>
+            <p>
+                There was another part where I also had to add an empty for each vertex so I invested a little time in creating a script that would do this automatically for a set of selected vertices which should save a bit of time in the future.
+            </p>
+            <p>
+                The current issue to contend with is how to apply motion blur to the reflection of the rollercoaster in the river, reflections can only be motion blurred if you are using full 3D motion blur, but at the minute we're using vector blur as a post process. I'm thinking I might have to created an inverted camera that renders a fake, but 3D reflection (seeing as a reflection is basically just the geometry but upside down), but I can't actually find a picture of that to explain how that's set up for the minute.
+            </p>
+            <p>
+                As I said, I also worked on our other shot in the sequence, shot 1, but all I've done is set up the track in that and some proxy geometry, so it's not as far along as this shot and not really worth showing at this point.
+            </p>
+            <p>
+                Shaders and textures are constantly being updated at the minute, that's a given, but some shaders might have to be different on a per shot basis just to account for the different lighting conditions, it may be less realistic, but it's more aesthetically pleasing.
+            </p>
+            <p>
+                Now I know how easy it can be to correct the geometry with hooks the other shots feel a bit less intimidating so hopefully I can continue at the same speed when I move onto them. Onwards.
+            </p>
+            <p>
+                <em>Ray.</em>
+            </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/rollercoaster-shading-and-layout-update.html'><< Previous Post</a>    <a id='next' href='/blog/inverted-cameras-for-vector-blurring-reflections.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

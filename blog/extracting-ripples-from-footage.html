@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/extracting-ripples-from-footage.html'><h1>Extracting ripples from footage</h1></a>
+                    <p>11/07/2013<p>
+                </div>
+                <p>
+                    As the rollercoaster project continues this blog post will look at a technique I used to displace the reflection of the rollercoaster in the river reflection.
+                </p>
+                <p>
+                    The river, where the rollercoaster is being reflected is obviously not a flat surface in real life and so in some way that surface needs to be recreated so our reflection also isn't completely flat. There's a couple of options at this point and they separate into either using geometry to displace the reflection during the render or by creating an effect in the compositor as a post-process.
+                </p>
+                <p>
+                    The geometry method could either be a displacement modifier or an ocean modifier. I only tried the ocean modifier, and while it can recreate the surface well, the amount of geometry that is needed for the small ripples took far too long to load into memory when rendering.  The displacement modifier would have the same issues.
+                </p>
+                <p>
+                    The second option and the one I had already thought would be better for the render time reason is to displace the reflection in the compositor. I don't know at what point I checked to see if a displace node existed (a key ingredient for this to work) but I already knew the technique I wanted to use. It was a technique I had seen demonstrated in Nuke, where using colour correction nodes you could isolate the highlights on the surface of the water and use this as a factor for the displacement, because each highlight represents the top of a ripple.
+                </p>
+                <p>
+                    It's not a method I've seen widely documented apart from the original place I saw it, unless it generally goes by another name. I tend to call it matte extraction, a matte being a mask. Knowing the technique I just had to put it into practice, and, this is one of those rare occasions where nothing went wrong.
+                </p>
+                <div class="two-column-layout">
+                <div class="column">
+                    <a class="full-width-image-link-or-max" href="/images/blog/6316527.png">
+                        <img class=centre-element src="/images/blog/6316527.png">
+                    </a>
+                </div>
+                    <div class="column">
+                    <a class="full-width-image-link-or-max" href="/images/blog/5551233.png">
+                        <img class=centre-element src="/images/blog/5551233.png">
+                    </a>
+                </div>
+            </div>
+            <p>
+                On the left you can see the ripples I extracted from the footage using colour correction and on the right you can see a reflection that has been displaced (albeit very faintly at this resolution). I'm currently isolating the water in the original footage with a mask, which isn't animated, so I'll probably try and create another render layer which can be used to do this automatically. I don't exactly enjoy animating masks.
+            </p>
+            <p>
+                It's not perfect at the minute and will no doubt go through a lot of fine tuning before it looks right, and of course this was without the <a href=https://www.raymairlot.co.uk/blog/inverted-cameras-for-vector-blurring-reflections>motion blur applied to it</a>.
+            </p>
+            <p>
+                The same thing has to also be done for any shadows that appear in the reflection, such as the shadows cast onto the reflected bridge, but it's easy to apply the effect again by grouping the nodes and creating another instance.
+            </p>
+            <p>
+                <em>Ray.</em>
+            </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/inverted-cameras-for-vector-blurring-reflections.html'><< Previous Post</a>    <a id='next' href='/blog/ice-and-icing.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

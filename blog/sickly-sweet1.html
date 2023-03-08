@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/sickly-sweet1.html'><h1>Sickly Sweet</h1></a>
+                    <p>25/02/2015<p>
+                </div>
+                <p>
+                    Just a bit of fun :)
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Sickly Sweet WM.png">
+                        <img class=centre-element src="/images/blog/Sickly Sweet WM.png">
+                    </a>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/lego-fluid-effect.html'><< Previous Post</a>    <a id='next' href='/blog/animated-render-border-add-on-and-the-pressures-of-releasing-paid-for-content.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/slider-puzzle-part-2-and-more-scripting.html'><h1>Slider Puzzle Part 2 and More Scripting</h1></a>
+                    <p>06/04/2014<p>
+                </div>
+                <p>
+                    Here is the second part of the Slider Puzzle Tutorial, this part focuses on unwrapping and texturing the grid:
+                </p>
+                <div id="yt-embed-container" class="centre-element">
+                    <div class="embedtool">
+                        <iframe src="https://www.youtube.com/embed/cHCvAfzLK0Y" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p>
+                    I think I just need to confirm that while I said there <a href=https://www.raymairlot.co.uk/blog/creating-the-grid-and-the-end-of-tutorials>wouldn't be any more tutorials</a> on a regular basis, that only comes into effect after this tutorial series is over. There are 2 more parts of this current tutorial still to be released, after that, it's a bit less certain.
+                </p>
+                <p>
+                    Anyway, onto more coding...
+                </p>
+                <p>
+                    I've found that since having worked on bigger python projects, smaller scripts are far quicker to write having become far more familiar with the code. I've always found myself writing little mini scripts for things like enabling/disabling Subsurf modifiers for all objects in a scene, so for my current project I decided to create a little toolset that I can eventually develop and use across all my projects.
+                </p>
+                <div class="two-column-layout">
+                <div class="column">
+                <p>
+                    Currently all it does is the aforementioned Subsurf on and off along with controlling the Shrinkwrap modifier in a similar way. This is quite specific to the project I'm doing where it's really useful to control just these modifiers, but I'd hope in the future to be able to dynamically search the scene for all modifiers so they can all be controlled in this manner for more general projects.
+                </p>
+                <p>
+                    The layout is a bit of a hack at the minute as I'm kind of forcing a 2 column menu to look like a panel. Eventually as I add more tools I'll probably collapse the modifier tools into proper submenus.
+                </p>
+                </div>
+                    <div class="column">
+                    <a class="full-width-image-link-or-max" href="/images/blog/5813342.png">
+                        <img class=centre-element src="/images/blog/5813342.png">
+                    </a>
+                </div>
+            </div>
+            <p>
+                Another cool thing I found was the ability to have an operator set a custom property when it runs. So I can use the same operator to make both the modifiers visible and invisible. On line 7 you can see I define a new property within the operator. To make sure I can access it I pass 'self' and 'context' into both the execute function and the function that has my main code on lines 9 and 10. It's with 'self' that you access the property, so I haven't yet experimented if 'context' is actually needed:
+            </p>
+                <a class="full-width-image-link-or-max" href="/images/blog/1944196.png">
+                    <img class=centre-element src="/images/blog/1944196.png">
+                </a>
+            <p>
+                Then you can access the operator property with '.propName' after the normal operator call and set it's value:
+            </p>
+                <a class="full-width-image-link-or-max" href="/images/blog/5065256.png">
+                    <img class=centre-element src="/images/blog/5065256.png">
+                </a>
+            <p>
+                You can then access the property with 'self.propName':
+            </p>
+                <a class="full-width-image-link-or-max" href="/images/blog/8428233.png">
+                    <img class=centre-element src="/images/blog/8428233.png">
+                </a>
+            <p>
+                Now I just have to work out how to set <em>multiple</em> arguments with an operator call...
+            </p>
+            <p>
+                Anyway, have to actually do some work now instead of just writing about it. Part 3 of the Slider Puzzle tutorial is out on Tuesday.
+            </p>
+            <p>
+                <em>Ray.</em>
+            </p>
+            <p>
+                <em>Ps. I hope to have proper embedded code working soon.</em>
+            </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/creating-the-grid-and-the-end-of-tutorials.html'><< Previous Post</a>    <a id='next' href='/blog/slider-puzzle-part-3-and-bug-reporting.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

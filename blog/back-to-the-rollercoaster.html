@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/back-to-the-rollercoaster.html'><h1>Back to The Rollercoaster</h1></a>
+                    <p>28/05/2014<p>
+                </div>
+                <p>
+                    In the <a href=http://www.raymairlot.co.uk/blog/slider-puzzle-part-4-and-the-big-project>last post</a> I said I would talk about the Futuristic Car 2 project, but, well, enough time passes between these posts that I'm not always working on the thing I said I would be. I certainly was working on the other project, and I will definitely write about it at some point, but not today. It's always nice to have a little break from longer projects, it's easy to start to get sick of a project if you work on it solidly for too long so I reverted back to something I haven't worked on for over a year: The Rollercoaster project.
+                </p>
+                <p>
+                    This time around I've mainly been working on updating the materials, which has been really quite fun to get back to, and feels relatively easy compared to the other project's myriad of objects, hierarchies and scripts. The materials didn't have to be updated, there's plenty of other things that aren't finished, but in the year since they were first created an anisotropic shader was added to Cycles. I thought I would at least update some of the brushed metals to use them. But of course, I ended up doing a lot more than that.
+                </p>
+                <p>
+                    Here's a nice shot of the wheel the wheels on the rail and the base which connects them to the 'coaster:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Capture 3.PNG">
+                        <img class=centre-element src="/images/blog/Capture 3.PNG">
+                    </a>
+                <p>
+                    Some of these materials have already been updated further, so there's a bit less wear and tear on the purple bolts and the gold wheels now have a bit of dirt on them.
+                </p>
+                <p>
+                    This kind of detail, the worn edges, the subtle bumps and dirt maps are all unfortunately fairly irrelevant. The rollerocaster will be going fast enough that motion blur will hide most of this work, but I can't knowingly release something that's meant to be realistic if I know I could have made it better. Besides, it does at least give me a nice asset to show off in my portfolio even if the final video doesn't quite make the most of the work I've put into it.
+                </p>
+                <p>
+                    With that in mind, I'm working on a few tricks to render a slightly closer camera than the original tracked footage might appear to allow to show at least a bit more detail...
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/slider-puzzle-part-4-and-the-big-project.html'><< Previous Post</a>    <a id='next' href='/blog/rollercoaster-update-a-game-of-shadows.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

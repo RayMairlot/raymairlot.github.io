@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/solitaire-win-screen-with-geometry-nodes.html'><h1>Solitaire Win Screen With Geometry Nodes</h1></a>
+                    <p>15/02/2022<p>
+                </div>
+                <p>
+                    I just remade the 'Solitaire Win Screen' in Blender with Geometry Nodes:
+                </p>
+                <div class='image-with-caption centre-element'>
+                    <a href="/images/blog/Solitaire-Cards-GIF.gif">
+                        <img src="/images/blog/Solitaire-Cards-GIF.gif">
+                    </a>
+                    <p> Playing card images © Chris Aguilar at https://totalnonsense.com/open-source-vector-playing-cards/, LGPL 3.0</p>
+                </div>
+                <p>
+                    This is what it looks like in the viewport; cards are instanced on curves which are instanced along lines, which are instanced along the x axis, so that the cards can appear in front of each other when looking through the camera.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Solitaire-Cards-Viewport-Demo.gif">
+                        <img class=centre-element src="/images/blog/Solitaire-Cards-Viewport-Demo.gif">
+                    </a>
+                <p>
+                    Cards are culled when they are outside of the camera view, which is easy when the camera is orthographic.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Camera Cull.png">
+                        <img class=centre-element src="/images/blog/Camera Cull.png">
+                    </a>
+                <p>
+                    As well as performance, this is mainly done so that the next card 'cascade' starts as soon as the previous one is off-screen. All cards are instanced at once and appear based on their index using another delete geometry node.
+                </p>
+                <p>
+                    Originally I built a single 'cascade' with some nice controls, but then realised I couldn't instance this node group and have random values for each parameter 😐. Instead, I rebuilt it so all lines and meshes are created first and then all the cards instanced at once at the end.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Solitaire-Cards-Single-Casdade-Demo.gif">
+                        <img class=centre-element src="/images/blog/Solitaire-Cards-Single-Casdade-Demo.gif">
+                    </a>
+                <p>
+                    All the cards share the same material and a node group selects the number and suit. The card images are all in one texture in 4 rows and by multiplying the UVs I can change which card image is displayed.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Solitaire-Cards-Material-Demo.gif">
+                        <img class=centre-element src="/images/blog/Solitaire-Cards-Material-Demo.gif">
+                    </a>
+                <p>
+                    (In reality, I don't keyframe the node's values, I use the x position of each cascade to select a number between 1 and 52 that gets fed into this.)
+                </p>
+                <p>
+                    At first I was using freestyle for the black card outlines, which was great to get consistent line thicknesses, but with a lot of cards in front of each other it took too long to generate the view map so I just extruded the edges of the card and coloured them black 🤷‍♂️.
+                </p>
+                <p>
+                    Finally, turn down the samples to 1, set light path bounces to 0, set the pixel filter to 0.01 (anti aliasing) and despite having 2,500 instances you get 0.1 second renders and something that looks like it's from 1995 😎.
+                </p>
+                <p>
+                    Oh, and the 20 second GIF at the top is 732kb thanks to its simple colours!
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/10-print-in-blender-using-material-nodes.html'><< Previous Post</a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

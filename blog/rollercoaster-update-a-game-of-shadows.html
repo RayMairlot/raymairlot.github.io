@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/rollercoaster-update-a-game-of-shadows.html'><h1>Rollercoaster Update: A Game of Shadows</h1></a>
+                    <p>28/05/2014<p>
+                </div>
+                <div class='image-with-caption centre-element'>
+                    <a href="/images/blog/Test close.png">
+                        <img src="/images/blog/Test close.png">
+                    </a>
+                    <p> Latest render.</p>
+                </div>
+                <p>
+                    You really do start to realise how big a vfx project is once you get to the compositing.
+                </p>
+                <p>
+                    Take shadows for example. This became (and continues to be) perhaps the biggest part of the post processing. I already knew I would have to build any object in 3D if it needed to receive a shadow, but there were several things, having never done a project like this from start to finish, that I didn't realise until I came to the compositing:
+                </p>
+                <h2>Objects...objects everywhere</h2>
+                <p>
+                    There were a <em>lot</em> more objects in the scene once I really started to look. Originally I just thought I had to build the main buildings and surfaces. But no, as I looked closer, railings, people, buses, taxis...the more I looked the more I found. Luckily most of this didn't require any new techniques, just more modelling and quite a bit more animation (more on animation in a separate post, later).
+                </p>
+                <p>
+                    Most of the objects can be dealt with quite easily as they're stationary. There was, however, one pedestrian who was walking across the street and was close enough to the camera that the shadow couldn't simply go over them flatly but for realism should match the contours of the body.
+                </p>
+                <p>
+                    I already had a person armature and model from the people I had made to sit on the rollercoaster so it wasn't much of a problem to re-use this model and animate the armature to the person in the footage. It was a bit tedious, and if you saw the 3D view from any other perspective than the camera you might think this person didn't have a lot of bone structure, with knees and elbows bending in directions that would make you wince. Nevertheless, from the camera view the little 3D figure appears to cross the road matching his real-world counterpart fairly well with shadows falling over his body instead of being flat, like some of the more distant people can afford to have.
+                </p>
+                <h2>Foreground people</h2>
+                <p>
+                    If <em>mid-ground</em> people weren't annoying enough to recreate, then boy was I in for a treat when I noticed all the <em>fore-ground</em> people, with more detail than my generic 3D human could handle.
+                </p>
+                <p>
+                    When we originally filmed, it took several takes to find one that didn't have cyclists or buses going right through the middle of the shot, but even so, it was impossible to film on a busy street without there being <em>some</em> pedestrians and vehicles in the way.
+                </p>
+                <p>
+                    Any person that appears in front of the shadow means that a part of the shadow has to be removed. The only way to really deal with that was with masking, so I had to painstakingly mask the 3 or 4 people walking across the shot frame by frame. Frame. By. Frame. This was not enjoyable even though it was a fairly short sequence. But, once complete a simple 'Math' node could add the white mask back over the top of the shadow pass, cancelling out the shadow in one fell swoop.
+                </p>
+                <h2>Existing Shadows</h2>
+                <p>
+                    These two previous points are annoying but at least I was already aware of those issues even if I wasn't completely aware of the scale they would need to be dealt with. Which left the detail I <em>hadn't</em> been aware of:
+                </p>
+                <p>
+                    The footage has <em>existing</em> shadows. This sounds obvious. And it is! Of course there are shadows in the footage, things in the real world cast shadows. But what was less obvious is that I would somehow have to stop the CG shadows from <em>overlapping</em> them. If they overlapped there would be a dark patch, you can't cast a shadow onto something that's already in shadow without it getting darker than it should be, so the shadows have to very precisely stop at the exact point the real shadows begin.
+                </p>
+                <p>
+                    This started to worry me slightly, I'd missed something which seemed obvious and I wasn't immediately sure how to solve this...
+                </p>
+                <p>
+                    I realised that unless I wanted to try and roto (mask) the shadows very precisely I would have to attempt to use a technique similar to how I'd extracted the <a href=http://www.raymairlot.co.uk/blog/extracting-ripples-from-footage>ripples from the river</a>. My thought was that I could create a rough mask around the area in the footage with the existing shadow and then isolate the darkest parts of that area, which should be the shadows, with colour correction. For the most part this does seem to work, there's still a bit of fine tuning to do at the exact join between real and CG, but the vector blur helps to, well, blur that line.
+                </p>
+                <p>
+                    A lot of work for just one part of the compositing and there's still lots more to do. Aside from compositing though, putting the people on the rollercoaster was a fun little exercise so I'll try and cover that next time.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/back-to-the-rollercoaster.html'><< Previous Post</a>    <a id='next' href='/blog/lego-fluid-effect.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

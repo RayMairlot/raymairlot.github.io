@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/bugs-more-bugs-and-then-finally-some-work.html'><h1>Bugs, More Bugs and Then Finally Some Work</h1></a>
+                    <p>13/03/2016<p>
+                </div>
+                <p>
+                    Well, I've managed to stick to my idea of doing weekly blog posts, but then again, I'm only a week in, so maybe that's not quite the achievement I thought it was when I started this sentence.
+                </p>
+                <h2>A bug</h2>
+                <p>
+                    It's always a bit pretentious to say you've got a big project but can't talk about it, especially when that limitation is self-imposed, but if I'm going to get the most out of this project, it means working out how to reveal it best. Last week I mentioned that perhaps this would be the week I showed it to the world. Or at least, the small segment of the world that is interested in 3D. Interested in 3D and likely to see my post. Interested in 3D, likely to see my post and actually click on it. Interes...well you get the idea, it's niche:
+                </p>
+                <div class='image-with-caption centre-element'>
+                    <a href="/images/blog/Pie-Chart.gif">
+                        <img src="/images/blog/Pie-Chart.gif">
+                    </a>
+                    <p> Created in Blender, of course.</p>
+                </div>
+                <p>
+                    On Monday I set about starting this reveal process by trying to do an up to date render. I hadn't done a render of the project in a while as it had got so large geometry-wise that my GTX 570, with it's 1GB of GDDR5 RAM, kept crashing midway through the render. But silly old me! GPUs are so often lauded as the be all and end all of graphics performance and rendering that I had stupidly forgotten about my CPU. Sure, renders are going to be a lot slower, but they render!
+                </p>
+                <p>
+                    Of course, the new found optimism that that previous exclamation mark hopefully depicted, was short lived. I have a compositing setup in the scene that renders the current camera angle in the current scene and then renders an alternate angle from another scene (with Linked geometry) and combines them into one, nicely laid out image. Trouble is, it now gets to the alternate angle scene and crashes....so the rest of the day was spent trying to reduce the file enough to create a bug report, <a href=https://developer.blender.org/T47715>which I did</a>.
+                </p>
+                <h2>Another bug</h2>
+                <p>
+                    Tuesday gave the gift of another bug, this time in my own add-on '<a href=https://blendermarket.com/products/animated-render-border/>Animated Render Border</a>'. I would love to say it was coding skill that allowed me to solve the bug in half an hour, but really, it was panic. There is nothing quite like the rush you get from seeing the words "does not work" in the same context as a product you have released. Well, there probably is, but not in my quiet life.
+                </p>
+                <h2>And the rest of the week</h2>
+                <p>
+                    Luckily, for the rest of the week I actually got some good work done, but it depends on the good developers who work on Blender as to when I'll actually be able to show you something. It's going to get pretty awkward on this blog if for the next few weeks I just have to say "Maybe you'll see it next week!" as eventually you'll presume there is no project.*
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+                <div class='aside'>
+                    <p><em>*"Why not just show the angle that does render then?" I could, but I've waited this long to show it to anyone, so I'd rather wait a bit and do it right, than just show half of the model. I have a few ideas how to get around the bug for next week's post anyway.</em></p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/scene-nodes-and-unity.html'><< Previous Post</a>    <a id='next' href='/blog/iron-man-heartbreaker.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

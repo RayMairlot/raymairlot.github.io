@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/all-my-time-is-gone-and-other-stories.html'><h1>All My Time is Gone and Other Stories</h1></a>
+                    <p>23/05/2016<p>
+                </div>
+                <p>
+                    It's been 4 weeks since I last wrote here, leaving The Internet to descend into madness as it tries to comprehend a world without regular blog posts from me. "When will the literary drought end?", The Internet cries into the dark. "When?!", it cries again, worried that no-one heard the first time. Fear not, I <em>have</em> heard you. The drought/darkness (delete as appropriate) is over. I have returned, albeit briefly, to quench your thirst for ramblings, quenches and of course, thirsts, or my name's not Ray 'The Thirst-Quencher' Mairlot*.
+                </p>
+                <div class='aside'>
+                    <p><em>*I will continue to proclaim that is my name up to, but not beyond, the point of being asked to prove it.</em></p>
+                </div>
+                <p>
+                    While once my time was abundant, now, my time is taken up by (and I'm happy to say, <em>will continue to be</em> taken up by) freelance, but I did manage to steal a few hours away to work on a small script at the weekend. Or one of the weekends. I forget which one and it's not really important to telling you what I worked on. What I'm trying to say is, it's an extraneous detail that doesn't deserve to be expanded on. Let's just say <em>a</em> weekend and be done with it. Embrace the ambiguity.
+                </p>
+                <p>
+                    The script I made is currently a standalone script, but if it proves to be worthwhile it will be packaged up to be part of <a href=https://blendermarket.com/products/animated-render-border/>Animated Render Border</a> (my add-on on the Blender Market), upgrading it to its third and probably, final version. What <em>always</em> improves something? More of that thing! In this case, that means more render borders, i.e., being able to set multiple regions of the image to render, instead of just one.
+                </p>
+                <p>
+                    My test was successful as the image below shows; two borders are set using a temporary UI and then rendered into one image:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/ARB-Multiple-Borders-Demo.gif">
+                        <img class=centre-element src="/images/blog/ARB-Multiple-Borders-Demo.gif">
+                    </a>
+                <p>
+                    There are a few hurdles before I can say it will be <em>definitely</em> released, such as trying this out on larger scenes. Essentially, the script renders the frame twice and then** combines the results, so if a frame takes a long time to build the BVH or do some volume pre-processing then any time saved by doing a border render might be lost by having to do this pre-processing twice.
+                </p>
+                <div class='aside'>
+                    <p><em>**30th April! I remembered, that's when I made the script. Thank goodness. Anyone who was worried about the lack of detail before can now calmly recede from the depths of ambiguity, back into the comfort of specificity.</em></p>
+                </div>
+                <p>
+                    When will I get to work on it again? I don't know. Will I probably start another experimental script before finishing this one? Yes, it's more than likely. But, for now, it's back to having no time, which is really no complaint at all, because I can attest to the fact that getting paid to do something you enjoy is far better than <em>not</em> getting paid.
+                </p>
+                <p>
+                    And with that, perhaps somewhat abruptly, the end.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/the-forth-arm.html'><< Previous Post</a>    <a id='next' href='/blog/how-to-make-things-that-no-one-needs.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

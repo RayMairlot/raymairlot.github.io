@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/animation-nodes-an-experiment.html'><h1>Animation Nodes: An Experiment</h1></a>
+                    <p>24/11/2017<p>
+                </div>
+                <p>
+                    I recently made my first foray in learning probably one of the most advanced Blender add-ons that exists: Animation Nodes (AN onwards). And by 'learning' I mean I've done one project in it and don't know when I'll do another.
+                </p>
+                <p>
+                    Here is my first, and possibly last, test:
+                </p>
+                <blockquote class="twitter-tweet tw-align-center" data-conversation="none" data-dnt="true"><a href="https://twitter.com/RayMairlot/status/918796491677986817"></a></blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <p>
+                    Now I have the rather unenvious task of trying to explain how I did it. Because I said I would and it seemed like a good idea at the time and now it's two thousand and ninety-three words later and I've come back up to the top of this post to write about how long it's taken and how I regret saying I would explain it.
+                </p>
+                <p>
+                    However, despite the time it's taken to write this, this isn't a step-by-step tutorial and will probably take some investigation of your own to get a similar result. I merely nudge you towards the door, you must stumble your own way through it.
+                </p>
+                <p>
+                    There are 3 main parts to re-creating the effect:
+                </p>
+                <ol>
+                    <li>Filling an object with other objects.</li>
+                    <li>Scaling the objects with AN.</li>
+                    <li>Creating the 'wave' effect with AN.</li>
+                </ol>
+                <p>
+                    When I first started this mini-project I wasn't even intending to use AN, I was just trying to see if it were possible to fill an object with lots of other objects. It was only after looking at the sphere-filled torus that I wondered if I could animate it nicely.
+                </p>
+                <p>
+                    My point is, at least in this version, the generating of the spheres to fill the torus was done beforehand. I would eventually like to try doing this step more procedurally as well, but for now this is a much more manual process.
+                </p>
+                <p>
+                    Now, if you are ready to have some learning flung at you, proceed to the first part.
+                </p>
+                <h2>The Filling The Torus With Spheres Part</h2>
+                <p>
+                    I'm not going to go into mega-detail for this part (or indeed any part), but the basic process is to fill a torus with a particle system of spheres and then use a rigid body system to allow the spheres to settle into non-intersecting positions:
+                </p>
+                <ol>
+                    <li>Fill an object with particles by using an 'Emitter' type particle system set to volume and a sphere as the <em>Dupli Object</em> (with particles set to start and end on frame 1).</li>
+                    <li>Convert the particle system to separate objects (Ctrl + A > <em>Make duplicates real</em>), make them all single users (U > <em>Object & Data</em>) and apply rotations and scales (Ctrl + A again).</li>
+                    <li>Set the new spheres to rigid bodies.</li>
+                    <li>Make the torus a passive rigid body set to Mesh and flip its normals so the rigid body system knows you your intention is for the rigid bodies to collide with the <em>inside</em> of the mesh.</li>
+                    <li>Turn off gravity (set gravity values to '0' in the Scene tab in the <em>Properties Editor</em>) and run the simulation.</li>
+                    <li>Discard any spheres that escaped the torus. They are dead to us now.</li>
+                    <li>On a frame where the spheres have settled, select all spheres and apply the <em>Visual Transform</em> (Ctrl + A > <em>Visual Transform</em>). This sets the spheres' positions to their positions as calculated by the rigid body simulation.</li>
+                    <li>Remove the rigid body settings from the spheres.</li>
+                </ol>
+                <p>
+                    After doing this project I actually found someone had already done nearly the exact same steps (explained in far more detail) in their own YouTube tutorial <a href=https://youtu.be/1gM8yEMFMjg>here</a>.
+                </p>
+                <h2>The First Animation Nodes Part</h2>
+                <p>
+                    This is the part where the real 'fun' begins:
+                </p>
+                <blockquote class="twitter-tweet tw-align-center" data-conversation="none" data-dnt="true"><a href="https://twitter.com/RayMairlot/status/918796870557814785?s=20"></a></blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <p>
+                    When I first made this it wasn't immediately obvious where to start. Partly, that's because with AN, nothing is obvious, immediately or indeed ever. Nevertheless, I had heard enough about AN to know that 'Subprograms' might lead me to the effect I wanted. So there too, is where we will begin.
+                </p>
+                <p>
+                    Here is the first section of AN node setup, which deals with scaling the objects:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/AN Node Setup Scale.png">
+                        <img class=centre-element src="/images/blog/AN Node Setup Scale.png">
+                    </a>
+                <p>
+                    A key concept of Animation Nodes is to think about repeatable chunks of work. Instead of having to animate each object individually, we create a chunk of work (or in AN terms, a 'Subprogram') that takes in one object and animates it. We can then take that chunk of work and repeat it for as many objects as we need.
+                </p>
+                <p>
+                    The 'Loop Input' node is connected to the chunk of work and the 'Invoke Subprogram' node calls that chunk of work as many times as needed.
+                </p>
+                <p>
+                    How does the 'Invoke Subrogram' node know how many times to run the 'Subprogram'? Well, that's what we'll set up first.
+                </p>
+                <p>
+                    After adding an 'Invoke Subprogram' node and choosing 'New Subprogram'> Loop, we need to change the 'Loop Input' node to accept a different input. Ideally, we need it to take in a list of objects and perform an operation on each one. Luckily, that's as easy as clicking the 'New Iterator' button on the node and choosing 'Object List' from the list of available inputs.
+                </p>
+                <p>
+                    You'll now see that the 'Invoke Subprogram' node has changed its input from being 'Iterations' to 'Object List'. Far more useful. The 'Loop Input' node now knows that I will be passing it a list of objects and that I want to run the 'Subprogram' for as many objects in the list.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/AN After Iterator.png">
+                        <img class=centre-element src="/images/blog/AN After Iterator.png">
+                    </a>
+                <p>
+                    As for the list of objects, we can do this with a regular Blender object group, so add all your spheres, or whatever confounded shape you've used, add them to a group (Ctrl+G) and name it something completely irrelevant, like 'Group.001'. You know, something that will be completely unintelligible when you come back to this project in a few months. I've been silly and named my group 'Objects in Torus', which almost sounds like a useful name. I'll change it later.
+                </p>
+                <p>
+                    So to summarise, the 'Invoke Subprogram' node will be passed a group of objects and it's going to loop through the list of objects and animate them depending on what is connected to the 'Loop Input' node.
+                </p>
+                <p>
+                    Add an 'Objects from Group' node, choose the group in the node's drop-down list that you just created and then connect its one output to the 'Subprogram's one input, like so:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/Object Loop.png">
+                        <img class=centre-element src="/images/blog/Object Loop.png">
+                    </a>
+                <p>
+                    That unnerving, unusual feeling, which you're hopefully feeling if my writing has served its purpose, is the feeling of starting to understand something, of making progress. A quite unusual feeling when first working with AN. Make the most of it, because it probably won't last long.
+                </p>
+                <p>
+                    Now we're onto the actual animation, we want to be able to pull an individual object from that list. We already set up the iterator, and when we did this the 'Loop Input' node got a new output called 'Object'. We can now add any nodes we want to animate that individual object and the animation will get applied to all objects in our group, because the 'Object' output changes to a different object in the group each time the 'Subprogram' runs.
+                </p>
+                <p>
+                    Here are the nodes, connected to the 'Loop Input' node that will actually animate each individual object:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/AN Node Setup Just Loop.png">
+                        <img class=centre-element src="/images/blog/AN Node Setup Just Loop.png">
+                    </a>
+                <p>
+                    The basic idea of how it's animating the object is it is looking at the location of two empties (one either side of the torus) and depending on how close the empties are to the individual object, it should be scaled somewhere between 0 and its original size. The empties are then animated closer and further away from the object which means the objects will then individually scale up or down.
+                </p>
+                <p>
+                    To summarise the node setup above:
+                </p>
+                <ol>
+                    <li>Read in the 'Falloff' (a bit like Blender force fields, where there is an area around an empty in which objects are effected) - in this case we're specifically looking at the 'z' or '-z' direction of each empty and adding them together (so that both falloffs are considered). I think the falloff range is 0-1 so multiplying them together actually works better than adding so that the maximum values will never exceed 1 (1 x 1 = 1, obvs).</li>
+                    <li>Use the 'Evaluate Falloff' node to compare the current object's location and its distance to each of the empties (each object is only ever in range of one empty).</li>
+                    <li>Use the output of this calculation as the scale value for the object. As the objects have their scale applied, when the falloff is 1 the objects will be at full size, otherwise they will be scaled down.</li>
+                </ol>
+                <p>
+                    On the left in the screenshot below, you can see the two empties selected, whose falloffs are compared to each object's location:
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/AN Empties.png">
+                        <img class=centre-element src="/images/blog/AN Empties.png">
+                    </a>
+                <p>
+                    They're parented to a larger empty which is animated diagonally along the local 'z' axis as shown above. This is how the effect happens diagonally, as the 'Object Controller Falloff' nodes are set to read the local 'z' and '-z' axis respectively.
+                </p>
+                <p>
+                    You can see on the right (above) a representation of the falloff, where in the centre it's lighter and the objects are full size, but if the empties move diagonally up and right, the imaginary dark falloff area will also move, start to cover the torus and cause the spheres to scale down.
+                </p>
+                <h2>Creating the 'Wave' Effect</h2>
+                <p>
+                    The third and thankfully final part (come on, we're nearly at the end now) is to create the billowing wave effect. Here's the node network for the wave effect (I've removed the nodes that handle the scaling for the minute, just to make things a bit simpler):
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/AN Node Setup Just Wave.png">
+                        <img class=centre-element src="/images/blog/AN Node Setup Just Wave.png">
+                    </a>
+                <p>
+                    The basic idea is that we are taking the original location of the object and using a 'sin' wave to animate it back and forth on the 'y' axis, adding in a bit of randomness for good measure along the way. The node setup above equates to this equation:
+                </p>
+                <pre>
+                    sin(xLocation - ((time + TimeOffset)/Speed)) * RandomNumber * Strength + OriginalLocation
+                </pre>
+                <p>
+                    For those that don't know, the 'sin' function produces a wave depending on the number fed to it. Seeing as we want an animated wave we need to pass in a constantly changing value, so we pass in the time value ('Time Info' node), offset it just so the wave starts on the frame I want (the 'Math' node adding 40 to offset by 40 frames), turn down the effect a bit ('Math' node dividing by 5) and finally we subtract the object's original 'x' location so that each object gets a slightly offset sin value (otherwise they would all move the same amount).
+                </p>
+                <p>
+                    After that we multiply in a bit of randomness between 0.5 and 1 so they each move a bit more individually, turn down the overall effect by multiplying by a number less than one, add it to the original 'y' value (so they start from their original 'y' positions), combine the 'y' location with the original 'x' and 'z' locations, before it's finally used by the 'Object Transforms Output' node which sets the location for the current object. Phew.
+                </p>
+                <p>
+                    It's possible, likely even, that this equation could be simplified, but such was the joy of finally getting something which resembled a result that I couldn't bear to touch anything and accidentally break it.
+                </p>
+                <h2>Add it all together</h2>
+                <p>
+                    Now we've calculated the location <em>and</em> the scale we can add all the nodes together, producing this wonder:
+                </p>
+                <div class='image-with-caption centre-element'>
+                    <a href="/images/blog/AN Node setup Full.png">
+                        <img src="/images/blog/AN Node setup Full.png">
+                    </a>
+                    <p> Look at that big, lovely, seamless screenshot. It's almost as if I used some automated method to capture it...</p>
+                </div>
+                <p>
+                    Really, I should have added in a few more images, gifs or some other animated doodahs to break up those chunks of text, but golly gosh, I really couldn't be bothered; it took long enough just to write all of this without faffing about making nice illustrative, understandable and helpful images.
+                </p>
+                <p>
+                    So there we have it, a completely clear, 100% explained, nothing vague, detailed, step-by-step guide of how I did it. Apart from all the parts I skimmed over and left to you, the avid reader, to figure out for yourselves. Which, in fairness to me - and I have been assured that I <em>definitely</em> deserve fairness - is only really the animating of the empties and the adding and connecting of the nodes.
+                </p>
+                <p>
+                    Well done me. And well done to you for getting this far. But mainly well done me. Because let's be honest, it's me that's done most of the work in this transaction. I've had to use all 10 fingers to type, you've just had to use two eyes. Or whatever number of eyes you have available to you. Either way, regardless of the number of operational eyes, 10 fingers is more. No one's got 10 eyes...
+                </p>
+                <p>
+                    ...Unless you're reading it in a group.
+                </p>
+                <p>
+                    Bugger.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/moving-render-layers-and-travelling-in-time.html'><< Previous Post</a>    <a id='next' href='/blog/making-macro-maker-a-makers-memoir.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

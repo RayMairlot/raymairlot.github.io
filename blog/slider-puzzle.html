@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/slider-puzzle.html'><h1>Slider Puzzle</h1></a>
+                    <p>08/11/2013<p>
+                </div>
+                <p>
+                    Well the weeks have rolled on since my last video and finally the new effect is finished. This took a while...
+                </p>
+                <div id="yt-embed-container" class="centre-element">
+                    <div class="embedtool">
+                        <iframe src="https://www.youtube.com/embed/T3EVFTEf1wU" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p>
+                    This video will eventually lead to my first tutorial really that focuses solely on python in blender. The script I wrote can basically take a few parameters such as the grid size, the number of moves (to mix the puzzle, the more the better/slower) and the number of frames each move should take.
+                </p>
+                <p>
+                    This takes a specified 'tile' object and generates the grid based on it, I could have used just a flat plane or squashed cube for the tile, the script would run quicker, but I wanted it to have 'tabs' and grooves just like the real thing. It looks good, but the more verts the slower the script. You also have to set up the material beforehand, just to basically choose the texture, the script does the uv mapping.
+                </p>
+                <p>
+                    The puzzle starts from the 'finished' position and the script animates each tile randomly to mix the puzzle. Keyframes are recorded in such a way that when played forward the animation appears to descramble as it goes on. There's also a few other things the script does such as printing out useful output to the console to show how far along the script has got, the final 30 x 30 grid at the end of the video takes a fair few minutes to create so it's nice to have progress reports. I also factored in that after you've run the script you'll often want to run it again but with different parameters, so the grid can also delete the old grid before creating the new one if you want.
+                </p>
+                <p>
+                    This isn't going to be a beginner python tutorial or even a beginner python in blender tutorial, this is probably for people who've already made a few small scripts themselves using the blender api.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/icing-text-tutorial.html'><< Previous Post</a>    <a id='next' href='/blog/robot-vs-vacuum.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/scene-nodes-and-unity.html'><h1>Scene Nodes and Unity</h1></a>
+                    <p>04/03/2016<p>
+                </div>
+                <p>
+                    I haven't posted here much, but I'm hoping to do a weekly post of what work I've been doing each week. Seeing as I haven't done a blog post for a while, I'll cover a few things I've been working on in the previous months. Does that sound fun? I don't know, but you've already loaded the page now, so you may as well read a bit more.
+                </p>
+                <h2>Scene Nodes</h2>
+                <p>
+                    An interesting little experiment in Blender I did a few weeks ago is something I'm calling 'Scene Nodes'. Blender used to have something called the '<a href=http://wiki.blender.org/index.php/Doc:2.4/Manual/Data_System/The_Outliner#Oops_Schematic_view>Oops Schematic View</a>' in the Outliner, which allowed you to view your 3D scene in a visual, node based way, showing the relationships between your assets. This feature never made it into the revamped Blender 2.5 so I thought I would have a go at recreating it with Python. Partly, that was because I just thought it would be fun (it was 50% fun, 30% googling, 15% deciding what colour each node should be and 5% crying) but also because I thought that if it proved to be popular I might develop another add-on to sell on the Blender Market.
+                </p>
+                <div class='image-with-caption centre-element'>
+                    <a href="/images/blog/CaSjJcDW0AA1iBg.png large.png">
+                        <img src="/images/blog/CaSjJcDW0AA1iBg.png large.png">
+                    </a>
+                    <p> Working out what colour nodes should be took longer than it should have done.</p>
+                </div>
+                <p>
+                    The result above shows all the different objects and materials in my scene and also the relationship between them. 'Cube.001' (orange) is the child of 'Camera.001' (grey)  and also a parent to 4 objects (orange) and a lamp (yellow). I got it working so that not only could you press a button to generate this node setup, but that duplicating nodes would duplicate the actual object, deleting a node would delete an object and changing the connections between objects would change the real object's parenting.
+                </p>
+                <p>
+                    Before you go rifling through you wallet to find money to throw at the screen* (because you obviously love the sound of it, not because you're misguidedly attempting to throw loose change into my eyes), while it was quite fun to do, I'm not entirely sure that there's enough interest in it for me to make it an add-on. My last add-on wasn't really cost effective, considering the development time vs monetary return. I'm not ruling out making it an add-on, but I don't think it's a 'high-priority' project.
+                </p>
+                <div class='aside'>
+                    <p><em>*and people say I'm a fantasist.**</em></p>
+                    <p><em>**If anyone of importance is reading this, I'm lying, no one has ever called me a fantasist. It was just a joke, which we (I) here at www.RayMairlot.co.uk deeply regret.</em></p>
+                </div>
+                <h2>Experiments with Unity:</h2>
+                <p>
+                    I've also been making a game with a friend, not in Unity as the title might suggest, but in Flash. Flash might get criticised a lot, but for making a cross-platform game it really makes a lot of sense (to me). However, I'm well aware that several sites are moving away from flash, at least for video delivery, so I thought I would make some investigations into other game engines, just in case the day comes that Flash content is no longer run by web browsers.
+                </p>
+                <p>
+                    I decided that I would try out Unity as it has a free version and I got to grips with one of the tutorials. I wasn't best pleased to find my simple tutorial scene of a ball rolling over a plane, collecting yellow diamonds, came to an eye-watering 170MB. God help me if I try something complex*. Maybe I can cut that size down somehow, but at least it does cross-platform publishing pretty easily.
+                </p>
+                <div class='aside'>
+                    <p><em>*Dear God, I know you're busy, but please help me squash these megabytes. If you help me (for free) I'll tell everyone it was you that helped me and I think that will be great exposure for you. Thanks, Ray.</em></p>
+                </div>
+                <p>
+                    I had originally thought that if I wanted to learn Unity it would be better if I already had a working game in Flash, so that when trying to re-create it in Unity I wouldn't have to be worrying if the logic of the game was correct, only the conversion of AS3 to C# (one of Unity's coding languages). I made a little Tetris game in Flash, but having seen the large file size Unity creates I was put off from actually trying to convert it. I realised that Flash is still the better option for me, but that Unity was a viable alternative if I really needed it.
+                </p>
+                <div class='image-with-caption centre-element'>
+                    <a href="/images/blog/Tetris screenshot.png">
+                        <img src="/images/blog/Tetris screenshot.png">
+                    </a>
+                    <p> Tetris: Surprisingly tricky to make.</p>
+                </div>
+                <p>
+                    That's not to say making the Tetris game was a waste of time; it helped me a lot with realising how to implement OOP concepts properly, which I can put to good use in the game I'm making in Flash.
+                </p>
+                <p>
+                    All in all, quite a few experimental projects, but now I'm back to my <em>main</em> one, which I may start to reveal soon. Or not, know one knows. If people say they know, they're lying.
+                </p>
+                <p>
+                    Unless that people is me.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/animated-render-border-add-on-and-the-pressures-of-releasing-paid-for-content.html'><< Previous Post</a>    <a id='next' href='/blog/bugs-more-bugs-and-then-finally-some-work.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>

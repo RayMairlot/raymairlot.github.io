@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <div id="header"></div>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/rollercoaster-update.html'><h1>Rollercoaster Update</h1></a>
+                    <p>29/03/2013<p>
+                </div>
+                <p>
+                    <strong>[This post was originally posted on Half-Man Half-Bird's website and has been reposted here with permission so that my future posts on this topic are not out of context.]</strong>
+                </p>
+                <p>
+                    It was a long week last week. Long enough that I didn't do a blog post and barely did any work on the rollercoaster project. A week filled with waiting around for various renders to finish. Unfortunately, the renders weren't for this project but for a <a href=http://www.youtube.com/watch?v=TbYcU3AfM0g>personal project</a> that I finally finished yesterday. But that's not to say that there's not been an update to this project, after last weeks blog post I had a few days of working on it and managed to get some important steps completed.
+                </p>
+                <p>
+                    The main/only thing I did was to figure out how to rig the rollercoaster to be able to travel along the track in a way that will make it easy to animate. I had a feeling it was either going to work right away and be completely simple, or take a bit more work. No need to guess which one it turned out to be then.
+                </p>
+                <p>
+                    The most obvious thing to try when trying to get something to travel along a path in Blender is the follow path constraint and then use the path animation properties on the curve to move the object along.  It was easy enough to do for the first carriage/set of seats, which gave me a bit of hope the others would work.  When I used the same settings on the other carriages I found I couldn't just parent the other carriages to the first one and have them all move at once as I'd hoped. The first one moved and even matched the direction that the rails were bending in but the others just followed the first one and ignored their follow path constraints.
+                </p>
+                <p>
+                    I then moved onto a slightly weirder but ultimately successful technique that I've used before. It's weird in the sense that we are basically using a tool that would normally be used for modelling, but under certain circumstances can be useful for animation. The technique uses the curve modifier to deform a single cube (one for each carriage) along the main curve that determines where the track is. You can then, and this is the quirky part of the technique, move the cube on it's local y axis (direction curve is pointing in) and it will appear to travel along the curve. You can then parent the carriage to it's controller cube without any issues.
+                </p>
+                <p>
+                    The cube itself isn't rendered and is only used to get the 'direction' or <a href=http://en.wikipedia.org/wiki/File:Graph_of_sliding_derivative_line.gif>tangent</a> of that point in the curve. In actual fact I couldn't do a simple parent to the curved cube I had to do a parent to 3 of it's vertices. If you just do a normal parent operation the carriage wont follow the cube properly as the cube isn't being rotated as it travels along the curve, it's just being deformed. But you can parent directly to the vertices  of the cube which seems to work. Then it's just a case of parenting all these controller cubes to a single empty, the empty can then be moved and everything follows correctly. The empty also has to be moved on it's local axis so even if the curve is going in all directions you only ever move the empty on it's local y axis to move everything along.
+                </p>
+                <p>
+                    Below you can see all the carriages bending as the curve is deformed.  I just added in a quick hook (the cube) which can control a point on the curve. It means I can quickly move the cube to deform the curve to see if the rigging is working.
+                </p>
+                    <a class="full-width-image-link-or-max" href="/images/blog/rollercoaster bend.gif">
+                        <img class=centre-element src="/images/blog/rollercoaster bend.gif">
+                    </a>
+                <p>
+                    The above animation also highlights another issue I had to contend with once everything was following the main curve properly.  As the curve bends, the distance between each carriage increases which caused me to have to really think about how I could actually connect the carriages together as whatever I used would have to adapt to this increase in distance. You can see that it's increasing because the arrays which make the rails are having to auto extend on the left hand side to accommodate the new length of the curve. I don't think real rollercoasters have the distance problem but I couldn't actually find any references of how the carriages are joined so I don't know for sure. I eventually went for a piston option, or telescopic might be a better word. A series of constraints mean that the beam and joining objects point to the next carriage in the line, so the beam parented to carriage 1 points to carriage 2 etc. When the distance increases more of the beam that was hidden in the 'joint' is revealed. In the above animation it's the line of objects below the main rail.
+                </p>
+                <p>
+                    It was pretty important to get that done because without it animation could have become really tedious. Another bonus is that it seems to move really quickly in the viewport, but there may be a bit of a slowdown once the rails are fully extended.
+                </p>
+                <p>
+                    Next is to extend the track and match it to the footage and construct the support struts which connect the 'coaster to the surfaces.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+<div class='post-navigation'>    <a id='previous' href='/blog/rollercoaster-tracking-and-construction.html'><< Previous Post</a>    <a id='next' href='/blog/rollercoaster-shading-and-layout-update.html'>Next Post >></a></div>        </div>
+
+        <div id="footer"></div>
+    </body>
+</html>
