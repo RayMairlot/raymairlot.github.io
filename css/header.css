@@ -48,6 +48,7 @@
         width: auto;
     }
 
+    /* Needed for mobile view - narrow browser window doesn't show issue */
     #logo img {
         width: 100%;
     }
