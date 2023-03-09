@@ -2,10 +2,16 @@ article {
     margin: 60 150px 70px 150px;
 }
 
+article h1 {
+    font-size: 30 !important;
+    font-weight: normal !important;
+}
+
 article h2 {
-    font-size: 26;
-    margin-top: 60px;
+    font-size: 22 !important;
+    margin-top: 70px;
     margin-bottom: 40px;
+    text-transform: none !important;
 }
 
 .blog-header {
@@ -26,6 +32,8 @@ article h2 {
 
 .blog-header p {
     margin: 0 !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 14 !important;
 }
 
 .post-navigation {
