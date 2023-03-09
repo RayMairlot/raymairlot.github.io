@@ -68,7 +68,7 @@ pre {
 }
 
 .quote {
-    background-color: lightgray;
+    background-color: rgb(238, 238, 238);
     margin: 45px 30px;
     padding: 20px;
     border-radius: 10px;
