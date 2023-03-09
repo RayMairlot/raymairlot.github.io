@@ -178,6 +178,17 @@ ol, #page-content ul {
     display: inline-block;
 }
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.social-icons img {
+    height: 50px;
+    width: 50px;
+}
+
 .embedtool {
     position: relative;
     height: 0;
