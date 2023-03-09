@@ -1,6 +1,13 @@
 #navigation-bar {
-    background-color: darkgrey;
+    background-color: black;
     display: flex;
+    height: 75px;
+}
+
+#navigation-bar a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 #logo {
@@ -12,12 +19,16 @@
 #navigation {
     display: flex;
     list-style-type: none;
-    margin: 0 5 0 0;
+    margin: 0 15 0 0;
     padding: 0;
 }
 
 #navigation > li {
-    padding: 20px;
+    padding: 25px;
+}
+
+#navigation > li:hover {
+    background-color: rgb(36, 36, 36);
 }
 
 @media (max-width: 900px) {
@@ -26,14 +37,13 @@
     }
 
     #navigation {
-        background-color: lightgrey;
+        background-color: rgb(94, 94, 94);
         margin: 0;
     }
 }
 
 @media (max-width: 500px) {
     #logo {
-        text-align: center;
         width: auto;
     }
 
@@ -47,7 +57,7 @@
 
     #navigation > li {
         border-style: solid;
-        border-color: darkgrey;
+        border-color: black;
         border-width: 0 0 1px 0;
         text-align: center;
     }
