@@ -166,6 +166,10 @@ ol, #page-content ul {
     width: 50%;
 }
 
+.centre-text {
+    text-align: center;
+}
+
 .button {
     background-color: black;
     padding: 15px;

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/about.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <header id="header"></header>
+
+        <div id="page-content">
+
+            <div id="about-text" class="centre-text centre-element">
+                <h2>About</h2>
+                <p>
+                    My name is Ray Mairlot, I'm a UK based 3D artist and in 2011 I graduated from Kingston University
+                    London
+                    with First
+                    Class Honours in Computer Graphics Technology.
+                </p>
+                <p>
+                    I mainly do hard surface modelling and realistic rendering so if you have any work like that that
+                    you
+                    need doing, either
+                    stills or animated, feel free to contact me. I also use Photoshop for a lot of my work, so I'm
+                    proficient in that too.
+                </p>
+                <p>I dabble in Python for Blender 3D and I have created my own add-on which is for sale <a
+                       href="https://blendermarket.com/products/animated-render-border/">here</a>.</p>
+                <p>Here is my <a href="/files/ray_mairlot_cv_web_version.pdf">CV</a>.</p>
+            </div>
+
+        </div>
+
+        <footer id="footer"></footer>
+    </body>
+</html>
