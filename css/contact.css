@@ -1,0 +1,9 @@
+#contact-text {
+    width: 60%;
+    margin-bottom: 70px;
+}
+
+#contact-text p {
+    font-style: italic;
+    font-size: 18 !important;
+}
