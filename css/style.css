@@ -297,6 +297,10 @@ ol, #page-content ul {
         margin: 30px 0px;
     }
 
+    .full-width-image-link-or-max:not(.column .full-width-image-link-or-max) {
+        margin: 30px 0;
+    }
+
     .image-and-grid > .image-grid {
         margin-top: -10;
     }
