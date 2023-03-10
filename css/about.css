@@ -1,3 +1,9 @@
 #about-text {
     width: 60%;
 }
+
+@media (max-width: 750px) {
+    #about-text {
+        width: 100%;
+    }
+}
