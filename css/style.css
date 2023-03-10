@@ -91,7 +91,7 @@ ol, #page-content ul {
 }
 
 .image-grid-two-columns {
-    grid-template-columns: repeat(auto-fit, minmax(max(350px, 100%/3), 1fr));
+    grid-template-columns: 50% 50%;
 }
 
 .image-grid-two-columns img {
@@ -99,7 +99,7 @@ ol, #page-content ul {
 }
 
 .image-grid-three-columns {
-    grid-template-columns: repeat(auto-fit, minmax(max(300px, 100%/4), 1fr));
+    grid-template-columns: 33% 33% 33%;
 }
 
 .image-grid-three-columns img {
@@ -107,7 +107,7 @@ ol, #page-content ul {
 }
 
 .image-grid-four-columns {
-    grid-template-columns: repeat(auto-fit, minmax(max(250px, 100%/5), 1fr));
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
 .image-grid-four-columns img {
@@ -268,7 +268,34 @@ ol, #page-content ul {
 }
 
 
+@media (max-width: 1050px) {
+
+    .image-grid-four-columns {
+        grid-template-columns: 33% 33% 33%;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .image-grid-three-columns,
+    .image-grid-four-columns {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .image-grid {
+        grid-template-columns: 100%;
+    }
+
+    .image-grid img {
+        height: 300px;
+    }
+}
+
 @media (max-width: 750px) {
+
     .image-with-caption:not(.column) {
         width: 100%;
     }

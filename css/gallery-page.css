@@ -9,3 +9,12 @@
 .gallery-page-grid {
     margin: 20px;
 }
+
+@media (max-width: 750px) {
+
+    .gallery-page-grid {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+}
