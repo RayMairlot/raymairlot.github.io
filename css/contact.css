@@ -7,3 +7,9 @@
     font-style: italic;
     font-size: 18 !important;
 }
+
+@media (max-width: 750px) {
+    #contact-text {
+        width: 100%;
+    }
+}
