@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/gallery-page.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/images/RM Logo favicon.ico">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <header id="header"></header>
+
+        <div id="page-content">
+            <div id="gallery-page-title-container">
+                <h1 id="gallery-page-title">Curve Gradient Ping-Pong</h1>
+                <p id="gallery-page-description">An experiment using Blender's Geometry Nodes using the 'Ping-Pong'
+                    maths operation to 'bounce' lines at the edge of the
+                    video.</p>
+            </div>
+            <div class="vimeo-embed-container centre-element">
+                <iframe src="https://player.vimeo.com/video/724895577?autoplay=1&loop=1&title=0&byline=0&portrait=0"
+                        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </body>
+</html>
