@@ -85,9 +85,11 @@
                 <p>
                     Here is the first section of AN node setup, which deals with scaling the objects:
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/AN Node Setup Scale.png">
-                        <img class=centre-element src="/images/blog/AN Node Setup Scale.png">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/AN Node Setup Scale.png">
+                        <img src="/images/blog/AN Node Setup Scale.png">
                     </a>
+                </div>
                 <p>
                     A key concept of Animation Nodes is to think about repeatable chunks of work. Instead of having to animate each object individually, we create a chunk of work (or in AN terms, a 'Subprogram') that takes in one object and animates it. We can then take that chunk of work and repeat it for as many objects as we need.
                 </p>
@@ -103,9 +105,11 @@
                 <p>
                     You'll now see that the 'Invoke Subprogram' node has changed its input from being 'Iterations' to 'Object List'. Far more useful. The 'Loop Input' node now knows that I will be passing it a list of objects and that I want to run the 'Subprogram' for as many objects in the list.
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/AN After Iterator.png">
-                        <img class=centre-element src="/images/blog/AN After Iterator.png">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/AN After Iterator.png">
+                        <img src="/images/blog/AN After Iterator.png">
                     </a>
+                </div>
                 <p>
                     As for the list of objects, we can do this with a regular Blender object group, so add all your spheres, or whatever confounded shape you've used, add them to a group (Ctrl+G) and name it something completely irrelevant, like 'Group.001'. You know, something that will be completely unintelligible when you come back to this project in a few months. I've been silly and named my group 'Objects in Torus', which almost sounds like a useful name. I'll change it later.
                 </p>
@@ -115,9 +119,11 @@
                 <p>
                     Add an 'Objects from Group' node, choose the group in the node's drop-down list that you just created and then connect its one output to the 'Subprogram's one input, like so:
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/Object Loop.png">
-                        <img class=centre-element src="/images/blog/Object Loop.png">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/Object Loop.png">
+                        <img src="/images/blog/Object Loop.png">
                     </a>
+                </div>
                 <p>
                     That unnerving, unusual feeling, which you're hopefully feeling if my writing has served its purpose, is the feeling of starting to understand something, of making progress. A quite unusual feeling when first working with AN. Make the most of it, because it probably won't last long.
                 </p>
@@ -127,9 +133,11 @@
                 <p>
                     Here are the nodes, connected to the 'Loop Input' node that will actually animate each individual object:
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/AN Node Setup Just Loop.png">
-                        <img class=centre-element src="/images/blog/AN Node Setup Just Loop.png">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/AN Node Setup Just Loop.png">
+                        <img src="/images/blog/AN Node Setup Just Loop.png">
                     </a>
+                </div>
                 <p>
                     The basic idea of how it's animating the object is it is looking at the location of two empties (one either side of the torus) and depending on how close the empties are to the individual object, it should be scaled somewhere between 0 and its original size. The empties are then animated closer and further away from the object which means the objects will then individually scale up or down.
                 </p>
@@ -144,9 +152,11 @@
                 <p>
                     On the left in the screenshot below, you can see the two empties selected, whose falloffs are compared to each object's location:
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/AN Empties.png">
-                        <img class=centre-element src="/images/blog/AN Empties.png">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/AN Empties.png">
+                        <img src="/images/blog/AN Empties.png">
                     </a>
+                </div>
                 <p>
                     They're parented to a larger empty which is animated diagonally along the local 'z' axis as shown above. This is how the effect happens diagonally, as the 'Object Controller Falloff' nodes are set to read the local 'z' and '-z' axis respectively.
                 </p>
@@ -157,9 +167,11 @@
                 <p>
                     The third and thankfully final part (come on, we're nearly at the end now) is to create the billowing wave effect. Here's the node network for the wave effect (I've removed the nodes that handle the scaling for the minute, just to make things a bit simpler):
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/AN Node Setup Just Wave.png">
-                        <img class=centre-element src="/images/blog/AN Node Setup Just Wave.png">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/AN Node Setup Just Wave.png">
+                        <img src="/images/blog/AN Node Setup Just Wave.png">
                     </a>
+                </div>
                 <p>
                     The basic idea is that we are taking the original location of the object and using a 'sin' wave to animate it back and forth on the 'y' axis, adding in a bit of randomness for good measure along the way. The node setup above equates to this equation:
                 </p>

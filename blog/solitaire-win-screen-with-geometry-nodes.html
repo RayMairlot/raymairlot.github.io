@@ -37,30 +37,38 @@
                 <p>
                     This is what it looks like in the viewport; cards are instanced on curves which are instanced along lines, which are instanced along the x axis, so that the cards can appear in front of each other when looking through the camera.
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/Solitaire-Cards-Viewport-Demo.gif">
-                        <img class=centre-element src="/images/blog/Solitaire-Cards-Viewport-Demo.gif">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/Solitaire-Cards-Viewport-Demo.gif">
+                        <img src="/images/blog/Solitaire-Cards-Viewport-Demo.gif">
                     </a>
+                </div>
                 <p>
                     Cards are culled when they are outside of the camera view, which is easy when the camera is orthographic.
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/Camera Cull.png">
-                        <img class=centre-element src="/images/blog/Camera Cull.png">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/Camera Cull.png">
+                        <img src="/images/blog/Camera Cull.png">
                     </a>
+                </div>
                 <p>
                     As well as performance, this is mainly done so that the next card 'cascade' starts as soon as the previous one is off-screen. All cards are instanced at once and appear based on their index using another delete geometry node.
                 </p>
                 <p>
                     Originally I built a single 'cascade' with some nice controls, but then realised I couldn't instance this node group and have random values for each parameter 😐. Instead, I rebuilt it so all lines and meshes are created first and then all the cards instanced at once at the end.
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/Solitaire-Cards-Single-Casdade-Demo.gif">
-                        <img class=centre-element src="/images/blog/Solitaire-Cards-Single-Casdade-Demo.gif">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/Solitaire-Cards-Single-Casdade-Demo.gif">
+                        <img src="/images/blog/Solitaire-Cards-Single-Casdade-Demo.gif">
                     </a>
+                </div>
                 <p>
                     All the cards share the same material and a node group selects the number and suit. The card images are all in one texture in 4 rows and by multiplying the UVs I can change which card image is displayed.
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/Solitaire-Cards-Material-Demo.gif">
-                        <img class=centre-element src="/images/blog/Solitaire-Cards-Material-Demo.gif">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/Solitaire-Cards-Material-Demo.gif">
+                        <img src="/images/blog/Solitaire-Cards-Material-Demo.gif">
                     </a>
+                </div>
                 <p>
                     (In reality, I don't keyframe the node's values, I use the x position of each cascade to select a number between 1 and 52 that gets fed into this.)
                 </p>

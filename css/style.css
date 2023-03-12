@@ -142,13 +142,18 @@ ol, #page-content ul {
     margin-top: -40;
 }
 
-.centre-image-link img,
-.image-with-caption img:not(.column img),
-.full-width-image-link-or-max img {
+.centre-image-link,
+.image-with-caption:not(.column .image-with-caption),
+.full-width-image-link-or-max {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    object-fit: contain;
+    text-align: center;
+}
+
+.centre-image-link img,
+.image-with-caption img:not(.column .image-with-caption img),
+.full-width-image-link-or-max img {
     max-width: 100%;
 }
 

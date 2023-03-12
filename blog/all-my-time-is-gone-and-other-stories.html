@@ -40,9 +40,11 @@
                 <p>
                     My test was successful as the image below shows; two borders are set using a temporary UI and then rendered into one image:
                 </p>
-                    <a class="full-width-image-link-or-max" href="/images/blog/ARB-Multiple-Borders-Demo.gif">
-                        <img class=centre-element src="/images/blog/ARB-Multiple-Borders-Demo.gif">
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/ARB-Multiple-Borders-Demo.gif">
+                        <img src="/images/blog/ARB-Multiple-Borders-Demo.gif">
                     </a>
+                </div>
                 <p>
                     There are a few hurdles before I can say it will be <em>definitely</em> released, such as trying this out on larger scenes. Essentially, the script renders the frame twice and then** combines the results, so if a frame takes a long time to build the BVH or do some volume pre-processing then any time saved by doing a border render might be lost by having to do this pre-processing twice.
                 </p>
