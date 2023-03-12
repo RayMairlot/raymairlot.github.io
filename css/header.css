@@ -1,14 +1,6 @@
 #navigation-bar {
     background-color: black;
     display: flex;
-
-}
-
-#navigation-bar a {
-    font-size: 13;
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
 }
 
 #logo {
@@ -24,8 +16,13 @@
     padding: 0;
 }
 
-#navigation > li {
-    padding: 25px;
+#navigation a {
+    font-size: 13;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    padding: 29.5px;
 }
 
 #navigation > li:hover {
@@ -40,6 +37,10 @@
     #navigation {
         background-color: rgb(94, 94, 94);
         margin: 0;
+    }
+
+    #navigation a {
+        padding: 20px;
     }
 }
 
