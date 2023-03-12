@@ -1,9 +1,15 @@
 body {
     margin: 0;
+    /* Makes the #page-content expand to fill the remaining space on the page
+    so that the footer is always at the bottom. */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #page-content {
     padding: 35px;
+    flex-grow: 1;
 }
 
 #page-content p:first-of-type:not(:only-of-type) {
