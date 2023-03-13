@@ -40,13 +40,22 @@ article h2 {
 }
 
 .post-navigation {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 400px;
+    margin-top: 60px;
+    margin-left: 75px;
 }
 
-#next {
-    margin-left: 25px;
+#next,
+#previous {
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(2, 119, 228);
+    color: white;
+    border-radius: 8px;
+    padding: 12px;
+    width: 150px;
 }
 
 #disqus_thread,
@@ -120,17 +129,6 @@ blockquote {
     width: 95%;
 }
 
-@media (max-width: 500px) {
-
-    .two-column-layout {
-        flex-direction: column;
-    }
-
-    .column {
-        width: 100%;
-    }
-}
-
 @media (max-width: 750px) {
 
     article {
@@ -145,5 +143,34 @@ blockquote {
     .quote {
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .post-navigation {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .two-column-layout {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .post-navigation {
+        grid-template-columns: 100%;
+        width: 100%;
+    }
+
+    #previous:not(:only-child) {
+        margin-bottom: 15px
+    }
+
+    #next,
+    #previous {
+        width: auto;
     }
 }
