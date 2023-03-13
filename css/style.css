@@ -32,7 +32,18 @@ a:not(p > a) {
     font-size: 14;
 }
 
-p, h1, h2, li {
+#page-content p a {
+    text-decoration: none;
+    display: inline-block;
+    height: 22px;
+    border-bottom: solid 3px rgb(2, 119, 228);
+}
+
+#page-content .aside a {
+    height: 16px;
+}
+
+p, h1, h2, li, a {
     color: #3f3f3f;
 }
 
@@ -53,7 +64,7 @@ img {
 #page-content p:not(.aside p),
 #page-content li {
     font-size: 17.5;
-    line-height: 25px;
+    line-height: 28px;
 }
 
 #page-content p:not(.image-with-caption p):not(.aside p):not(#biography p),
