@@ -2,6 +2,7 @@ article {
     margin: 60 150px 70px 150px;
 }
 
+
 article h1 {
     font-size: 30 !important;
     font-weight: normal !important;
@@ -44,6 +45,11 @@ article h2 {
 
 #next {
     margin-left: 25px;
+}
+
+#disqus_thread,
+#disqus_recommendations {
+    margin: 0 150px 0 150px;
 }
 
 .aside {

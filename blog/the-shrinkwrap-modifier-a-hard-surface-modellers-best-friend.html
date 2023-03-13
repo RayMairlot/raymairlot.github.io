@@ -22,22 +22,34 @@
         <div id="page-content">
             <article>
                 <div class='blog-header'>
-                    <a href='/blog/the-shrinkwrap-modifier-a-hard-surface-modellers-best-friend.html'><h1>The Shrinkwrap Modifier: A Hard-Surface Modeller's Best Friend</h1></a>
-                    <p>10/04/2016<p>
+                    <a href='/blog/the-shrinkwrap-modifier-a-hard-surface-modellers-best-friend.html'>
+                        <h1>The Shrinkwrap Modifier: A Hard-Surface Modeller's Best Friend</h1>
+                    </a>
+                    <p>10/04/2016
+                    <p>
                 </div>
                 <p>
-                    This post is mainly about using the Shrinkwrap modifier for modelling, which is below, but there's also a quick update on some of my projects right at the end.
+                    This post is mainly about using the Shrinkwrap modifier for modelling, which is below, but there's
+                    also a quick update on some of my projects right at the end.
                 </p>
                 <h2>My Favourite Modifier</h2>
                 <p>
-                    Before I started the 'Heartbreaker' project I probably wouldn't have said that the Shrinkwrap modifier is one of my favourite modifiers in Blender (not that anyone had <em>actually</em> asked me, or likely ever would). Maybe in the top 10, but only just. I would probably have gone for one of the classics, like the Subsurf or Mirror, you just can't go wrong with those two. However, that's all changed. If anyone ever asks me*, I will say my new favourite modifier, at least regarding modelling - which is what I'm doing most of the time - is the Shrinkwrap. It has become my go-to, problem solving, reliable friend.
+                    Before I started the 'Heartbreaker' project I probably wouldn't have said that the Shrinkwrap
+                    modifier is one of my favourite modifiers in Blender (not that anyone had <em>actually</em> asked
+                    me, or likely ever would). Maybe in the top 10, but only just. I would probably have gone for one of
+                    the classics, like the Subsurf or Mirror, you just can't go wrong with those two. However, that's
+                    all changed. If anyone ever asks me*, I will say my new favourite modifier, at least regarding
+                    modelling - which is what I'm doing most of the time - is the Shrinkwrap. It has become my go-to,
+                    problem solving, reliable friend.
                 </p>
                 <div class='aside'>
                     <p><em>*Which they wont.</em></p>
                 </div>
                 <h2>Are You Insane? And What Does The Shrinkwrap Modifier Even Do?</h2>
                 <p>
-                    No, I am not. A valid question (the second one), thank you (me) for asking. In its simplest form, the Shrinkwrap modifier is tasked with snapping the current object onto the surface of another object. It also has the ability to only snap specific vertices if you specify a vertex group.
+                    No, I am not. A valid question (the second one), thank you (me) for asking. In its simplest form,
+                    the Shrinkwrap modifier is tasked with snapping the current object onto the surface of another
+                    object. It also has the ability to only snap specific vertices if you specify a vertex group.
                 </p>
                 <p>
                     Here we see a simple subdivided plane being shrinkwrapped to the surface of a sphere:
@@ -49,49 +61,69 @@
                     <p> A simple, but I'm sure you'll agree, *Powerful* example.</p>
                 </div>
                 <p>
-                    I think the Shrinkwrap modifier was probably first created as a retopology tool, the snapping allowing you to easily create new, low-poly geometry, over your high-res model, without having to constantly think about manual snapping. Considering this, I'm not sure that 'Shrinkwrap' is actually the best name for it; maybe 'Snap' would have been better. The <em>Snap</em> modifier has a ring to it. But then, who am I to start renaming things? Sure, I was technically the best renamer in the area of Greater London in the years 1993 - 1998*, but I have no <em>official</em> certification for that, so I'll leave <em>actual</em> naming and any subsequent renaming to those that do.
+                    I think the Shrinkwrap modifier was probably first created as a retopology tool, the snapping
+                    allowing you to easily create new, low-poly geometry, over your high-res model, without having to
+                    constantly think about manual snapping. Considering this, I'm not sure that 'Shrinkwrap' is actually
+                    the best name for it; maybe 'Snap' would have been better. The <em>Snap</em> modifier has a ring to
+                    it. But then, who am I to start renaming things? Sure, I was technically the best renamer in the
+                    area of Greater London in the years 1993 - 1998*, but I have no <em>official</em> certification for
+                    that, so I'll leave <em>actual</em> naming and any subsequent renaming to those that do.
                 </p>
                 <div class='aside'>
-                    <p><em>*I retired from the gruelling world of competitive renaming undefeated and vowed never to return, due to the physical stress it caused my body.</em></p>
+                    <p><em>*I retired from the gruelling world of competitive renaming undefeated and vowed never to
+                            return, due to the physical stress it caused my body.</em></p>
                 </div>
                 <h2>How Does Retopology Tie-In To Hard-Surface Modelling? Are You Sure You're Not Insane?</h2>
                 <p>
-                    It's not so much that retopology fits into hard surface modelling it's more that some hard-surface modelling scenarios and retopology share some common needs. Also, please stop asking if I'm insane.
+                    It's not so much that retopology fits into hard surface modelling it's more that some hard-surface
+                    modelling scenarios and retopology share some common needs. Also, please stop asking if I'm insane.
                 </p>
                 <p>
                     There are two scenarios that can be very time-consuming when modelling:
                 </p>
                 <ol>
-                    <li>You have several meshes that all need to conform to the same profile (meaning surface curvature).</li>
+                    <li>You have several meshes that all need to conform to the same profile (meaning surface
+                        curvature).</li>
                     <li>You need to edit or add additional details to a curved surface.</li>
                 </ol>
                 <p>
-                    This is very similar to what retopology requires and these two problems both happen to be the Shrinkwrap modifier's strength: conforming vertices to a specific surface.
+                    This is very similar to what retopology requires and these two problems both happen to be the
+                    Shrinkwrap modifier's strength: conforming vertices to a specific surface.
                 </p>
                 <h2>That's All Well And Good, But Show Me Some Specific Examples</h2>
                 <p>
-                    Please don't be so demanding. I've got some examples from 'Heartbreaker', the project I just literally won't shut up about.
+                    Please don't be so demanding. I've got some examples from 'Heartbreaker', the project I just
+                    literally won't shut up about.
                 </p>
                 <p>
-                    The 'Heartbreaker' Iron Man suit has a tendency to have many separate panels that all conform to the same profile. Below, on the left, is the forearm, which is made of many pieces. They all have the same bulge and crease going through them, which would be time consuming to model manually. Instead, I built one continuous surface to describe the surface I want my mesh to conform to, shown on the right. All the pieces on the left conform to the profile of the mesh on the right (the Shrinkwrap target):
+                    The 'Heartbreaker' Iron Man suit has a tendency to have many separate panels that all conform to the
+                    same profile. Below, on the left, is the forearm, which is made of many pieces. They all have the
+                    same bulge and crease going through them, which would be time consuming to model manually. Instead,
+                    I built one continuous surface to describe the surface I want my mesh to conform to, shown on the
+                    right. All the pieces on the left conform to the profile of the mesh on the right (the Shrinkwrap
+                    target):
                 </p>
                 <div class="image-grid image-grid-two-columns">
-                <div class=''>
-                    <a href="/images/blog/Forearm.png">
-                        <img src="/images/blog/Forearm.png">
-                    </a>
-                </div>
-                <div class=''>
-                    <a href="/images/blog/Forearm shrinkwrap.png">
-                        <img src="/images/blog/Forearm shrinkwrap.png">
-                    </a>
-                </div>
+                    <div class=''>
+                        <a href="/images/blog/Forearm.png">
+                            <img src="/images/blog/Forearm.png">
+                        </a>
+                    </div>
+                    <div class=''>
+                        <a href="/images/blog/Forearm shrinkwrap.png">
+                            <img src="/images/blog/Forearm shrinkwrap.png">
+                        </a>
+                    </div>
                 </div>
                 <p>
-                    Heartbreaker also has many examples of detailing cut into curved panels. Cutting into curved surfaces is notoriously difficult as any sharpening edge loops on those details end up causing undesirable pinching, particularly at corners. It's also very difficult to perfectly maintain a curved surface while adding in new geometry.
+                    Heartbreaker also has many examples of detailing cut into curved panels. Cutting into curved
+                    surfaces is notoriously difficult as any sharpening edge loops on those details end up causing
+                    undesirable pinching, particularly at corners. It's also very difficult to perfectly maintain a
+                    curved surface while adding in new geometry.
                 </p>
                 <p>
-                    Here, the head remains perfectly curved despite having cut details into it, thanks to good ol' Shrinkwrap:
+                    Here, the head remains perfectly curved despite having cut details into it, thanks to good ol'
+                    Shrinkwrap:
                 </p>
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/Head surface close.png">
@@ -99,36 +131,44 @@
                     </a>
                 </div>
                 <p>
-                    Here is a wider view of the top of the head on the left, with its Shrinkwrap counterpart on the right:
+                    Here is a wider view of the top of the head on the left, with its Shrinkwrap counterpart on the
+                    right:
                 </p>
                 <div class="image-grid image-grid-two-columns">
-                <div class=''>
-                    <a href="/images/blog/Head.png">
-                        <img src="/images/blog/Head.png">
-                    </a>
-                </div>
-                <div class=''>
-                    <a href="/images/blog/Head shrinkwrap.png">
-                        <img src="/images/blog/Head shrinkwrap.png">
-                    </a>
-                </div>
+                    <div class=''>
+                        <a href="/images/blog/Head.png">
+                            <img src="/images/blog/Head.png">
+                        </a>
+                    </div>
+                    <div class=''>
+                        <a href="/images/blog/Head shrinkwrap.png">
+                            <img src="/images/blog/Head shrinkwrap.png">
+                        </a>
+                    </div>
                 </div>
                 <p>
-                    The 'eyebrows' in the above image were excluded from the Shrinkwrap by adding all vertices apart from the eyebrow to a vertex group and selecting it on the Shrinkwrap modifier.
+                    The 'eyebrows' in the above image were excluded from the Shrinkwrap by adding all vertices apart
+                    from the eyebrow to a vertex group and selecting it on the Shrinkwrap modifier.
                 </p>
                 <h2>The Process</h2>
                 <ol>
                     <li>Model a simple mesh that describes the curvature you want your mesh(es) to follow*.</li>
                     <li>Add a Shrinkwrap modifier to the mesh(es) you want to conform to your Shrinkwrap object.</li>
                     <li>Select the Shrinkwrap object as the 'Target' on the Shrinkwrap modifier.</li>
-                    <li>If you only want to Shrinkwrap part of your mesh, then create a vertex group that contains all the vertices you want to effect and select that vertex group on the modifier.</li>
+                    <li>If you only want to Shrinkwrap part of your mesh, then create a vertex group that contains all
+                        the vertices you want to effect and select that vertex group on the modifier.</li>
                     <li>If you want, repeat the previous steps to add multiple Shrinkwraps.</li>
                 </ol>
                 <div class='aside'>
-                    <p><em>*If I've already started modelling something, but decide I need a Shrinkwrap, I will sometimes duplicate the object I'm modelling, simplify it, and use it as the Shrinkwrap object.</em></p>
+                    <p><em>*If I've already started modelling something, but decide I need a Shrinkwrap, I will
+                            sometimes duplicate the object I'm modelling, simplify it, and use it as the Shrinkwrap
+                            object.</em></p>
                 </div>
                 <p>
-                    I also like to change the 'Maximum Draw Type' to 'Wire' in the 'Display' panel of the 'Object' tab in the 'Properties Editor' for the Shrinkwrap object so you can see the object you are modelling as well (shown below). Also, you may find it useful to turn on 'Draw All Edges', also in the 'Display' panel and 'Optimal  Display', on the Surbsurf modifier, if you're using one.
+                    I also like to change the 'Maximum Draw Type' to 'Wire' in the 'Display' panel of the 'Object' tab
+                    in the 'Properties Editor' for the Shrinkwrap object so you can see the object you are modelling as
+                    well (shown below). Also, you may find it useful to turn on 'Draw All Edges', also in the 'Display'
+                    panel and 'Optimal Display', on the Surbsurf modifier, if you're using one.
                 </p>
                 <div class='image-with-caption centre-element'>
                     <a href="/images/blog/Head with wire.png">
@@ -138,10 +178,15 @@
                 </div>
                 <h2>When One Shrinkwrap Just Isn't Enough</h2>
                 <p>
-                    Sometimes, creating a good enough Shrinkwrap object would be as complicated as modelling the original object, so not only will I sometimes use several Shrinkwrap objects (instead of one big one), but some of <em>those</em> Shrinkwrap objects have Shrinkwrap modifiers themselves. It's like needing to build scaffolding to be able to build more complicated scaffolding to be able to build the final object.
+                    Sometimes, creating a good enough Shrinkwrap object would be as complicated as modelling the
+                    original object, so not only will I sometimes use several Shrinkwrap objects (instead of one big
+                    one), but some of <em>those</em> Shrinkwrap objects have Shrinkwrap modifiers themselves. It's like
+                    needing to build scaffolding to be able to build more complicated scaffolding to be able to build
+                    the final object.
                 </p>
                 <p>
-                    Here, for example, is the chest piece from Heartbreaker. It's probably the single most complicated piece in the whole suit, shown with all 9 of it's Shrinkwrap objects:
+                    Here, for example, is the chest piece from Heartbreaker. It's probably the single most complicated
+                    piece in the whole suit, shown with all 9 of it's Shrinkwrap objects:
                 </p>
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/Chest-shrinkwrap-comparison.gif">
@@ -149,27 +194,47 @@
                     </a>
                 </div>
                 <p>
-                    The key to this is vertex groups. Each Shrinkwrap object above is responsible for only part of the mesh.
+                    The key to this is vertex groups. Each Shrinkwrap object above is responsible for only part of the
+                    mesh.
                 </p>
                 <h2>Nobody's Perfect</h2>
                 <p>
-                    Despite the unrivalled awesomeness of the Shrinkwrap modifier, it does have a problem, but it can be worked around quite easily.
+                    Despite the unrivalled awesomeness of the Shrinkwrap modifier, it does have a problem, but it can be
+                    worked around quite easily.
                 </p>
                 <p>
-                    When you're moving the vertices of an object that is Shrinkwrapped, what you're seeing is the vertices moving along the surface of the Shrinkwrap object. What's <em>actually</em> happening is that you're moving the vertices in 3D space. This causes the Shrinkwrap modifier to sometimes have a hard time determining which part of the surface the vertices should be on if the vertices are actually very far away from it in 3D space (which can happen when editing the mesh). The vertices will snap to the surface, but might not move smoothly. A quick fix for this is to press the 'Copy' button on the Shrinkwrap modifier to create a duplicate and then press 'Apply' on the copy. You have now applied the effects of the modifier and the vertices are now close to the surface again, allowing smooth movement.
+                    When you're moving the vertices of an object that is Shrinkwrapped, what you're seeing is the
+                    vertices moving along the surface of the Shrinkwrap object. What's <em>actually</em> happening is
+                    that you're moving the vertices in 3D space. This causes the Shrinkwrap modifier to sometimes have a
+                    hard time determining which part of the surface the vertices should be on if the vertices are
+                    actually very far away from it in 3D space (which can happen when editing the mesh). The vertices
+                    will snap to the surface, but might not move smoothly. A quick fix for this is to press the 'Copy'
+                    button on the Shrinkwrap modifier to create a duplicate and then press 'Apply' on the copy. You have
+                    now applied the effects of the modifier and the vertices are now close to the surface again,
+                    allowing smooth movement.
                 </p>
                 <p>
-                    The same 'Copy' and 'Apply' process also needs to be done if you find loop-cut-and-slide, vertex-sliding or other modelling tools start to position vertices weirdly. For example, with vertex-sliding, the vertices will slide dependant on where they are in <em>3D space</em>, which isn't necessarily where they visually appear to be.
+                    The same 'Copy' and 'Apply' process also needs to be done if you find loop-cut-and-slide,
+                    vertex-sliding or other modelling tools start to position vertices weirdly. For example, with
+                    vertex-sliding, the vertices will slide dependant on where they are in <em>3D space</em>, which
+                    isn't necessarily where they visually appear to be.
                 </p>
                 <p>
-                    One other thing is that the Shrinkwrap modifier should probably be before any Subsurf modifiers you might have on the object. If you have a Subsurf first then you're giving the Shrinkwrap more vertices to play with than actually exist. This will only be problematic if you want to eventually apply all the Shrinkwraps on the object though.
+                    One other thing is that the Shrinkwrap modifier should probably be before any Subsurf modifiers you
+                    might have on the object. If you have a Subsurf first then you're giving the Shrinkwrap more
+                    vertices to play with than actually exist. This will only be problematic if you want to eventually
+                    apply all the Shrinkwraps on the object though.
                 </p>
                 <h2>The End, Finally</h2>
                 <p>
-                    You may think using this technique only applies to specific objects or tasks, but I have found myself using it on many projects and I now can't do without it, so give it a try and let me know how it goes.
+                    You may think using this technique only applies to specific objects or tasks, but I have found
+                    myself using it on many projects and I now can't do without it, so give it a try and let me know how
+                    it goes.
                 </p>
                 <p>
-                    As a reward for getting to the end of this post (if you just scrolled all the way down without reading DO NOT LOOK BELOW AT THE REWARD, IT IS NOT FOR YOU), here is the entire 'Heartbreaker' suit with all 113 of it's glorious Shrinkwrap guides:
+                    As a reward for getting to the end of this post (if you just scrolled all the way down without
+                    reading DO NOT LOOK BELOW AT THE REWARD, IT IS NOT FOR YOU), here is the entire 'Heartbreaker' suit
+                    with all 113 of it's glorious Shrinkwrap guides:
                 </p>
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/Body-shrinkwrap-comparison.gif">
@@ -177,14 +242,19 @@
                     </a>
                 </div>
                 <p>
-                    Embrace the Shrinkwrap modifier, love it, cuddle it, hold it at night, whisper sweet nothings into its ear and thank the gods it exists.
+                    Embrace the Shrinkwrap modifier, love it, cuddle it, hold it at night, whisper sweet nothings into
+                    its ear and thank the gods it exists.
                 </p>
                 <h2>A Quick Update On Other Projects</h2>
                 <p>
-                    I haven't got much done regarding 'Heartbreaker' so no update on that, other than I'm now working on fixing the upper-back, which I think is the last major part to be redone.
+                    I haven't got much done regarding 'Heartbreaker' so no update on that, other than I'm now working on
+                    fixing the upper-back, which I think is the last major part to be redone.
                 </p>
                 <p>
-                    A quick update on '<a href=http://www.raymairlot.co.uk/blog/selective-unhide-add-on>Selective-Unhide</a>', my unhiding add-on, is that it now supports not just Object Mode, but also Armature Edit Mode and Armature Pose Mode for hidden bones and bone groups and Mesh Edit Mode for hidden vertices:
+                    A quick update on '<a
+                       href=http://www.raymairlot.co.uk/blog/selective-unhide-add-on>Selective-Unhide</a>', my unhiding
+                    add-on, is that it now supports not just Object Mode, but also Armature Edit Mode and Armature Pose
+                    Mode for hidden bones and bone groups and Mesh Edit Mode for hidden vertices:
                 </p>
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/Selective Unhide All Modes.png">
@@ -198,7 +268,30 @@
                     <em>Ray.</em>
                 </p>
             </article>
-<div class='post-navigation'>    <a id='previous' href='/blog/making-headway.html'><< Previous Post</a>    <a id='next' href='/blog/the-forth-arm.html'>Next Post >></a></div>        </div>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+                // var disqus_config = function () {
+                //     //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                //     this.page.identifier = '291568750785247174'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                // };
+
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://raymairlotblog.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by
+                    Disqus.</a></noscript>
+            <div class='post-navigation'> <a id='previous' href='/blog/making-headway.html'>
+                    << Previous Post</a> <a id='next' href='/blog/the-forth-arm.html'>Next Post >></a></div>
+        </div>
 
         <footer id="footer"></footer>
     </body>
