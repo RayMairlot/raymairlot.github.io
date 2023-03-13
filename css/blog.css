@@ -137,6 +137,11 @@ blockquote {
         margin: 60 0px 70px 0px;
     }
 
+    #disqus_thread,
+    #disqus_recommendations {
+        margin: 0;
+    }
+
     .quote {
         margin-left: 0;
         margin-right: 0;
