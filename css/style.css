@@ -28,10 +28,6 @@ p, p a, li {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-a:not(p > a) {
-    font-size: 14;
-}
-
 p, h1, h2, li {
     color: #3f3f3f;
 }
