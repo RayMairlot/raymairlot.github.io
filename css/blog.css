@@ -80,14 +80,10 @@ article a:not(.image-with-caption a, .button) {
 
 .aside {
     display: inline-block;
+    font-size: 16;
 }
 
 .aside a {
-    height: 16px;
-}
-
-.aside p {
-    font-size: 16;
 }
 
 .aside p:first-of-type {
