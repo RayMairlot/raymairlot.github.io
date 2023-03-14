@@ -33,6 +33,10 @@ h1 {
     grid-gap: 20px !important;
 }
 
+#case-study-sections a {
+    font-size: 16;
+}
+
 #case-study-sections .image-with-caption {
     width: auto !important;
 }
