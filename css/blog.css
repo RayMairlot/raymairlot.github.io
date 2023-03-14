@@ -84,6 +84,7 @@ article a:not(.image-with-caption a, .button) {
 }
 
 .aside a {
+    height: 17px !important;
 }
 
 .aside p:first-of-type {
