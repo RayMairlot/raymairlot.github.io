@@ -24,7 +24,7 @@ h1, h2, a, .image-with-caption * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-p, p > a, li {
+p, p a, li {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
