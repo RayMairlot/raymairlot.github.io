@@ -20,7 +20,7 @@ body {
     margin-bottom: 0;
 }
 
-h1, h2, a, .image-with-caption p {
+h1, h2, a, .image-with-caption * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
