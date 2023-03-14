@@ -28,6 +28,13 @@ h2 {
     width: 80%;
 }
 
+
+@media (max-width: 650px) {
+    .image-grid {
+        grid-template-columns: 50% 50% !important;
+    }
+}
+
 @media (max-width: 500px) {
     #biography {
         flex-direction: column;
@@ -46,5 +53,9 @@ h2 {
 
     #yt-embed-container {
         width: 100%;
+    }
+
+    .image-grid {
+        grid-template-columns: 100% !important;
     }
 }

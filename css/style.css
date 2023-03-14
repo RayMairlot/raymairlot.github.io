@@ -300,10 +300,6 @@ ol, #page-content ul {
         grid-template-columns: 100%;
     }
 
-    .image-grid img {
-        height: 300px;
-    }
-
     .image-grid-full-height img {
         height: auto;
     }
