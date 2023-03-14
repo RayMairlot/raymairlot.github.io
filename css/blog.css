@@ -15,18 +15,18 @@ article h2 {
     text-transform: none !important;
 }
 
-article p a {
+article p a:not(.image-with-caption a) {
     text-decoration: none;
     display: inline-block;
     height: 22px;
     border-bottom: solid 3px rgb(2, 119, 228);
 }
 
-article p a:hover {
+article p a:not(.image-with-caption a):hover {
     color: rgb(2, 119, 228);
 }
 
-article a {
+article a:not(.image-with-caption a, .button) {
     color: #3f3f3f;
 }
 
