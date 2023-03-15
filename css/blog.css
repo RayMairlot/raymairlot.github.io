@@ -18,8 +18,6 @@ article h2 {
 
 article p a:not(.image-with-caption a) {
     text-decoration: none;
-    display: inline-block;
-    height: 22px;
     border-bottom: solid 3px rgb(2, 119, 228);
 }
 
@@ -82,10 +80,6 @@ article a:not(.image-with-caption a, .button) {
 .aside {
     display: inline-block;
     font-size: 16;
-}
-
-.aside a {
-    height: 17px !important;
 }
 
 .aside p:first-of-type {
