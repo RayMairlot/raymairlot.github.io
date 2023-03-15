@@ -63,6 +63,12 @@ h1 {
     width: 100%;
 }
 
+@media (min-width: 1300px) {
+    #case-study-sections > div:nth-child(even) {
+        border-radius: 15px;
+    }
+}
+
 @media (max-width: 750px) {
     #case-study-sections > div {
         padding: 30px 35px;
