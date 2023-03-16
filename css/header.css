@@ -42,12 +42,14 @@
     #navigation a {
         padding: 20px;
     }
-}
 
-@media (max-width: 500px) {
     #logo {
         width: auto;
     }
+}
+
+@media (max-width: 500px) {
+
 
     /* Needed for mobile view - narrow browser window doesn't show issue */
     #logo img {
