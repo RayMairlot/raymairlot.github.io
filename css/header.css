@@ -50,8 +50,13 @@
 
 @media (max-width: 500px) {
 
+    #logo {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 10px;
+    }
 
-    /* Needed for mobile view - narrow browser window doesn't show issue */
+    /* Scales logo down for *very* narrow windows */
     #logo img {
         width: 100%;
     }
