@@ -140,11 +140,13 @@ blockquote {
     width: 95%;
 }
 
-@media (max-width: 750px) {
-
+@media (max-width: 940px) {
     article {
         margin: 60 0px 70px 0px;
     }
+}
+
+@media (max-width: 750px) {
 
     #disqus_thread,
     #disqus_recommendations {
