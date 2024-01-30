@@ -98,9 +98,10 @@ article a:not(.image-with-caption a, .button) {
 pre {
     background-color: lightgrey;
     text-align: left;
-    white-space: pre-line;
+    white-space: pre;
     margin: 35px 0;
     padding: 20px;
+    overflow-x: auto;
 }
 
 .quote {

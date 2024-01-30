@@ -32,9 +32,7 @@
                 <p>
                     Before I get onto the add-on I'll take you through the manual rendering process I used to do. To do a 'background' render (more commonly referred to as a 'command line' render) you open up a Command Prompt (or something similar for non-Windows users), navigate to the Blender installation directory and use something like this:
                 </p>
-                <pre>
-                    blender -b "C:\Path\To\Blend\File.blend" -a
-                </pre>
+<pre>blender -b "C:\Path\To\Blend\File.blend" -a</pre>
                 <p>
                     To break things down, that's:
                 </p>
@@ -47,11 +45,9 @@
                 <p>
                     If I want to render multiple files then I would create a Windows Batch file with the following commands (I've simplified the paths just so they would fit on the page nicely):
                 </p>
-                <pre>
-                    CALL "C:\BlenderPath\blender.exe" -b "C:\blendfile 1.blend" -s 1 -e 50 -a
-                    CALL "C:\BlenderPath\blender.exe" -b "C:\blendfile 2.blend" -s 75 -e 80 -a
-                    CALL "C:\BlenderPath\blender.exe" -b "C:\blendfile 3.blend" -s 211 -e 263 -a
-                </pre>
+<pre>CALL "C:\BlenderPath\blender.exe" -b "C:\blendfile 1.blend" -s 1 -e 50 -a
+CALL "C:\BlenderPath\blender.exe" -b "C:\blendfile 2.blend" -s 75 -e 80 -a
+CALL "C:\BlenderPath\blender.exe" -b "C:\blendfile 3.blend" -s 211 -e 263 -a</pre>
                 <ul>
                     <li>'<strong>CALL</strong>' which opens a program, followed by the path to blender executable to specify blender is the program I want to open</li>
                     <li>'<strong>-s</strong>' and then a frame number, specifying the frame to start rendering from</li>

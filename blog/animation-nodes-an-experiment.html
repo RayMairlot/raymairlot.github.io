@@ -175,9 +175,7 @@
                 <p>
                     The basic idea is that we are taking the original location of the object and using a 'sin' wave to animate it back and forth on the 'y' axis, adding in a bit of randomness for good measure along the way. The node setup above equates to this equation:
                 </p>
-                <pre>
-                    sin(xLocation - ((time + TimeOffset)/Speed)) * RandomNumber * Strength + OriginalLocation
-                </pre>
+<pre>sin(xLocation - ((time + TimeOffset)/Speed)) * RandomNumber * Strength + OriginalLocation</pre>
                 <p>
                     For those that don't know, the 'sin' function produces a wave depending on the number fed to it. Seeing as we want an animated wave we need to pass in a constantly changing value, so we pass in the time value ('Time Info' node), offset it just so the wave starts on the frame I want (the 'Math' node adding 40 to offset by 40 frames), turn down the effect a bit ('Math' node dividing by 5) and finally we subtract the object's original 'x' location so that each object gets a slightly offset sin value (otherwise they would all move the same amount).
                 </p>
