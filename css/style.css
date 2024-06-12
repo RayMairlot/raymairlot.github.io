@@ -33,7 +33,7 @@ p, p a, li {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-p, h1, h2, li {
+p, h1, h2, h2 > a, li {
     color: #3f3f3f;
 }
 

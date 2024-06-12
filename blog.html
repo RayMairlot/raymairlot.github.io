@@ -20,24 +20,397 @@
         <header id="header"></header>
 
         <div id="page-content">
-            <article>
-                <div class='blog-header'>
-                    <a href='/blog/cute-toy-truck.html'><h1>Cute Toy Truck</h1></a>
-                    <p>31/01/2024<p>
-                </div>
-                <p>
+
+            <h1>Blog</h1>
+
+            <div class='centre-element' id='biography'>
+                <img src='images/Profile Round.png'>
+                <p>Ray Mairlot sometimes writes in this here blog. Thankfully, he suspends his preoccupation of writing in the third person when doing so.</p>
+            </div>
+
+            <section class='blog-post-summary-list'>
+                <div class='section-divider'></div>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/cute-toy-truck.html'>Cute Toy Truck</a></h2>
+                    <time datetime='2024-01-31'>31/01/2024</time>
+                    <p class='summary'>
                     A cute, red, toy truck. A small background prop from a bigger project.
-                </p>
-                <div class=' full-width-image-link-or-max centre-element'>
-                    <a href="/images/blog/Toy Truck Test Render 1 WM.png">
-                        <img src="/images/blog/Toy Truck Test Render 1 WM.png" alt="A cute, red, 3D toy truck on wooden floorboards.">
-                    </a>
-                </div>
-                <p>
-                    <em>Ray.</em>
-                </p>
-            </article>
-<div class='post-navigation'>    <a id='previous' href='/blog/saving-images-from-historic-englands-smartframe-viewer.html'><< Previous Post</a></div>        </div>
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/saving-images-from-historic-englands-smartframe-viewer.html'>Saving Images From Historic England's SmartFrame Viewer</a></h2>
+                    <time datetime='2024-01-26'>26/01/2024</time>
+                    <p class='summary'>
+                    The <a href=https://historicengland.org.uk/>Historic England website</a> allows viewing <a href=https://historicengland.org.uk/images-books/archive/collections/aerial-photos/>aerial photos</a> on its website. However, the way it displays them is using a 'SmartFrame', and although it usefully allows panning around the very large images, the main point of it seems to be to prevent downloading, even if the images are in the public domain.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/boids.html'>Boids</a></h2>
+                    <time datetime='2024-01-25'>25/01/2024</time>
+                    <p class='summary'>
+                    I've just had a go at implementing <a href=https://en.wikipedia.org/wiki/Boids>Boids</a> with Blender's <a href=https://docs.blender.org/manual/en/latest/physics/simulation_nodes.html>Simulation Nodes</a> (part of Geometry Nodes) and thought I would write up, briefly, the general process.[...]
+                    The quick idea of boids is that using three simple rules - Alignment, Cohesion, and Separation - you can get particles (or boids) to recreate the 'flocking' behaviour of birds or shoals of fish.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/bodies-in-the-attic-wip.html'>Bodies in the Attic (WIP)</a></h2>
+                    <time datetime='2023-05-31'>31/05/2023</time>
+                    <p class='summary'>
+                    An extract of a larger project, testing out the Geometry Nodes cobweb system I made.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/fester-addams-wip.html'>Fester Addams WIP</a></h2>
+                    <time datetime='2023-04-15'>15/04/2023</time>
+                    <p class='summary'>
+                    Fester Addams WIP, based on the The Addams Family (1991) film depiction.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/solitaire-win-screen-with-geometry-nodes.html'>Solitaire Win Screen With Geometry Nodes</a></h2>
+                    <time datetime='2022-02-15'>15/02/2022</time>
+                    <p class='summary'>
+                    I just remade the 'Solitaire Win Screen' in Blender with Geometry Nodes:[...]
+                    This is what it looks like in the viewport; cards are instanced on curves which are instanced along lines, which are instanced along the x axis, so that the cards can appear in front of each other when looking through the camera.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/10-print-in-blender-using-material-nodes.html'>10 Print in Blender Using Material Nodes</a></h2>
+                    <time datetime='2020-08-21'>21/08/2020</time>
+                    <p class='summary'>
+                    During the Coronavirus lockdown I've been trying to improve my understanding of procedural materials in Blender. During one of my experiments I remembered a video I had seen by the excellent Daniel Shiffman on the <a href=https://www.youtube.com/watch?v=bEyTZ5ZZxZs&vl>Coding Train YouTube channel</a> about '<a href=https://10print.org/>10 Print</a>' and I wondered if I could recreate this in Blender.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/making-macro-maker-a-makers-memoir.html'>Making Macro Maker: A Maker's Memoir</a></h2>
+                    <time datetime='2018-03-14'>14/03/2018</time>
+                    <p class='summary'>
+                    A while ago I was doing a series of repetitive actions in Blender - not an uncommon occurrence - and as usual, I began to think of a Python script that I could write to do this task for me...[...]
+                    But I write a lot of scripts. And the add-ons I write are often project specific and therefore limited in use. Plus, this task was about manipulating object's and their data and applying modifiers and joining objects and moving them and setting their origins and removing doubles and and...and that sounded like a terrible amount of effort.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/animation-nodes-an-experiment.html'>Animation Nodes: An Experiment</a></h2>
+                    <time datetime='2017-11-24'>24/11/2017</time>
+                    <p class='summary'>
+                    I recently made my first foray in learning probably one of the most advanced Blender add-ons that exists: Animation Nodes (AN onwards). And by 'learning' I mean I've done one project in it and don't know when I'll do another.[...]
+                    Here is my first, and possibly last, test:
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/moving-render-layers-and-travelling-in-time.html'>Moving Render Layers and Travelling in Time</a></h2>
+                    <time datetime='2017-04-01'>01/04/2017</time>
+                    <p class='summary'>
+                    Over the past few months I found the need to create two more add-ons for Blender 3D: 'Timecode' and the aptly, but rather unexcitingly named 'Move Render Layers'.[...]
+                    'Timecode' is a small add-on that adds the ability to navigate the timeline by inserting a timecode into the <em>Timeline</em> Editor's header (in the form of HH:MM:SS:FF):
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/node-pong-a-silly-little-idea.html'>Node Pong: A Silly Little Idea</a></h2>
+                    <time datetime='2017-02-04'>04/02/2017</time>
+                    <p class='summary'>
+                    A few months ago I had a silly idea, and as with all my silly ideas I spent far too much time on it. I knew it was silly. I knew because whenever I thought about it I sniggered to myself. I also knew that if I worked on it that the pay-off would be relatively small (compared to the work it would require), but I couldn't resist.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/batch-render-tools-and-the-wonderful-world-of-hummous.html'>Batch Render Tools (and The Wonderful World of Hummous)</a></h2>
+                    <time datetime='2016-07-15'>15/07/2016</time>
+                    <p class='summary'>
+                    During the freelance work that I've been working on for the last couple of months I had to do a lot of long renders of animations. When I'm doing a really long render I tend to use the command line to do a 'background' render so that Blender's UI doesn't have to be visible (which apparently saves a bit of memory), and as with most things recently, that caused me to write an another add-on...
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/how-to-make-things-that-no-one-needs.html'>How to Make Things That No One Needs</a></h2>
+                    <time datetime='2016-07-12'>12/07/2016</time>
+                    <p class='summary'>
+                    I've been working on a freelance project for the past couple of months, hence the radio silence. That work is finished for the minute, so I decided to use this week to finish up a few small projects before settling back in to regular work. One of those small projects was good, the other...
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/all-my-time-is-gone-and-other-stories.html'>All My Time is Gone and Other Stories</a></h2>
+                    <time datetime='2016-05-23'>23/05/2016</time>
+                    <p class='summary'>
+                    It's been 4 weeks since I last wrote here, leaving The Internet to descend into madness as it tries to comprehend a world without regular blog posts from me. "When will the literary drought end?", The Internet cries into the dark. "When?!", it cries again, worried that no-one heard the first time. Fear not, I <em>have</em> heard you. The drought/darkness (delete as appropriate) is over. I have returned, albeit briefly, to quench your thirst for ramblings, quenches and of course, thirsts, or my name's not Ray 'The Thirst-Quencher' Mairlot*.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/the-forth-arm.html'>Modelling The Forth Arm</a></h2>
+                    <time datetime='2016-04-23'>23/04/2016</time>
+                    <p class='summary'>
+                    In my last post I noticed that the forearm models looked a little less than perfect. The forearms were one of the first parts of the model I made and originally I really wanted to make sure they conformed to the reference images I had. Coming back to them now, I think I made them conform a bit too much. Even though they appeared to fit the references, they were a weird shape when viewed from the top. I thought it would be better to reshape them to something more logical even if they didn't match the reference images as well:
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/the-shrinkwrap-modifier-a-hard-surface-modellers-best-friend.html'>The Shrinkwrap Modifier: A Hard-Surface Modeller's Best Friend</a></h2>
+                    <time datetime='2016-04-10'>10/04/2016</time>
+                    <p class='summary'>
+                    This post is mainly about using the Shrinkwrap modifier for modelling, which is below, but there's also a quick update on some of my projects right at the end.[...]
+                    Before I started the 'Heartbreaker' project I probably wouldn't have said that the Shrinkwrap modifier is one of my favourite modifiers in Blender (not that anyone had <em>actually</em> asked me, or likely ever would). Maybe in the top 10, but only just. I would probably have gone for one of the classics, like the Subsurf or Mirror, you just can't go wrong with those two. However, that's all changed. If anyone ever asks me*, I will say my new favourite modifier, at least regarding modelling - which is what I'm doing most of the time - is the Shrinkwrap. It has become my go-to, problem solving, reliable friend.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/making-headway.html'>Making Headway</a></h2>
+                    <time datetime='2016-04-01'>01/04/2016</time>
+                    <p class='summary'>
+                    Despite promising to cover some of the modelling processes I use for the 'Heartbreaker' project, I'm just doing a short post today. Hard surface modelling techniques can wait until I have time (and/or inclination) to do a proper write up.[...]
+                    In my ongoing modelling odyssey* the Heartbreaker project continues, today with the 'finishing' of the head. I say 'finishing' as there are still a few things to do, like a few interior panels that lie behind the exterior panels, but essentially I have finished the main modelling.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/selective-unhide-add-on.html'>Selective Unhide Add-on</a></h2>
+                    <time datetime='2016-03-26'>26/03/2016</time>
+                    <p class='summary'>
+                    '<a href=http://www.raymairlot.co.uk/blog/iron-man-heartbreaker>Heartbreaker</a>' isn't the main thing I'm going to be talking about today. I did do some work on it (as I do every week); it was an update on the head, and I wanted to finish that update before showing a 'before and after' comparison, so until that's fully finished, I'll just show the newer version of the bicep which I also worked on:
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/iron-man-heartbreaker.html'>Iron Man - Heartbreaker</a></h2>
+                    <time datetime='2016-03-17'>17/03/2016</time>
+                    <p class='summary'>
+                    Finally! I worked around the rendering issues mentioned <a href=http://www.raymairlot.co.uk/blog/bugs-more-bugs-and-then-finally-some-work>previously</a>, so I can finally reveal what I've been working on: the Iron Man 'Heartbreaker' suit.[...]
+                    Proof that I actually was working on something. Ha!
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/bugs-more-bugs-and-then-finally-some-work.html'>Bugs, More Bugs and Then Finally Some Work</a></h2>
+                    <time datetime='2016-03-13'>13/03/2016</time>
+                    <p class='summary'>
+                    Well, I've managed to stick to my idea of doing weekly blog posts, but then again, I'm only a week in, so maybe that's not quite the achievement I thought it was when I started this sentence.[...]
+                    It's always a bit pretentious to say you've got a big project but can't talk about it, especially when that limitation is self-imposed, but if I'm going to get the most out of this project, it means working out how to reveal it best. Last week I mentioned that perhaps this would be the week I showed it to the world. Or at least, the small segment of the world that is interested in 3D. Interested in 3D and likely to see my post. Interested in 3D, likely to see my post and actually click on it. Interes...well you get the idea, it's niche:
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/scene-nodes-and-unity.html'>Scene Nodes and Unity</a></h2>
+                    <time datetime='2016-03-04'>04/03/2016</time>
+                    <p class='summary'>
+                    I haven't posted here much, but I'm hoping to do a weekly post of what work I've been doing each week. Seeing as I haven't done a blog post for a while, I'll cover a few things I've been working on in the previous months. Does that sound fun? I don't know, but you've already loaded the page now, so you may as well read a bit more.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/animated-render-border-add-on-and-the-pressures-of-releasing-paid-for-content.html'>Animated Render Border Add-on and The Pressures of Releasing Paid-for Content</a></h2>
+                    <time datetime='2015-07-11'>11/07/2015</time>
+                    <p class='summary'>
+                    A few days ago I released my first add-on on the <a href=https://blendermarket.com/products/animated-render-border>Blender Market</a>: Animated Render Border. It's an add-on that allows the render border feature of blender - which allows a portion of an image be rendered - to be animated and track objects. This can cut down render time by skipping rendering the background (which might be blank if using render layers) or by rendering only a specific part of an image for a whole animated preview. I won't go too much into the details of it as that's all I seem to have done over the last few days, and frankly, I've bored myself by writing the same blurb on all the various social sites and forums. Instead, indulge yourself by watching the (relatively) short video below which is a full demo of the add-on, and of course, feel free to head over to the <a href=https://blendermarket.com/products/animated-render-border/>Blender Market</a> to buy yourself a copy:
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/sickly-sweet.html'>Sickly Sweet</a></h2>
+                    <time datetime='2015-02-25'>25/02/2015</time>
+                    <p class='summary'>
+                    Just a bit of fun :)
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/lego-fluid-effect.html'>Lego Fluid Effect</a></h2>
+                    <time datetime='2015-02-20'>20/02/2015</time>
+                    <p class='summary'>
+                    I released a new video on youtube last week (inspired by <a href=https://vimeo.com/99970136>this</a>), the first in nearly a year. I think I can safely say it went down rather well, getting featured on <a href=http://www.blendernation.com/2015/02/12/lego-fluid-effect/>BlenderNation</a>, which helped it gain 10,000 views in just a few days.[...]
+                    As usual, this project went on longer than I wanted, growing from an idea of just showing the actual fluid part to deciding that it needed some <em>context</em>, meaning I felt I should add some type of scene, rather than just some bricks in blank space. I thought I should at least show the bricks appearing (I managed to resist having a submarine surface, I'll leave that for another day ;) ), and to have them appearing <em>from</em> somewhere I added a brick pile.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/rollercoaster-update-a-game-of-shadows.html'>Rollercoaster Update: A Game of Shadows</a></h2>
+                    <time datetime='2014-05-28'>28/05/2014</time>
+                    <p class='summary'>
+                    You really do start to realise how big a vfx project is once you get to the compositing.[...]
+                    Take shadows for example. This became (and continues to be) perhaps the biggest part of the post processing. I already knew I would have to build any object in 3D if it needed to receive a shadow, but there were several things, having never done a project like this from start to finish, that I didn't realise until I came to the compositing:
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/back-to-the-rollercoaster.html'>Back to The Rollercoaster</a></h2>
+                    <time datetime='2014-05-28'>28/05/2014</time>
+                    <p class='summary'>
+                    In the <a href=http://www.raymairlot.co.uk/blog/slider-puzzle-part-4-and-the-big-project>last post</a> I said I would talk about the Futuristic Car 2 project, but, well, enough time passes between these posts that I'm not always working on the thing I said I would be. I certainly was working on the other project, and I will definitely write about it at some point, but not today. It's always nice to have a little break from longer projects, it's easy to start to get sick of a project if you work on it solidly for too long so I reverted back to something I haven't worked on for over a year: The Rollercoaster project.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/slider-puzzle-part-4-and-the-big-project.html'>Slider Puzzle Part 4 and The Big Project</a></h2>
+                    <time datetime='2014-05-17'>17/05/2014</time>
+                    <p class='summary'>
+                    Well, it's slightly to my surprise that I hadn't actually posted the 4th part of my <a href=https://www.youtube.com/playlist?list=PLcvN4zs8FzNOBhQZJ-AE-UJaGWSgknfFf>tutorial series</a> on my blog:[...]
+                    It's been a few weeks since this video was released, the content of which has all but slipped from my mind, but I presume from the helpful title that it contains the actual animation of the pieces. After re-watching the intro I'm also informed that it contains some optimizations to make the code run a little more efficiently. So that's nice.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/slider-puzzle-part-3-and-bug-reporting.html'>Slider Puzzle Part 3 and Bug Reporting</a></h2>
+                    <time datetime='2014-04-11'>11/04/2014</time>
+                    <p class='summary'>
+                    Well, another week has shot by which means it's time for part 3 of my <a href=https://www.youtube.com/playlist?list=PLcvN4zs8FzNOBhQZJ-AE-UJaGWSgknfFf>tutorial series</a>:[...]
+                    I've also been working on my other main project. I haven't really spoken about it yet or shared anything about it other than that I've done some scripting for it. I'm still not ready to do that, maybe after this tutorial is out the way I can start sharing more about it.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/slider-puzzle-part-2-and-more-scripting.html'>Slider Puzzle Part 2 and More Scripting</a></h2>
+                    <time datetime='2014-04-06'>06/04/2014</time>
+                    <p class='summary'>
+                    Here is the second part of the Slider Puzzle Tutorial, this part focuses on unwrapping and texturing the grid:[...]
+                    I think I just need to confirm that while I said there <a href=https://www.raymairlot.co.uk/blog/creating-the-grid-and-the-end-of-tutorials>wouldn't be any more tutorials</a> on a regular basis, that only comes into effect after this tutorial series is over. There are 2 more parts of this current tutorial still to be released, after that, it's a bit less certain.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/creating-the-grid-and-the-end-of-tutorials.html'>Creating The Grid and The End of Tutorials</a></h2>
+                    <time datetime='2014-03-29'>29/03/2014</time>
+                    <p class='summary'>
+                    Well, it's certainly been a long time since my <a href=https://www.raymairlot.co.uk/blog/slider-puzzle>last video</a>. Here's the first part of the tutorial that accompanies it:[...]
+                    I had actually planned on stopping doing tutorials, or at least 'ramping down'. I got a job in November (unfortunately not related to 3D or graphics), so my spare time is a little more precious now.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/robot-vs-vacuum.html'>Robot vs Vacuum</a></h2>
+                    <time datetime='2013-11-21'>21/11/2013</time>
+                    <p class='summary'>
+                    Just a quick 3D re-doing of an old illustration:[...]
+                    I had wanted to call this 'Robot vs Hoover' but I think it's only the UK and a few other places that use the word hoover, which is a brand name, as the alternative word for vacuum cleaner. For the sake of international understanding the name had to change. It was a big sacrifice.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/slider-puzzle.html'>Slider Puzzle</a></h2>
+                    <time datetime='2013-11-08'>08/11/2013</time>
+                    <p class='summary'>
+                    Well the weeks have rolled on since my last video and finally the new effect is finished. This took a while...[...]
+                    This video will eventually lead to my first tutorial really that focuses solely on python in blender. The script I wrote can basically take a few parameters such as the grid size, the number of moves (to mix the puzzle, the more the better/slower) and the number of frames each move should take.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/icing-text-tutorial.html'>Icing Text Tutorial</a></h2>
+                    <time datetime='2013-10-08'>08/10/2013</time>
+                    <p class='summary'>
+                    So here's my latest tutorial based on the <a href=https://www.raymairlot.co.uk/blog/ice-and-icing>Icing Effect</a> from a few videos back:[...]
+                    There's not a huge amount to say specifically about the techniques demonstrated other than it solely focuses on the creating of the icing and not the materials or rendering, but I talk about that in the video anyway. As often happens, I managed to improve the technique from the original video as I was preparing for the tutorial (more on that in a separate post), which is helpful because I wasn't particularly looking forward to recording this. It was a difficult effect (as they all seem to be) and the technique was particularly hard to develop as there didn't seem to be a definite explanation as to why certain things had to be done, which kind of undermines the point of a tutorial which is to teach.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/inflating-text.html'>Inflating Text</a></h2>
+                    <time datetime='2013-09-17'>17/09/2013</time>
+                    <p class='summary'>
+                    Introducing my latest effect, Inflating Text:[...]
+                    So this effect was a real tough one, it was really difficult at times to get it finished. I had to switch techniques after having worked on it for a few days and had already given up on several other effects when I realised they wouldn't work, so it felt like it took a long time to complete.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/ice-and-icing.html'>Ice and Icing</a></h2>
+                    <time datetime='2013-08-09'>09/08/2013</time>
+                    <p class='summary'>
+                    I've put the rollercoaster project on hold for a bit. I did a bit of work on it the other day, which I'll talk about in a separate post, and I might work on it as a break from the current project but I just feel I should be focusing on work for my showreel.[...]
+                    While the rollercoaster project is something that will be included in my reel it's a bit more general than my modelling 'remit'.  Sure, it has modelling, but it's focus is vfx which is a bit more general. I've always heard you should be quite specific in your reel and that it should clearly represent what you want to do so I'm working on a more modelling heavy project. I'm not going to talk about it at the moment, for some reason I like to keep most of my projects secret, as if I've got a huge audience waiting in suspense. But I'll do a few posts once it's out, it's a complex project (for me) so that may be a while.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/extracting-ripples-from-footage.html'>Extracting ripples from footage</a></h2>
+                    <time datetime='2013-07-11'>11/07/2013</time>
+                    <p class='summary'>
+                    As the rollercoaster project continues this blog post will look at a technique I used to displace the reflection of the rollercoaster in the river reflection.[...]
+                    The river, where the rollercoaster is being reflected is obviously not a flat surface in real life and so in some way that surface needs to be recreated so our reflection also isn't completely flat. There's a couple of options at this point and they separate into either using geometry to displace the reflection during the render or by creating an effect in the compositor as a post-process.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/inverted-cameras-for-vector-blurring-reflections.html'>Inverted Cameras For Vector Blurring Reflections</a></h2>
+                    <time datetime='2013-06-24'>24/06/2013</time>
+                    <p class='summary'>
+                    It's a catchy post title I know.[...]
+                    Technically this is the first post on my own site about the vfx rollercoaster project I'm working on, so if you want to catch up have a look at some of the previous posts that I ported over from my other site.[...]
+                    At the end of the last blog post I said something about using an inverted camera so that vector blur would work for reflections. I did indeed get this to work and seeing as I can't find much mention of either an alternative method or this method, I'll explain a little further.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/rollercoaster-shot-3.html'>Rollercoaster: Shot 3</a></h2>
+                    <time datetime='2013-05-22'>22/05/2013</time>
+                    <p class='summary'>
+                    The problem of writing a blog post is that while I'm writing it I feel I should be working on the thing I'm writing about. That's probably why it's been roughly a month since the last blog post even though I said it would be every Wednesday. The trouble is it doesn't always feel that there's a blog post worthy amount of work done. Maybe I should do smaller more regular updates.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/rollercoaster-shading-and-layout-update.html'>Rollercoaster: Shading and layout update</a></h2>
+                    <time datetime='2013-04-17'>17/04/2013</time>
+                    <p class='summary'>
+                    So it's been a couple of weeks since the last update but things have advanced quite a bit. I'm still working on 'Shot 2' but the tracks have been laid out, rendering tests have been done and shading has started.[...]
+                    One of the first things I did was set up the track which was simple enough and just meant scaling the imported (from the other scene) track so everything was roughly the correct size and then match it to the geometry I had already built that represents the buildings. You can also see the support struts that I've made which 'hold up' the building, because it's not like it would end up pulling down the building or anything...
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/rollercoaster-update.html'>Rollercoaster Update</a></h2>
+                    <time datetime='2013-03-29'>29/03/2013</time>
+                    <p class='summary'>
+                    It was a long week last week. Long enough that I didn't do a blog post and barely did any work on the rollercoaster project. A week filled with waiting around for various renders to finish. Unfortunately, the renders weren't for this project but for a <a href=http://www.youtube.com/watch?v=TbYcU3AfM0g>personal project</a> that I finally finished yesterday. But that's not to say that there's not been an update to this project, after last weeks blog post I had a few days of working on it and managed to get some important steps completed.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/rollercoaster-tracking-and-construction.html'>Rollercoaster: Tracking and Construction</a></h2>
+                    <time datetime='2013-03-13'>13/03/2013</time>
+                    <p class='summary'>
+                    In our last post we outlined how we got on getting our footage for this rollercoaster project. I wanted to get started pretty quickly with this project and I'd actually already started modelling the rollercoaster before we had the footage, but seeing as it was the tracking that I thought would give the most problems I changed focus to trying to get Shot 2 in our sequence tracked. This would effectively work as our test shot; if we could get this shot done we could continue with the rest of the project, and if I decided it couldn't be done then we would move on to something else. I think I was right about this being the most difficult part (at least so far).
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/life-is-a-rollercoaster.html'>Life Is A Rollercoaster</a></h2>
+                    <time datetime='2013-03-07'>07/03/2013</time>
+                    <p class='summary'>
+                    Unlike the other posts this was written by Matthew Griffin and not by me.]</strong>[...]
+                    I'm delighted to be on your screen telling you what our new project is all about. Put simply, we're going to put a rollercoaster in a town centre. London was lucky enough to be graced with its one whole day of Spring on Tuesday, so we took our opportunity to go filming in the small town of Kingston in South West London to get our source footage.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/blender-3d-hdri-background-replacement.html'>Blender 3D HDRI Background Replacement</a></h2>
+                    <time datetime='2011-09-09'>09/09/2011</time>
+                    <p class='summary'>
+                    This is just a quick post (I hope) with a tip on how to render a different background when using HDRI lighting in Blender 3D. As you can see from the images on my <a href=www.raymairlot.co.uk>gallery</a> I generally just render a single object and don't really make a scene for it. The downside of this is that if the object is reflective it doesn't have anything to reflect in the empty scene and looks plain and unrealistic.
+                    </p>
+                </article>
+
+                <article class='blog-post-summary-box'>
+                    <h2><a href='/blog/new-video-blender-fracture-and-particle-explosion.html'>Blender Fracture and Particle Explosion Tutorial</a></h2>
+                    <time datetime='2011-08-21'>21/08/2011</time>
+                    <p class='summary'>
+                    I've just finished my latest video and thought I would give a few details (ok, it turned into quite a few details) as to how it was created. The finished result is below.[...]
+                    There are several different elements that came into play to create the finished result:
+                    </p>
+                </article>
+            </section>
+
+        </div>
 
         <footer id="footer"></footer>
     </body>

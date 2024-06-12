@@ -1,190 +1,118 @@
-article {
-    margin: 60 150px 70px 150px;
+h1 {
+    font-size: 30;
+    text-align: center;
+}
+
+
+#biography {
+    width: 600;
+    display: flex;
+    margin-top: 50px;
+}
+
+
+#biography img {
+    width: 75px;
+    height: 75px;
+    align-self: center;
+}
+
+
+#biography p {
+    font-style: italic;
+    margin-left: 30px;
+}
+
+
+.blog-post-summary-list {
+    margin: 50px 150px 70px 150px;
     max-width: 900px;
 }
 
 
-article h1 {
-    font-size: 30 !important;
+.blog-post-summary-list > .section-divider {
+    margin-bottom: 75;
+}
+
+
+.blog-post-summary-box {
+    margin-bottom: 75;
+}
+
+
+.blog-post-summary-box > h2 > a {
+    text-decoration: none;
+}
+
+
+.blog-post-summary-box > h2 {
+    font-size: 25 !important;
     font-weight: normal !important;
+    text-align: left;
 }
 
-article h2 {
-    font-size: 22 !important;
-    margin-top: 70px;
-    margin-bottom: 40px;
-    text-transform: none !important;
-}
 
-article p a:not(.image-with-caption a) {
-    text-decoration: none;
-    border-bottom: solid 3px rgb(2, 119, 228);
-}
-
-article p a:not(.image-with-caption a):hover {
-    color: rgb(2, 119, 228);
-}
-
-article a:not(.image-with-caption a, .button) {
-    color: #3f3f3f;
-}
-
-.blog-header {
-    border-style: solid;
-    border-color: rgb(218, 218, 218);
-    border-width: 0 0 1px 0;
-    padding-bottom: 30px;
-    margin-bottom: 50px;
-}
-
-.blog-header h1 {
-    margin-top: 0;
-    margin-bottom: 20;
-    display: inline-block;
-}
-
-.blog-header a {
-    text-decoration: none;
-}
-
-.blog-header p {
+.blog-post-summary-box > time {
     margin: 0 !important;
     font-family: Verdana, Geneva, Tahoma, sans-serif !important;
     font-size: 14 !important;
+    color: #3f3f3f;
 }
 
-.post-navigation {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    width: 400px;
-    margin-top: 60px;
-    margin-left: 75px;
+
+.blog-post-summary-box > .summary {
+    position: relative;
+    display: block;
+    height: 85px;
+    overflow: hidden;
 }
 
-#next,
-#previous {
+
+.blog-post-summary-box > .summary:after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(rgba(255, 0, 0, 0) 50%,
+            rgb(255, 255, 255) 95%);
+    pointer-events: none;
+}
+
+
+.blog-post-summary-box > .summary > a {
+    pointer-events: initial;
+    cursor: text;
     text-decoration: none;
-    text-align: center;
-    background-color: rgb(2, 119, 228);
-    color: white;
-    border-radius: 8px;
-    padding: 12px;
-    width: 150px;
+    color: #3f3f3f;
 }
 
-#disqus_thread,
-#disqus_recommendations {
-    margin: 0 150px 0 150px;
+
+@media (max-width: 650px) {
+    #biography {
+        flex-direction: column;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    #biography p {
+        text-align: center;
+        margin: 30px 0px 0px 0px;
+    }
+
+    .blog-post-summary-box > .summary {
+        height: 125px;
+    }
+
+    .blog-post-summary-box {
+        margin-bottom: 55;
+    }
 }
 
-.aside {
-    display: inline-block;
-    font-size: 16;
-}
-
-.aside p:first-of-type {
-    margin-top: 0;
-}
-
-.aside p:last-of-type {
-    margin-bottom: 0;
-}
-
-.twitter-tweet {
-    margin-top: 40px !important;
-    margin-bottom: 40px !important;
-}
-
-pre {
-    background-color: lightgrey;
-    text-align: left;
-    white-space: pre;
-    margin: 35px 0;
-    padding: 20px;
-    overflow-x: auto;
-}
-
-.quote {
-    background-color: rgb(238, 238, 238);
-    margin: 45px 30px;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-}
-
-.quote-open, .quote-close {
-    font-weight: bold;
-    font-size: 40;
-}
-
-.quote-open::before {
-    content: open-quote;
-}
-
-.quote-close {
-    margin-top: auto;
-    margin-bottom: -15px
-}
-
-.quote-close::after {
-    content: close-quote;
-}
-
-blockquote {
-    font-style: italic;
-    margin: 20px 5px 20px 10px;
-}
-
-#yt-embed-container {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 95%;
-}
 
 @media (max-width: 940px) {
-    article {
+    .blog-post-summary-list {
         margin: 60 0px 70px 0px;
-    }
-}
-
-@media (max-width: 750px) {
-
-    #disqus_thread,
-    #disqus_recommendations {
-        margin: 0;
-    }
-
-    .quote {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .post-navigation {
-        margin-left: 0px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .two-column-layout {
-        flex-direction: column;
-    }
-
-    .column {
-        width: 100%;
-    }
-
-    .post-navigation {
-        grid-template-columns: 100%;
-        width: 100%;
-    }
-
-    #previous:not(:only-child) {
-        margin-bottom: 15px
-    }
-
-    #next,
-    #previous {
-        width: auto;
     }
 }
