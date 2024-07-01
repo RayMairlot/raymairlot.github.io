@@ -36,11 +36,6 @@ h1 {
 }
 
 
-.blog-post-summary-list {
-    border: 1px solid black;
-}
-
-
 .section-divider {
     margin: 50px 0px 75px 0px;
 }
@@ -106,10 +101,13 @@ h1 {
 
 
 #blog-sidebar {
-    border: 1px solid black;
     margin-left: 20px;
-    width: 120px;
     flex-shrink: 0;
+    padding-left: 20px;
+    border-style: solid;
+    border-color: rgb(218, 218, 218);
+    border-width: 0 0 0 1px;
+    display: inline-block;
 }
 
 
@@ -120,10 +118,23 @@ h1 {
 }
 
 
+#blog-sidebar > h3 {
+    font-size: 18;
+    font-weight: 100;
+    margin: 0px 0px 20px 0px;
+}
+
+
 #blog-sidebar > #categories > li {
-    margin: 5px;
+    margin: 0px 0px 10px 5px;
+    padding: 0px 10px;
     background-color: rgb(207, 207, 207);
     border-radius: 25px;
+    clear: both;
+    font-size: 13;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    float: left;
+    line-height: 1.75;
 }
 
 
