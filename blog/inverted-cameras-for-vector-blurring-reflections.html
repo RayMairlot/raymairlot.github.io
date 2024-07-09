@@ -35,7 +35,7 @@
                     It's a catchy post title I know.
                 </p>
                 <p>
-                    Technically this is the first post on my own site about the vfx <a href=categories/rollercoaster.html>rollercoaster project</a> I'm working on, so if you want to catch up have a look at some of the previous posts that I ported over from my other site.
+                    Technically this is the first post on my own site about the vfx <a href='categories/rollercoaster.html'>rollercoaster project</a> I'm working on, so if you want to catch up have a look at some of the previous posts that I ported over from my other site.
                 </p>
                 <p>
                     At the end of the last blog post I said something about using an inverted camera so that vector blur would work for reflections. I did indeed get this to work and seeing as I can't find much mention of either an alternative method or this method, I'll explain a little further.
@@ -51,7 +51,7 @@
                 </p>
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/9148903854d.png">
-                        <img src="/images/blog/9148903854d.png" alt="A diagram which is split horizontally by a green line. Above the green line pointing down is a red camera. Below the green line pointing up is a blue camera.">
+                        <img src="/images/blog/9148903854d.png">
                     </a>
                 </div>
                 <p>
@@ -67,14 +67,14 @@
                 <div class="column">
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/2211282.png">
-                        <img src="/images/blog/2211282.png" alt="A render from within Blender 3D showing a blue rollercoaster track twisting around a bridge that crosses a river. The track's reflection is visible in the river. The track comes from the right of the image and curves around, under one of the bridge's arches, appears from behind the bridge, rises up and continues left into the distance.">
+                        <img src="/images/blog/2211282.png">
                     </a>
                 </div>
                 </div>
                     <div class="column">
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/1286989.png">
-                        <img src="/images/blog/1286989.png" alt="A screenshot from within Blender 3D showing a frame of a video of a bridge that crosses a river. In the river, in the place of the reflection of the bridge, is an upside down 3D bridge, with a rollercoaster coming out from one of its arches.">
+                        <img src="/images/blog/1286989.png">
                     </a>
                 </div>
                 </div>
@@ -86,7 +86,7 @@
                 It's actually still useful because I use the same technique to reflect the shadow pass that I composite over the footage, as with the reflections the shadow pass wasn't showing up shadows of the reflected geometry, so this also solves that.
             </p>
             <p>
-                The only downside at the minute is that Blender can't render multiple cameras per frame so you have to render out the reflection camera (as .exr's to preserve the vector pass accurately) first and then composite it in (which kind of cancels out the 'saves render time' reason). This may well change with the <a href=https://github.com/dfelinto/blender/tree/multiview>multi view project</a> that is being developed at the minute, but I'm not sure if that will allow different render layers to be visible per camera, so it may not help.
+                The only downside at the minute is that Blender can't render multiple cameras per frame so you have to render out the reflection camera (as .exr's to preserve the vector pass accurately) first and then composite it in (which kind of cancels out the 'saves render time' reason). This may well change with the <a href='https://github.com/dfelinto/blender/tree/multiview'>multi view project</a> that is being developed at the minute, but I'm not sure if that will allow different render layers to be visible per camera, so it may not help.
             </p>
             <p>
                 <em>Ray.</em>

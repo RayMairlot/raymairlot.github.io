@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <p>
-                    As the <a href=categories/rollercoaster.html>rollercoaster project</a> continues this blog post will look at a technique I used to displace the reflection of the rollercoaster in the river reflection.
+                    As the <a href='categories/rollercoaster.html'>rollercoaster project</a> continues this blog post will look at a technique I used to displace the reflection of the rollercoaster in the river reflection.
                 </p>
                 <p>
                     The river, where the rollercoaster is being reflected is obviously not a flat surface in real life and so in some way that surface needs to be recreated so our reflection also isn't completely flat. There's a couple of options at this point and they separate into either using geometry to displace the reflection during the render or by creating an effect in the compositor as a post-process.
@@ -49,14 +49,14 @@
                 <div class="column">
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/6316527.png">
-                        <img src="/images/blog/6316527.png" alt="A black and white picture showing white ripples of a reflection of a bridge on a black background.">
+                        <img src="/images/blog/6316527.png">
                     </a>
                 </div>
                 </div>
                     <div class="column">
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/5551233.png">
-                        <img src="/images/blog/5551233.png" alt="A render from within Blender 3D showing a blue rollercoaster track twisting around a bridge that crosses a river. The track's reflection is faintly visible in the river. The track comes from the right of the image and curves around, under one of the bridge's arches, appears from behind the bridge, rises up and continues left into the distance.">
+                        <img src="/images/blog/5551233.png">
                     </a>
                 </div>
                 </div>
@@ -65,7 +65,7 @@
                 On the left you can see the ripples I extracted from the footage using colour correction and on the right you can see a reflection that has been displaced (albeit very faintly at this resolution). I'm currently isolating the water in the original footage with a mask, which isn't animated, so I'll probably try and create another render layer which can be used to do this automatically. I don't exactly enjoy animating masks.
             </p>
             <p>
-                It's not perfect at the minute and will no doubt go through a lot of fine tuning before it looks right, and of course this was without the <a href=https://www.raymairlot.co.uk/blog/inverted-cameras-for-vector-blurring-reflections>motion blur applied to it</a>.
+                It's not perfect at the minute and will no doubt go through a lot of fine tuning before it looks right, and of course this was without the <a href='https://www.raymairlot.co.uk/blog/inverted-cameras-for-vector-blurring-reflections'>motion blur applied to it</a>.
             </p>
             <p>
                 The same thing has to also be done for any shadows that appear in the reflection, such as the shadows cast onto the reflected bridge, but it's easy to apply the effect again by grouping the nodes and creating another instance.

@@ -41,13 +41,13 @@
                     I thought to myself that it would be so much simpler if I could simply take the actions I was already doing - which were pretty straightforward when done through the UI - and just record them. Other software has this functionality: Word and a few of the other Office products have 'Macros' while Adobe's offering is 'Actions'. Both produce the same results: record a sequence of tasks, save it and then play those actions back any time on the selected content.
                 </p>
                 <p>
-                    I looked into whether Blender had any similar functionality. I knew it didn't really have anything like that built-in. <a href=https://blender.stackexchange.com/questions/6409/possible-to-replay-repetitive-tasks-using-python>Common advice</a> is to pull down the <em>Info Editor</em> window, copy the actions that are listed there and paste them into the <em>Text Editor</em> and run them. This does technically work, but this workflow is itself repetitive.
+                    I looked into whether Blender had any similar functionality. I knew it didn't really have anything like that built-in. <a href='https://blender.stackexchange.com/questions/6409/possible-to-replay-repetitive-tasks-using-python'>Common advice</a> is to pull down the <em>Info Editor</em> window, copy the actions that are listed there and paste them into the <em>Text Editor</em> and run them. This does technically work, but this workflow is itself repetitive.
                 </p>
                 <p>
                     There's even an add-on that comes with Blender called 'Macros Recorder', which does automatically record a series steps to a text file and inserts it into a script ready to be run. But that add-on doesn't have the nicest of UIs and at best I would describe it as 'cryptic', even though, once worked out, it is quite simple to use. Nevertheless, when comparing these options* with Word's macros or Photoshop's actions, they fall somewhat short, which tempted me to make my own add-on.
                 </p>
                 <div class='aside'>
-                    <p><em>*I've just found another add-on, <a href=http://blenderaddonlist.blogspot.co.uk/2014/09/addon-macro-menu.html>here</a>.</em></p>
+                    <p><em>*I've just found another add-on, <a href='http://blenderaddonlist.blogspot.co.uk/2014/09/addon-macro-menu.html'>here</a>.</em></p>
                 </div>
                 <p>
                     Now, you may be thinking "But weren't you complaining earlier that you right a lot of add-ons?" and the answer is "Yes", or at least "Yes, <em>but</em>..." I <em>do</em> write a lot of add-ons and I have, in the past, sometimes got caught up in writing an add-on as a bit of a distraction instead of just getting on with whatever task the add-on is meant to be helping with, <em>but</em>, <em>if</em> the add-on is helpful to many projects instead of just one and <em>if</em> I can see that maybe this add-on would be popular and useful enough to potentially sell, then I give in and allow myself to have a bit of a play with some code.
@@ -57,7 +57,7 @@
                 </p>
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/Macro Maker first screenshot.png">
-                        <img src="/images/blog/Macro Maker first screenshot.png" alt="A screenshot of a panel in Blender 3D called 'Record Macro'. There are 'Record', 'Save' and 'Discard' macro buttons, a 'Macro Name' property and a column of entries labelled 'Rotate', 'Translate' and 'Toggle Editmode'.">
+                        <img src="/images/blog/Macro Maker first screenshot.png">
                     </a>
                 </div>
                 <p>
@@ -68,7 +68,7 @@
                 </ul>
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/Macro Maker Demo - Editing.gif">
-                        <img src="/images/blog/Macro Maker Demo - Editing.gif" alt="A gif of the Blender 3D 3D View. On the left is a panel called 'Macro Maker'. A button that says 'Record macro' is pressed, the cube in the 3d view is rotated and translated and entries called 'Rotate' and 'Translate' appear in the panel on the left.">
+                        <img src="/images/blog/Macro Maker Demo - Editing.gif">
                     </a>
                 </div>
                 <ul>
@@ -83,7 +83,7 @@
                 </p>
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/Macro Maker Context Entry.png">
-                        <img src="/images/blog/Macro Maker Context Entry.png" alt="A screenshot of the context menu in Blender 3D. At the bottom of the menu is a highlighted item with the label 'Add Property to macro' with a red circle next to it.">
+                        <img src="/images/blog/Macro Maker Context Entry.png">
                     </a>
                 </div>
                 <p>
@@ -94,7 +94,7 @@
                 </p>
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/Macro Maker UI.png">
-                        <img src="/images/blog/Macro Maker UI.png" alt="A screenshot of the toolshelf in Blender 3D. There are panels called 'Macro Maker' and 'Manage Macros'. The 'Macro Maker' panel has a button called 'Record Macro' and a column of buttons labelled 'Macro 3', 'Macro 4' and 'Convert finished lego piece'. Each button has button with a cog icon next to it. The 'Manage Macros' panel has a 'Delete All Macros' and an 'Export Macros' button.">
+                        <img src="/images/blog/Macro Maker UI.png">
                     </a>
                 </div>
                 <p>
@@ -109,7 +109,7 @@
                     <li>Properties on the <em>object</em> can be recorded, but I can't yet record properties on an object's materials or modifiers.</li>
                 </ul>
                 <p>
-                    There are also a few technical things that need to be changed, but I think for the most part it would just take time. As for <em>why</em> I'm not continuing to work on it, the answer is 2.8. Blender is undergoing heavy development. Heavy enough that the very specific Python APIs I'm using might not even exist when 2.8 is finished (I'm already having to prepare for the fact that my existing add-ons, including the one I <a href=https://blendermarket.com/products/animated-render-border/>sell</a> will have to be updated, as some critical parts of the API are changing), so I'm going to wait until 2.8 is out before I work on it again.
+                    There are also a few technical things that need to be changed, but I think for the most part it would just take time. As for <em>why</em> I'm not continuing to work on it, the answer is 2.8. Blender is undergoing heavy development. Heavy enough that the very specific Python APIs I'm using might not even exist when 2.8 is finished (I'm already having to prepare for the fact that my existing add-ons, including the one I <a href='https://blendermarket.com/products/animated-render-border/'>sell</a> will have to be updated, as some critical parts of the API are changing), so I'm going to wait until 2.8 is out before I work on it again.
                 </p>
                 <p>
                     There is also a slightly different problem which makes me slightly wary of further development. From talking to a few people on Twitter about the add-on, I'm slightly worried people haven't thought about how macros actually work (in any software, not just my add-on) and they may have difficulty in adapting their current way of thinking when trying to use the add-on.

@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <p>
-                    I released a new video on youtube last week (inspired by <a href=https://vimeo.com/99970136>this</a>), the first in nearly a year. I think I can safely say it went down rather well, getting featured on <a href=http://www.blendernation.com/2015/02/12/lego-fluid-effect/>BlenderNation</a>, which helped it gain 10,000 views in just a few days.
+                    I released a new video on youtube last week (inspired by <a href='https://vimeo.com/99970136'>this</a>), the first in nearly a year. I think I can safely say it went down rather well, getting featured on <a href='http://www.blendernation.com/2015/02/12/lego-fluid-effect/'>BlenderNation</a>, which helped it gain 10,000 views in just a few days.
                 </p>
                 <div id="yt-embed-container" class="centre-element">
                     <div class="embedtool">
@@ -43,7 +43,7 @@
                     As usual, this project went on longer than I wanted, growing from an idea of just showing the actual fluid part to deciding that it needed some <em>context</em>, meaning I felt I should add some type of scene, rather than just some bricks in blank space. I thought I should at least show the bricks appearing (I managed to resist having a submarine surface, I'll leave that for another day ;) ), and to have them appearing <em>from</em> somewhere I added a brick pile.
                 </p>
                 <p>
-                    Annoyingly, the 'build up' part' was actually more challenging than the fluid as I had a few problems rendering. The build up is done with particles that are affected by an 'explode' modifier, and despite displaying correctly in the viewport, the render would only read a few frames of the particle cache before getting 'stuck' and no longer update. I presume this is a bug and not a <a href=http://wiki.blender.org/index.php/Dev:Source/Data_System/Dependency_Graph/Overview>dependancy</a> graph issue as it's only the render which doesn't work, but narrowing down the problem to a small enough sample to be able to submit it as a bug may be challenging.
+                    Annoyingly, the 'build up' part' was actually more challenging than the fluid as I had a few problems rendering. The build up is done with particles that are affected by an 'explode' modifier, and despite displaying correctly in the viewport, the render would only read a few frames of the particle cache before getting 'stuck' and no longer update. I presume this is a bug and not a <a href='http://wiki.blender.org/index.php/Dev:Source/Data_System/Dependency_Graph/Overview'>dependancy</a> graph issue as it's only the render which doesn't work, but narrowing down the problem to a small enough sample to be able to submit it as a bug may be challenging.
                 </p>
                 <p>
                     I tried several python solutions to try and get the frames to update properly, such as using a script to render each frame individually (with various pieces of code intended to update the scene between frames) or even generating a new blend file for each frame, each one offset by one frame, which another script would then render. None of these solved the refresh problem. It was annoying, because the build up obviously wasn't the main part of the video, but it was holding everything up, which made me question if I shouldn't include it in favour of a quicker release. I decided I had spent too much time on it already to not include it so I pushed ahead with my 'last-resort' method. The brute force, feel my wrath, this-is-definitely-going-to-work-and-nothing-will-stop-me method.
@@ -68,7 +68,7 @@
                 </p>
                 <div class=' full-width-image-link-or-max centre-element'>
                     <a href="/images/blog/Lego Smoke.png">
-                        <img src="/images/blog/Lego Smoke.png" alt="A render of a fire with smoke made of lego bricks. The bricks at the bottom are yellow and orange, and at the top they are grey and black.">
+                        <img src="/images/blog/Lego Smoke.png">
                     </a>
                 </div>
                 <p>
