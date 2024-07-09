@@ -47,10 +47,29 @@ article a:not(.image-with-caption a, .button) {
     text-decoration: none;
 }
 
-.blog-header p {
+.date-categories > time {
     margin: 0 !important;
     font-family: Verdana, Geneva, Tahoma, sans-serif !important;
     font-size: 14 !important;
+}
+
+.date-categories {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-categories > .categories {
+    list-style-type: none;
+    margin: 0 !important;
+}
+
+.date-categories > .categories > li {
+    display: inline;
+    font-size: 13 !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    color: #808080 !important;
+    margin: 0px !important;
+    line-height: normal !important;
 }
 
 .post-navigation {

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/images/RM Logo favicon.ico">
+        <title>'Geometry-nodes' Posts - Blog - Ray Mairlot - Freelance 3D Artist</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <header id="header"></header>
+
+        <div id="page-content">
+
+            <h1>'geometry-nodes' Posts:</h1>
+
+
+            <div class='section-divider'></div>
+
+            <div id='blog-main'>
+                <aside id='blog-sidebar'>
+                    <h3>Categories:</h3>
+                    <ul id='categories'>
+                        <li><a href='/blog/categories/addams-family-house.html'>addams-family-house</a></li>
+                        <li><a href='/blog/categories/animated-render-border.html'>animated-render-border</a></li>
+                        <li><a href='/blog/categories/animation.html'>animation</a></li>
+                        <li><a href='/blog/categories/blender.html'>blender</a></li>
+                        <li><a href='/blog/categories/geometry-nodes.html'>geometry-nodes</a></li>
+                        <li><a href='/blog/categories/guide.html'>guide</a></li>
+                        <li><a href='/blog/categories/heartbreaker.html'>heartbreaker</a></li>
+                        <li><a href='/blog/categories/image.html'>image</a></li>
+                        <li><a href='/blog/categories/rollercoaster.html'>rollercoaster</a></li>
+                        <li><a href='/blog/categories/scripting.html'>scripting</a></li>
+                        <li><a href='/blog/categories/slider-puzzle.html'>slider-puzzle</a></li>
+                        <li><a href='/blog/categories/text-effect.html'>text-effect</a></li>
+                    </ul>
+                </aside>
+
+                <section class='blog-post-summary-list'>
+
+                    <article class='blog-post-summary-box'>
+                        <h2><a href='/blog/boids.html'>Boids</a></h2>
+                        <div class='date-categories'>
+                            <time datetime='2024-01-25'>25/01/2024</time>
+                            <ul class='categories'>
+                                <li><a href='/blog/categories/blender.html'>blender,</a></li>
+                                <li><a href='/blog/categories/geometry-nodes.html'>geometry-nodes</a></li>
+                            </ul>
+                        </div>
+                        <p class='summary'>
+                    I've just had a go at implementing <a href=https://en.wikipedia.org/wiki/Boids>Boids</a> with Blender's <a href=https://docs.blender.org/manual/en/latest/physics/simulation_nodes.html>Simulation Nodes</a> (part of Geometry Nodes) and thought I would write up, briefly, the general process.[...]
+                    The quick idea of boids is that using three simple rules - Alignment, Cohesion, and Separation - you can get particles (or boids) to recreate the 'flocking' behaviour of birds or shoals of fish.
+                        </p>
+                    </article>
+
+                    <article class='blog-post-summary-box'>
+                        <h2><a href='/blog/solitaire-win-screen-with-geometry-nodes.html'>Solitaire Win Screen With Geometry Nodes</a></h2>
+                        <div class='date-categories'>
+                            <time datetime='2022-02-15'>15/02/2022</time>
+                            <ul class='categories'>
+                                <li><a href='/blog/categories/blender.html'>blender,</a></li>
+                                <li><a href='/blog/categories/animation.html'>animation,</a></li>
+                                <li><a href='/blog/categories/geometry-nodes.html'>geometry-nodes</a></li>
+                            </ul>
+                        </div>
+                        <p class='summary'>
+                    I just remade the 'Solitaire Win Screen' in Blender with Geometry Nodes:[...]
+                    This is what it looks like in the viewport; cards are instanced on curves which are instanced along lines, which are instanced along the x axis, so that the cards can appear in front of each other when looking through the camera.
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+    </body>
+</html>
