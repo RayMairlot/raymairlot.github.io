@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog article.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/images/RM Logo favicon.ico">
+        <title>Addams Family Seance - Blog - Ray Mairlot - Freelance 3D Artist</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <header id="header"></header>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/addams-family-seance.html'><h1>Addams Family Seance</h1></a>
+                    <div class='date-categories'>
+                        <time datetime='2024-11-07'>07/11/2024</time>
+                        <ul class='categories'>
+                        <li><a href='/blog/categories/blender.html'>blender,</a></li>
+                        <li><a href='/blog/categories/image.html'>image,</a></li>
+                        <li><a href='/blog/categories/addams-family-house.html'>addams-family-house</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    This is part of a larger project which isn't finished but I realised I might be able to have something shareable for around Halloween, which seemed appropriate, and put this together. This is one room from the <a href='/blog/categories/addams-family-house.html'>Addams Family house</a> I've made based on the house in The Addams Family (1991) film.
+                </p>
+                <div class=' full-width-image-link-or-max centre-element'>
+                    <a href="/images/blog/Seance Test Render WM.png">
+                        <img src="/images/blog/Seance Test Render WM.png" alt="A 3D render of Wednesday, Gomez, Morticia and Pugsley Addams sitting around a table looking at a blue, glowing, crystal ball on it.">
+                    </a>
+                </div>
+                <p>
+                    This is very much WIP; there's still plenty to improve about the characters, poses, books, lighting and cobwebs, and still a fair amount of denoising artefacts, but I tried to resist trying to get this perfect and just getting it done.
+                </p>
+                <p>
+                    The scene is from the scene in the film where the family perform a seance to try and call Fester home. There's a few extra characters in the film scene but I decided to cut them as I've already made six characters for the larger project (Gomez, Morticia, Wednesday, Pugsley and Lurch, and Gomez has four different outfits) and focus on just the main ones.
+                </p>
+                <p>
+                    I used <a href='https://docs.blender.org/manual/en/latest/render/cycles/object_settings/light_linking.html'>Light Linking</a> for the first time with this render to isolate which lights could affect which object, which was really useful for having lights for specific characters without worrying about errant highlights.
+                </p>
+                <p>
+                    As with all things, looking at this the next day I think I should have gone with slightly bolder lighting for the rim lights and crystall ball glow, but I will play around with that some more later.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+                // var disqus_config = function () {
+                //     //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                //     this.page.identifier = '291568750785247174'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                // };
+
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://raymairlotblog.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div class='post-navigation'>    <a id='previous' href='/blog/cute-toy-truck.html'><< Previous Post</a></div>        </div>
+
+        <footer id="footer"></footer>
+    </body>
+</html>
