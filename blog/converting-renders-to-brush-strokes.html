@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog article.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/images/RM Logo favicon.ico">
+        <title>Converting Renders to Brush Strokes - Blog - Ray Mairlot - Freelance 3D Artist</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <header id="header"></header>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/converting-renders-to-brush-strokes.html'><h1>Converting Renders to Brush Strokes</h1></a>
+                    <div class='date-categories'>
+                        <time datetime='2025-05-06'>06/05/2025</time>
+                        <ul class='categories'>
+                        <li><a href='/blog/categories/blender.html'>blender,</a></li>
+                        <li><a href='/blog/categories/image.html'>image</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Like others, I've been experimenting with converting a 3D scene to brush strokes using Geometry Nodes for use in a project. Obviously, a slightly exaggerated effect shown here. Will probably not use the bump at all in the project it's for.
+                </p>
+                <div class="image-grid image-grid-two-columns">
+                <div class=''>
+                    <a href="/images/blog/Convert to brush strokes render test 4 WM.png">
+                        <img src="/images/blog/Convert to brush strokes render test 4 WM.png" alt="2D render of a green ball on a green plane, made to look like it's been painted in thick acrylic.">
+                    </a>
+                </div>
+                <div class=''>
+                    <a href="/images/blog/Convert to brush strokes render test 4 Close WM.png">
+                        <img src="/images/blog/Convert to brush strokes render test 4 Close WM.png" alt="Close-up of a 2D render of a green ball on a green plane, made to look like it's been painted in thick acrylic.">
+                    </a>
+                </div>
+                </div>
+                <p>
+                    Couldn't figure out how to do it directly from 3D, so this just samples a 2D render for the brush stroke colours and has a few guide curves to direct the stroke direction. The key is to use 'Curve to Points' and use its 'Rotation' output to rotate the instances.
+                </p>
+                <div class="image-grid image-grid-two-columns">
+                <div class=''>
+                    <a href="/images/blog/Rendering Images as Brush Strokes viewport screenshot.jpg">
+                        <img src="/images/blog/Rendering Images as Brush Strokes viewport screenshot.jpg" alt="A 2D ball on a plane. Orange lines have been drawn over the the top of the image.">
+                    </a>
+                </div>
+                <div class=''>
+                    <a href="/images/blog/Rendering Images as Brush Strokes nodes.jpg">
+                        <img src="/images/blog/Rendering Images as Brush Strokes nodes.jpg" alt="Screenshot of a Blender 3D Geometry Nodes node network focusing on the 'Curve to Points' node.">
+                    </a>
+                </div>
+                </div>
+                <p>
+                    Another example:
+                </p>
+                <p>
+                    Converted -> Original render (with a Grease Pencil paint-over)
+                </p>
+                <div class="image-grid image-grid-two-columns">
+                <div class=''>
+                    <a href="/images/blog/Painting Ship Diffuse WM.png">
+                        <img src="/images/blog/Painting Ship Diffuse WM.png" alt="A 3D render of a ship on a stormy sea, made of broad brush strokes.">
+                    </a>
+                </div>
+                <div class=''>
+                    <a href="/images/blog/Painting Ship Before WM.png">
+                        <img src="/images/blog/Painting Ship Before WM.png" alt="A 3D render of a ship on a stormy sea.">
+                    </a>
+                </div>
+                </div>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+                // var disqus_config = function () {
+                //     //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                //     this.page.identifier = '291568750785247174'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                // };
+
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://raymairlotblog.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div class='post-navigation'>    <a id='previous' href='/blog/addams-family-seance.html'><< Previous Post</a></div>        </div>
+
+        <footer id="footer"></footer>
+    </body>
+</html>
