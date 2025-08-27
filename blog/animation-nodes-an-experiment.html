@@ -92,7 +92,7 @@
                 <p>
                     Here is the first section of AN node setup, which deals with scaling the objects:
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/AN Node Setup Scale.png">
                         <img src="/images/blog/AN Node Setup Scale.png" alt="A screenshot from within Blender 3D showing an 'Animation Nodes' node graph. The falloffs of two empties are being mixed together and are being evaluated based on a list of object's locations. The result of evaluating these falloffs is plugged into the 'Scale' input of an 'Object Transforms Output' node.">
                     </a>
@@ -112,7 +112,7 @@
                 <p>
                     You'll now see that the 'Invoke Subprogram' node has changed its input from being 'Iterations' to 'Object List'. Far more useful. The 'Loop Input' node now knows that I will be passing it a list of objects and that I want to run the 'Subprogram' for as many objects in the list.
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/AN After Iterator.png">
                         <img src="/images/blog/AN After Iterator.png" alt="A screenshot from within Blender 3D of Animation Nodes' 'Invoke Subprogram' and 'Loop Input' nodes.">
                     </a>
@@ -126,7 +126,7 @@
                 <p>
                     Add an 'Objects from Group' node, choose the group in the node's drop-down list that you just created and then connect its one output to the 'Subprogram's one input, like so:
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Object Loop.png">
                         <img src="/images/blog/Object Loop.png" alt="A screenshot of two Animation Nodes nodes in the Blender 3D node editor. An 'Objects from Group' node is plugged into an 'Invoke Subprogram' node.">
                     </a>
@@ -140,7 +140,7 @@
                 <p>
                     Here are the nodes, connected to the 'Loop Input' node that will actually animate each individual object:
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/AN Node Setup Just Loop.png">
                         <img src="/images/blog/AN Node Setup Just Loop.png" alt="A screenshot from within Blender 3D showing an 'Animation Nodes' node graph. The falloffs of two empties are being mixed together and are being evaluated based on a list of object's locations. The result of evaluating these falloffs is plugged into the 'Scale' input of an 'Object Transforms Output' node.">
                     </a>
@@ -159,7 +159,7 @@
                 <p>
                     On the left in the screenshot below, you can see the two empties selected, whose falloffs are compared to each object's location:
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/AN Empties.png">
                         <img src="/images/blog/AN Empties.png" alt="Two screenshots from within Blender 3D shown next to each other. On the left side is a doughnut shape made of spheres. Two empties at the doughnut's poles are selected. On the right is the same screenshot but one of the empties has been moved towards the other one and the spheres nearest the moved empty have got smaller - some so small that they have disappeared.">
                     </a>
@@ -174,7 +174,7 @@
                 <p>
                     The third and thankfully final part (come on, we're nearly at the end now) is to create the billowing wave effect. Here's the node network for the wave effect (I've removed the nodes that handle the scaling for the minute, just to make things a bit simpler):
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/AN Node Setup Just Wave.png">
                         <img src="/images/blog/AN Node Setup Just Wave.png" alt="A screenshot from within Blender 3D showing an 'Animation Nodes' node graph. The nodes are in a frame labelled 'sin Wave'.">
                     </a>

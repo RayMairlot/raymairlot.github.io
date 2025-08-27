@@ -60,7 +60,7 @@
                 </p>
                 </div>
                     <div class="column">
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/5813342.png">
                         <img src="/images/blog/5813342.png" alt="A picture of a custom menu in Blender 3D with the title 'Car Tools'. There are three sets of 'On' and 'Off' switches, labelled: 'Subsurf', 'Shrinkwrap' and 'Draw Wire'.">
                     </a>
@@ -70,7 +70,7 @@
             <p>
                 Another cool thing I found was the ability to have an operator set a custom property when it runs. So I can use the same operator to make both the modifiers visible and invisible. On line 7 you can see I define a new property within the operator. To make sure I can access it I pass 'self' and 'context' into both the execute function and the function that has my main code on lines 9 and 10. It's with 'self' that you access the property, so I haven't yet experimented if 'context' is actually needed:
             </p>
-            <div class=' full-width-image-link-or-max centre-element'>
+            <div class=' full-width-media-or-max centre-element'>
                 <a href="/images/blog/1944196.png">
                     <img src="/images/blog/1944196.png" alt="A screenshot of Python code showing an operator Class for Blender 3D which toggles subsurf modifiers on and off.">
                 </a>
@@ -78,7 +78,7 @@
             <p>
                 Then you can access the operator property with '.propName' after the normal operator call and set it's value:
             </p>
-            <div class=' full-width-image-link-or-max centre-element'>
+            <div class=' full-width-media-or-max centre-element'>
                 <a href="/images/blog/5065256.png">
                     <img src="/images/blog/5065256.png" alt="A screenshot of some Python code showing a line of code that sends a property to an operator from a button.">
                 </a>
@@ -86,7 +86,7 @@
             <p>
                 You can then access the property with 'self.propName':
             </p>
-            <div class=' full-width-image-link-or-max centre-element'>
+            <div class=' full-width-media-or-max centre-element'>
                 <a href="/images/blog/8428233.png">
                     <img src="/images/blog/8428233.png" alt="A screenshot of some Python code. The code shows a function which takes in two arguments, 'self' and 'context'. The function prints out a property of the 'self' argument.">
                 </a>

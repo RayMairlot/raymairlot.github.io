@@ -44,7 +44,7 @@
                 <p>
                     This is what it looks like in the viewport; cards are instanced on curves which are instanced along lines, which are instanced along the x axis, so that the cards can appear in front of each other when looking through the camera.
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Solitaire-Cards-Viewport-Demo.gif">
                         <img src="/images/blog/Solitaire-Cards-Viewport-Demo.gif" alt="A gif showing the Blender 3D view. The 3D view is being panned along, showing trails of playing cards appearing one by one.">
                     </a>
@@ -52,7 +52,7 @@
                 <p>
                     Cards are culled when they are outside of the camera view, which is easy when the camera is orthographic.
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Camera Cull.png">
                         <img src="/images/blog/Camera Cull.png" alt="A screenshot of a Geometry Nodes node network in Blender 3D. Some nodes are in a frame called 'Camera Cull. The nodes compares the position and if it is greater or less than specific values and gives the boolean result to a 'Delete Geometry' node.">
                     </a>
@@ -63,7 +63,7 @@
                 <p>
                     Originally I built a single 'cascade' with some nice controls, but then realised I couldn't instance this node group and have random values for each parameter 😐. Instead, I rebuilt it so all lines and meshes are created first and then all the cards instanced at once at the end.
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Solitaire-Cards-Single-Casdade-Demo.gif">
                         <img src="/images/blog/Solitaire-Cards-Single-Casdade-Demo.gif" alt="A gif showing the Blender 3D 3D view. As properties on a Geometry Nodes modifier are edited a trail of playing cards changes in length and height.">
                     </a>
@@ -71,7 +71,7 @@
                 <p>
                     All the cards share the same material and a node group selects the number and suit. The card images are all in one texture in 4 rows and by multiplying the UVs I can change which card image is displayed.
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Solitaire-Cards-Material-Demo.gif">
                         <img src="/images/blog/Solitaire-Cards-Material-Demo.gif" alt="A gif showing the Blender 3D shader editor on the left and a cartoon playing card on the right. As properties on the 'Playing Card Images' node are changed the card on the right changes in suit and number.">
                     </a>

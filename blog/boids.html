@@ -65,7 +65,7 @@
                 <p>
                     I also make the points 'wrap' i.e., when they reach the edge of the rectangle they warp to the other side. This is done by comparing each of the position attrbute's individual axis to see whether they exceed the defined bounds, and if they do, set their position to the other side of the bounds.
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Boid neighbours.gif">
                         <img src="/images/blog/Boid neighbours.gif" alt="A gif showing a series of grey triangles flying around. A red triangle is flying around with a circle around it. Any triangles that enter the circle turn blue and when they exit they turn back to grey.">
                     </a>
@@ -83,7 +83,7 @@
                 <p>
                     Here's a simplified screenshot showing the general setup:
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Boids alignment nodes.jpg">
                         <img src="/images/blog/Boids alignment nodes.jpg" alt="A screenshot of Geometry Nodes node network showing a Repeat Zone in a Simulation Zone.">
                     </a>
@@ -91,7 +91,7 @@
                 <p>
                     And here's the result:
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Boid Alignment.gif">
                         <img src="/images/blog/Boid Alignment.gif" alt="A gif showing a series of grey triangles flying around. They start out randomly placed and then group into bunches.">
                     </a>
@@ -106,7 +106,7 @@
                 <p>
                     This also uses the mean but this time of the position attrbute. I found I had to subtract this from the velocity, which I think differs from the coding challenge, which adds it, but it gets the desired result so 🤷‍♂️.
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Boid Cohesion.gif">
                         <img src="/images/blog/Boid Cohesion.gif" alt="A gif showing a series of grey triangles flying around. They start out randomly placed and then group into very dense bunches.">
                     </a>
@@ -118,7 +118,7 @@
                 <p>
                     Separation requires looking at the <em>distance</em> of the neighbouring boids. I use the Geometry Proximity for this. I subtract the position of the neighbour boid from the current one, divide it by the square of the distance beteen them, average them and then add it to the velocity. It sounds complex, and looking at the nodes makes me think I've got something wrong, but basically, the squaring and dividing means that out of the neighbours, the closest ones have the most effect. I think. As an additional step, multiplying the distance before squaring causes the separation to be larger or smaller, which can create very different effects.
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Boid Separation.gif">
                         <img src="/images/blog/Boid Separation.gif" alt="A gif showing a series of grey triangles flying around. They start out randomly placed and then group into bunches of equally spaced triangles.">
                     </a>
@@ -129,7 +129,7 @@
                 <p>
                     I did actually add one more 'feature', I converted it to a 3D simulation, which really didn't take much work aside from adapting the boid wrapping to take into account the Z axis as well.
                 </p>
-                <div class=' full-width-image-link-or-max centre-element'>
+                <div class=' full-width-media-or-max centre-element'>
                     <a href="/images/blog/Boid 3D.gif">
                         <img src="/images/blog/Boid 3D.gif" alt="A gif showing a series of grey cones flying around inside a 3D cube. They start out randomly placed and then group into bunches of equally spaced cones.">
                     </a>

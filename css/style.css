@@ -136,7 +136,7 @@ ol, #page-content ul {
     width: min(500px, 100%);
 }
 
-.full-width-image-link-or-max:not(.column .full-width-image-link-or-max) {
+.full-width-media-or-max:not(.column .full-width-media-or-max) {
     margin: 60px;
 }
 
@@ -151,7 +151,7 @@ ol, #page-content ul {
 
 .centre-image-link,
 .image-with-caption:not(.column .image-with-caption),
-.full-width-image-link-or-max {
+.full-width-media-or-max {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -160,7 +160,8 @@ ol, #page-content ul {
 
 .centre-image-link img,
 .image-with-caption img:not(.column .image-with-caption img),
-.full-width-image-link-or-max img {
+.full-width-media-or-max img,
+.full-width-media-or-max video {
     max-width: 100%;
 }
 
@@ -336,11 +337,11 @@ ol, #page-content ul {
     .centre-image-link,
     .image-with-caption,
     .image-and-grid,
-    .full-width-image-link-or-max {
+    .full-width-media-or-max {
         margin: 30px 0px;
     }
 
-    .full-width-image-link-or-max:not(.column .full-width-image-link-or-max) {
+    .full-width-media-or-max:not(.column .full-width-media-or-max) {
         margin: 30px 0;
     }
 
