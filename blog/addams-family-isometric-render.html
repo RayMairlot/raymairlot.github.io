@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog article.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/images/RM Logo favicon.ico">
+        <title>Addams Family Isometric Render - Blog - Ray Mairlot - Freelance 3D Artist</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <header id="header"></header>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/addams-family-isometric-render.html'><h1>Addams Family Isometric Render</h1></a>
+                    <div class='date-categories'>
+                        <time datetime='2025-08-20'>20/08/2025</time>
+                        <ul class='categories'>
+                        <li><a href='/blog/categories/blender.html'>blender,</a></li>
+                        <li><a href='/blog/categories/image.html'>image,</a></li>
+                        <li><a href='/blog/categories/addams-family-house.html'>addams-family-house</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Following my <a href='/blog/addams-family-mini-house.html'>previous post</a> where I realised I could extract out some parts of a larger project to make a separate render, this time I extracted the attic scene out of my <a href='/blog/categories/addams-family-house.html'>Addams Family house project</a> to create this isometric render and close-ups:
+                </p>
+                <div class=' full-width-media-or-max centre-element'>
+                    <a href="/images/blog/Electrocution Isometric WM.png">
+                        <img src="/images/blog/Electrocution Isometric WM.png" alt="A 3D Render of Pugsley Addams strapped in an electric chair and Wednesday Addams electrocuting him in an attic.">
+                    </a>
+                </div>
+                <div class=' full-width-media-or-max centre-element'>
+                    <a href="/images/blog/Electrocution Pugsley WM.png">
+                        <img src="/images/blog/Electrocution Pugsley WM.png" alt="A 3D render of a Medium close-up of Pugsley Addams sat in an electric chair with electrical bolts covering his skin.">
+                    </a>
+                </div>
+                <div class=' full-width-media-or-max centre-element'>
+                    <a href="/images/blog/Electrocution Wednesday WM.png">
+                        <img src="/images/blog/Electrocution Wednesday WM.png" alt="A 3D render of a Wednesday Addams looking gleeful, with her hand on an electrical switch with electrical bolts on it.">
+                    </a>
+                </div>
+                <p>
+                    I did have to modify the attic scene quite a lot to match the style of an isometric render - the original attic is a deeper room, which doesn't look right when viewed from an isometric angle, but I think it's worth it to get a little extra something out of a large project which is taking far longer to complete than I originally thought.
+                </p>
+                <p>
+                    Also, it made me realise that I definitely <em>do</em> want to use these volumetric light beams instead of the more cartoony light beams I had created with Geometry Nodes, that this new cobweb system is probably better than the one I was previously using (it stretches image planes instead of having geometry-based webs), and that using material based masks on the walls to cut holes in them for windows is much better than booleans (I had been on the fence about them, but they work really well).
+                </p>
+                <p>
+                    I also made <em>heavy</em> use of light and shadow-linking to allow lights to only affect specific objects. I can't imagine how I would have lit the scene without that relatively new feature.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+                // var disqus_config = function () {
+                //     //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                //     this.page.identifier = '291568750785247174'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                // };
+
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://raymairlotblog.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div class='post-navigation'>    <a id='previous' href='/blog/addams-family-mini-house.html'><< Previous Post</a></div>        </div>
+
+        <footer id="footer"></footer>
+    </body>
+</html>
