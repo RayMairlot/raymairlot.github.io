@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog article.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/images/RM Logo favicon.ico">
+        <title>Candles - Blog - Ray Mairlot - Freelance 3D Artist</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <header id="header"></header>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/candles.html'><h1>Candles</h1></a>
+                    <div class='date-categories'>
+                        <time datetime='2025-08-26'>26/08/2025</time>
+                        <ul class='categories'>
+                        <li><a href='/blog/categories/blender.html'>blender,</a></li>
+                        <li><a href='/blog/categories/animation.html'>animation,</a></li>
+                        <li><a href='/blog/categories/addams-family-house.html'>addams-family-house</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Only tangentally related to my <a href='/blog/categories/addams-family-house.html'>Addams Family house project</a>, but after doing the previous render I thought I could probably make a nice render just out of the candles, so I extracted them out and made this:
+                </p>
+                <div class="full-width-media-or-max centre-element">
+                    <video controls autoplay loop=true>
+                        <source src="/videos/Candles Render WM.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p>
+                    I made them a bit more realistic because the Addams Family House renders are a more cutesy style by making the flames a bit more of a reasonable size.
+                </p>
+                <p>
+                    I used two sculpted candles and then the randomisation, flame animation, wax mounds around the base, and the wax drips are Geometry Nodes.
+                </p>
+                <p>
+                    The extra wax was done by instancing icospheres and then Mesh to Volume> Volume to Mesh.
+                </p>
+                <p>
+                    The flame animation was done with a standard noise texture plugged into a Set Position node (with some nodes in-between to control the strength of the effect). Each candle gets a different part of the noise because by default the noise texture uses the position as the vector. I just add to the x component of the vector to animate it. I also use a vertex group to make sure the bottom of the flame isn't displaced.
+                </p>
+                <p>
+                    The looping was dony by having a copy of the noise offset by the distance it would travel over the course of the animation, so by the end the copy is where the first noise starts, then I have a Mix node which is animated to blend between the two noises. Starts with the first noise texture and blends to the copy.
+                </p>
+                <p>
+                    Several rows of list candles in a dark environment. The flames flutter slightly in the wind.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+                // var disqus_config = function () {
+                //     //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                //     this.page.identifier = '291568750785247174'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                // };
+
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://raymairlotblog.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div class='post-navigation'>    <a id='previous' href='/blog/addams-family-isometric-render.html'><< Previous Post</a></div>        </div>
+
+        <footer id="footer"></footer>
+    </body>
+</html>
