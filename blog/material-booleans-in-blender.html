@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog article.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/images/RM Logo favicon.ico">
+        <title>'Material Booleans' in Blender - Blog - Ray Mairlot - Freelance 3D Artist</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <header id="header"></header>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/material-booleans-in-blender.html'><h1>'Material Booleans' in Blender</h1></a>
+                    <div class='date-categories'>
+                        <time datetime='2025-09-03'>03/09/2025</time>
+                        <ul class='categories'>
+                        <li><a href='/blog/categories/blender.html'>blender,</a></li>
+                        <li><a href='/blog/categories/guide.html'>guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    This is what I've nicknamed 'Material Booleans', but they're really just masks that can be manipulated a bit like booleans, in that they can be moved like 3D objects and added or subtracted from one another.
+                </p>
+                <div class="full-width-media-or-max centre-element">
+                    <video controls autoplay loop=true>
+                        <source src="/videos/Material Booleans Complex WM.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p>
+                    I've been using them in a project where I have a wall I built with Geometry Nodes, and I want to punch a hole through it for a window. The problem? Well, if I want to use traditional, geometry-based booleans, I've got to convert the Geometry Nodes wall to a mesh, losing all the optimisation I had from using instances. (Even the newer 'Manifold' boolean option doesn't help that much with speed in this case.)
+                </p>
+                <p>
+                    A simpler method could be to use a shader based solution, by using a mask on the material, or even better, a 3D mask that can be easily manipulated in the viewport. You'll notice that the 'boolean' is making a hole through multiple objects, each with different materials:
+                </p>
+                <div class="full-width-media-or-max centre-element">
+                    <video controls autoplay loop=true>
+                        <source src="/videos/Material Booleans Window WM.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h2>How it works</h2>
+                <p>
+                    Every material that you want to punch a hole through shares the same node group. Because of how node groups work, anything that is done inside this node group is shared by all the materials that use the group. This way, a mask created inside the group is shared between multiple materials.
+                </p>
+                <div class=' full-width-media-or-max centre-element'>
+                    <a href="/images/blog/Material Booleans Material.jpg">
+                        <img src="/images/blog/Material Booleans Material.jpg" alt="A screenshot of a node group in Blender's shader editor.">
+                    </a>
+                </div>
+                <p>
+                    The mask node group mixes the incoming shader with a transparent shader using the mask. Everything inside the mask becomes transparent.
+                </p>
+                <div class=' full-width-media-or-max centre-element'>
+                    <a href="/images/blog/Material Booleans Mask.jpg">
+                        <img src="/images/blog/Material Booleans Mask.jpg" alt="A screenshot of a node group in Blender's shader editor.">
+                    </a>
+                </div>
+                <p>
+                    But what actually is the mask? Well, it could just be a regular black and white image texture. You can see that the mask above references an empty in the Texture Coordinate node. This vector is the coordinate used for the mask. This means that when the empty moves, the texture does too. But instead of using a 2D image texture, a better method might be to use the empty's Object Coordinates themselves to create the mask procedurally. Using a bit of maths you can manipulate the Object Coordinates to create basic procedural shapes. And because the empty has a 3D coordinate you can make <em>3D</em> shapes, which can then be used as a mask.
+                </p>
+                <p>
+                    For example, you can create a cube mask by manipulating the Object Coordinates like this:
+                </p>
+                <div class=' full-width-media-or-max centre-element'>
+                    <a href="/images/blog/Material Booleans Cube Shape.jpg">
+                        <img src="/images/blog/Material Booleans Cube Shape.jpg" alt="A screenshot of a node group in Blender's shader editor.">
+                    </a>
+                </div>
+                <p>
+                    Which, when displayed on two intersecting planes, with the empty in the middle, results in the following mask:
+                </p>
+                <div class=' full-width-media-or-max centre-element'>
+                    <a href="/images/blog/Material Booleans Mask Result.jpg">
+                        <img src="/images/blog/Material Booleans Mask Result.jpg" alt="A screenshot of two intersecting planes with a black and white mask displayed on them in Blender's 3D View.">
+                    </a>
+                </div>
+                <p>
+                    The maths for this was adapted from examples from <a href='https://thndl.com/square-shaped-shaders.html'>https://thndl.com/square-shaped-shaders.html</a>. There are also more examples <a href='https://thebookofshaders.com/edit.php?log=160414041142'>here</a>, which will allow you to make different shapes. It can be a bit tricky to convert the maths into Blender nodes, but you can find things like this by looking up 'SDF shapes' or 'GLSL shapes'. Even if the resources you find aren't related to Blender, they can often be translated to nodes because they are using the same mathematical functions that Blender uses.
+                </p>
+                <p>
+                    A sphere mask is a little simpler as you can use the Gradient Texture node:
+                </p>
+                <div class=' full-width-media-or-max centre-element'>
+                    <a href="/images/blog/Material Booleans Sphere Shape.jpg">
+                        <img src="/images/blog/Material Booleans Sphere Shape.jpg" alt="A screenshot of a node group in Blender's shader editor.">
+                    </a>
+                </div>
+                <p>
+                    Because you're using the empty's Object Coordinates, you can transform the empty however you like and the mask will stretch and rotate to match it. To help even more, you can change the display types of the emptys to have 'Cube' and 'Sphere' display types to match their mask shapes exactly. You can see an example of this in the video at the top of the page.
+                </p>
+                <p>
+                    (For the window mask shown previously, I combined a circle and cube mask to create the arched window shape.)
+                </p>
+                <p>
+                    If you want multiple masks you just have to duplicate the controller empty, duplicate the mask nodes, pick the new empty in the Texture Coordinate node, and add the masks together.
+                </p>
+                <div class="full-width-media-or-max centre-element">
+                    <video controls autoplay loop=true>
+                        <source src="/videos/Material Booleans Duplicate WM.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p>
+                    Subtracting the masks from each other instead of adding is how you can start to get different boolean effects.
+                </p>
+                <h2>Closing Thoughts</h2>
+                <p>
+                    And that's it! The trickiest part in this will probably be getting your head around the maths involved with manipulating the Object Coordinates. The best thing to do is read a bit about SDF shapes, learn a few of the definitions for the mathemetical operations the nodes use, and to enable the nodes one by one to see how each one affects the result.
+                </p>
+                <p>
+                    It's not all positives though—there are some things to consider when deciding whether to pick 'material booleans' over 'classic' booleans:
+                </p>
+                <ul>
+                    <li>One advantage is that you can <strong>retain instancing</strong>, and it is going to be as <strong>responsive</strong> as Cycles is on your machine.</li>
+                    <li>One thing you may find disadvantageous is that you can see the 'boolean' <strong>only in rendered viewport mode</strong>. If that matters to you, then this may not be the technique to choose.</li>
+                    <li>Another disadvantage is that, because light paths are now potentially travelling through many surfaces, you need a relatively <strong>high number of transparent bounces</strong>. Fortunately Cycles allows transparent bounces to be set independently from all the other bounces, and, as you can see from the examples on this page, it still responds well on my machine, but your mileage may vary.</li>
+                    <li>One final disadvantage is that there are sometimes <strong>artefacts</strong> at the edge of the mask where the mask and the surface start intersecting. It's a bit like z-fighting, and I haven't found a way to mitigate it, but it's only sometimes noticeable.</li>
+                </ul>
+                <p>
+                    Anyway I hope some of this was useful. I'm looking forward to a few month's time where I find that this technique has some terrible consequence and I have to backtrack on everything I've said, but for the meantime I will continue to use it.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+                // var disqus_config = function () {
+                //     //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                //     this.page.identifier = '291568750785247174'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                // };
+
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://raymairlotblog.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div class='post-navigation'>    <a id='previous' href='/blog/candles.html'><< Previous Post</a></div>        </div>
+
+        <footer id="footer"></footer>
+    </body>
+</html>
