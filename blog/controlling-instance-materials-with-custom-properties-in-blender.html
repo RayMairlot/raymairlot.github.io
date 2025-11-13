@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/blog article.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/images/RM Logo favicon.ico">
+        <title>Controlling Instance Materials With Custom Properties in Blender - Blog - Ray Mairlot - Freelance 3D Artist</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $("#header").load("/pages/header.html");
+                $("#footer").load("/pages/footer.html");
+            });
+        </script>
+    </head>
+    <body>
+
+        <header id="header"></header>
+
+        <div id="page-content">
+            <article>
+                <div class='blog-header'>
+                    <a href='/blog/controlling-instance-materials-with-custom-properties-in-blender.html'><h1>Controlling Instance Materials With Custom Properties in Blender</h1></a>
+                    <div class='date-categories'>
+                        <time datetime='2025-11-13'>13/11/2025</time>
+                        <ul class='categories'>
+                        <li><a href='/blog/categories/blender.html'>blender,</a></li>
+                        <li><a href='/blog/categories/guide.html'>guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Here's a little tip about using custom properties to control materials:
+                </p>
+                <div id="yt-embed-container" class="centre-element">
+                    <div class="embedtool">
+                        <iframe src="https://www.youtube.com/embed/hUUrGOpkrO0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p>
+                    One slight oddity, which I feel I should go over again, as it's only briefly mentioned in the video, is why the original cube (not the instance) goes black when the attribute node is connected. The attribute node is set to look on the <em>instancer</em> for the custom property. The cube, not being the instancer, doesn't have the custom property and so, confusingly in my opinion, the attribute node just returns black. You then end up with the odd situation where you can only view if the material is working by looking at the <em>instance</em> of those objects.
+                </p>
+                <p>
+                    I also now realise that it would have been better to use the lamp from the beginning of the video as the example instead of the cube and Suzanne - no idea why I didn't. Maybe because the setup is a bit more complicated due to the lamp being partially assembled by Geometry Nodes. Anyway, one result of not re-creating how the light works is that I never included the final node network the bulb material uses, so here it is:
+                </p>
+                <div class=' full-width-media-or-max centre-element'>
+                    <a href="/images/blog/Controlling Instance Materials - Bulb node network.jpg">
+                        <img src="/images/blog/Controlling Instance Materials - Bulb node network.jpg" alt="A screenshot of a shader node network in Blender showing attrbute nodes reading various custom properties.">
+                    </a>
+                </div>
+                <p>
+                    It's fairly simple, but just to give some minor explanation, as I had a question about it after sharing the video, the turning on and off of the light is done by mixing between the emission shader and an empty input, which will default to black.
+                </p>
+                <p>
+                    Of course, you can mix between far more complex things than an emission and an empty socket; you could mix between completely different principled shaders, or entire node networks, allowing some instances to have what looks like a completely different material. And instead of a boolean checkbox, you could change it to a float property with a 'factor' subtype to display a nice slider which fades between the two.
+                </p>
+                <p>
+                    <em>Ray.</em>
+                </p>
+            </article>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+                // var disqus_config = function () {
+                //     //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                //     this.page.identifier = '291568750785247174'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                // };
+
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://raymairlotblog.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div class='post-navigation'>    <a id='previous' href='/blog/poseimons-dream.html'><< Previous Post</a></div>        </div>
+
+        <footer id="footer"></footer>
+    </body>
+</html>
