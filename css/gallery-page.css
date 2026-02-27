@@ -10,6 +10,11 @@
     margin: 20px;
 }
 
+.image-grid-group > .gallery-page-grid {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
 #gallery-page-description {
     max-width: 800px;
 }
