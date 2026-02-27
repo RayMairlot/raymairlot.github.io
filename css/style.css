@@ -98,7 +98,7 @@ ol, #page-content ul {
 }
 
 .image-grid-two-columns {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .image-grid-two-columns img {
@@ -106,7 +106,7 @@ ol, #page-content ul {
 }
 
 .image-grid-three-columns {
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .image-grid-three-columns img {
@@ -114,7 +114,7 @@ ol, #page-content ul {
 }
 
 .image-grid-four-columns {
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .image-grid-four-columns img {
