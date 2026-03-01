@@ -126,6 +126,14 @@ ol, #page-content ul {
     height: 100%;
 }
 
+.span-grid-row {
+    grid-row: span 2;
+}
+
+.span-grid-row img {
+    height: 100%;
+}
+
 .centre-element {
     display: block;
     margin-left: auto;
