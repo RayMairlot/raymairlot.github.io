@@ -130,8 +130,11 @@ ol, #page-content ul {
     grid-row: span 2;
 }
 
+/* Presume that an image that spans rows is portrait and should
+   remain portrait (full height) at mobile width. It's possible that
+   'full-height-image' should be a new, separate class.*/
 .span-grid-row img {
-    height: 100%;
+    height: 100% !important;
 }
 
 .centre-element {
